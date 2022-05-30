@@ -584,17 +584,17 @@ looks like.</p>
 <span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>datafr</span></code></pre></div>
-<pre><code>##    var1       var2        var3
-## 1     a  1.3857391   1.0000000
-## 2     a  2.1422854  -4.0000000
-## 3     a  0.4166212   2.0000000
-## 4     b  1.7360511   4.2000000
-## 5     b -0.8533749   5.3333000
-## 6     b  1.3734497   0.1111111
-## 7     b  0.0632862   7.5000000
-## 8     c  0.1219852   0.0000000
-## 9     c -0.7527415 -11.0000000
-## 10    d -0.9722642   1.4142136</code></pre>
+<pre><code>##    var1        var2        var3
+## 1     a  0.63062028   1.0000000
+## 2     a  1.86786287  -4.0000000
+## 3     a  1.13853725   2.0000000
+## 4     b  0.35514635   4.2000000
+## 5     b -0.35135790   5.3333000
+## 6     b -0.46712764   0.1111111
+## 7     b -0.61182037   7.5000000
+## 8     c -1.39773241   0.0000000
+## 9     c -0.04896234 -11.0000000
+## 10    d -0.28856103   1.4142136</code></pre>
 <p>Each variable within our data frame is a vector, and the rules of
 vectors apply to them. All variables in a data frame must have the same
 length. But we might have variables with missing values. In R these
@@ -623,8 +623,8 @@ missing values are called NA:</p>
 <pre><code>##  [1]   1.0000000  -4.0000000   2.0000000   4.2000000   5.3333000   0.1111111
 ##  [7]   7.5000000   0.0000000 -11.0000000   1.4142136</code></pre>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>datafr<span class="sc">$</span>var2</span></code></pre></div>
-<pre><code>##  [1]  1.3857391  2.1422854  0.4166212  1.7360511 -0.8533749  1.3734497
-##  [7]  0.0632862  0.1219852 -0.7527415 -0.9722642</code></pre>
+<pre><code>##  [1]  0.63062028  1.86786287  1.13853725  0.35514635 -0.35135790 -0.46712764
+##  [7] -0.61182037 -1.39773241 -0.04896234 -0.28856103</code></pre>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>var2</span></code></pre></div>
 <pre><code>##  [1]  1  2  3  4  5 NA  7  8  9 10</code></pre>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(datafr)</span></code></pre></div>
@@ -657,21 +657,21 @@ A list can even contain another list.</p>
 ## 10    d   10
 ## 
 ## [[2]]
-##    var1       var2        var3
-## 1     a  1.3857391   1.0000000
-## 2     a  2.1422854  -4.0000000
-## 3     a  0.4166212   2.0000000
-## 4     b  1.7360511   4.2000000
-## 5     b -0.8533749   5.3333000
-## 6     b  1.3734497   0.1111111
-## 7     b  0.0632862   7.5000000
-## 8     c  0.1219852   0.0000000
-## 9     c -0.7527415 -11.0000000
-## 10    d -0.9722642   1.4142136
+##    var1        var2        var3
+## 1     a  0.63062028   1.0000000
+## 2     a  1.86786287  -4.0000000
+## 3     a  1.13853725   2.0000000
+## 4     b  0.35514635   4.2000000
+## 5     b -0.35135790   5.3333000
+## 6     b -0.46712764   0.1111111
+## 7     b -0.61182037   7.5000000
+## 8     c -1.39773241   0.0000000
+## 9     c -0.04896234 -11.0000000
+## 10    d -0.28856103   1.4142136
 ## 
 ## [[3]]
-##  [1]  1.3857391  2.1422854  0.4166212  1.7360511 -0.8533749  1.3734497
-##  [7]  0.0632862  0.1219852 -0.7527415 -0.9722642</code></pre>
+##  [1]  0.63062028  1.86786287  1.13853725  0.35514635 -0.35135790 -0.46712764
+##  [7] -0.61182037 -1.39773241 -0.04896234 -0.28856103</code></pre>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>ls2 <span class="ot">&lt;-</span> <span class="fu">list</span>(df, ls)</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>ls2</span></code></pre></div>
 <pre><code>## [[1]]
@@ -702,21 +702,21 @@ A list can even contain another list.</p>
 ## 10    d   10
 ## 
 ## [[2]][[2]]
-##    var1       var2        var3
-## 1     a  1.3857391   1.0000000
-## 2     a  2.1422854  -4.0000000
-## 3     a  0.4166212   2.0000000
-## 4     b  1.7360511   4.2000000
-## 5     b -0.8533749   5.3333000
-## 6     b  1.3734497   0.1111111
-## 7     b  0.0632862   7.5000000
-## 8     c  0.1219852   0.0000000
-## 9     c -0.7527415 -11.0000000
-## 10    d -0.9722642   1.4142136
+##    var1        var2        var3
+## 1     a  0.63062028   1.0000000
+## 2     a  1.86786287  -4.0000000
+## 3     a  1.13853725   2.0000000
+## 4     b  0.35514635   4.2000000
+## 5     b -0.35135790   5.3333000
+## 6     b -0.46712764   0.1111111
+## 7     b -0.61182037   7.5000000
+## 8     c -1.39773241   0.0000000
+## 9     c -0.04896234 -11.0000000
+## 10    d -0.28856103   1.4142136
 ## 
 ## [[2]][[3]]
-##  [1]  1.3857391  2.1422854  0.4166212  1.7360511 -0.8533749  1.3734497
-##  [7]  0.0632862  0.1219852 -0.7527415 -0.9722642</code></pre>
+##  [1]  0.63062028  1.86786287  1.13853725  0.35514635 -0.35135790 -0.46712764
+##  [7] -0.61182037 -1.39773241 -0.04896234 -0.28856103</code></pre>
 <p>There are many functions that allow you to try to coerce the nature
 of an object:<br />
 - as.numeric() tries to coerce its argument into a numeric.<br />
