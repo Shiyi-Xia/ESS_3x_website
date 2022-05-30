@@ -18,7 +18,7 @@ Folders
 - ***Datasets*** contains data used by R files.
 - ***R_files*** contains class R code, exercises, solutions to exercises, and an extra R file to introduce ggplot2.
 
-But we will mainly use this [website](https://raw.githack.com/Shiyi-Xia/ESS_3x_website/main/index.html) during the course.
+But we will mainly use this [website](https://raw.githack.com/Shiyi-Xia/ESS_3x_website/main/_site/index.html) during the course.
 
 ## When we finish 🎉
 ### Take-away Notes
