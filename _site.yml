@@ -7,7 +7,7 @@ navbar:
       href: index.html
     - text: "Learning"
       href: Learning.html
-    - text: "Exercies"
+    - text: "Exercises"
       href: Exercise.html
 output:
   html_document:
