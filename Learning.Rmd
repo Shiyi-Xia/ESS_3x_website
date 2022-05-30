@@ -1,0 +1,738 @@
+---
+title: "Learning"
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Packages needed
+
+```{r message=FALSE, warning=FALSE}
+#install.packages(c("dplyr","haven","readr", "tidyr","ggplot2","texreg","stringr","stringi","WDI"))
+library(haven)        # Import Data
+library(readr)        # Import Data
+library(dplyr)        # Data manipulation
+library(ggplot2)      # Creating graphics
+library(stringr)      # Deal with string data
+library(kableExtra)   # Build complex tables and manipulate table styles
+library(WDI)          # Get data from the World Bank's API
+library(psych)        # We use the describe() function from this package for summary statistics.
+library(texreg)       # Convert regression output to Table
+library(stargazer)    # Convert regression output to Table
+library(equatiomatic) # Provide an automatic way to show the equations of models fitted in R.
+```
+
+# Basic R
+
+## R Data Type
+
+What are the main types of data we will deal with?\
+They can be:\
+1. Numbers
+
+```{r, results='hide'}
+0
+1.5
+3/4
+```
+
+2.  Strings:
+
+```{r, results='hide'}
+"Hello world"
+```
+
+3.  Categories: [England, Scotland, Wales, Northern Ireland]
+
+4.  Logical:
+
+## Creating objects
+
+Data types can be contained in R objects.\
+In RStudio we make vast use of the \<- operator to assign values to
+objects. We can obtain the operator quickly by typing the "alt" + "-"
+keys together.
+
+## Types of objects
+
+There are many types of objects in R. Today we focus our attention on:\
+1) Vectors\
+2) Matrices (2-dimensional vectors)\
+3) Data Frames\
+4) Lists\
+
+### Vectors
+
+Vectors are one-dimensional objects that can have different lengths and
+can contain different values, but all of the same nature (all numeric,
+all characters, all logical...)
+
+```{r}
+my.first.vector <- c(1, 5, 2, 6, 8, 9, 12, 2.4, 0.3, -2.56, 3/4, 2+3)
+# the c() function stands for "concatenate" and is used to join objects together
+my.first.vector
+```
+
+How long is my vector?
+
+```{r}
+length(my.first.vector)
+```
+
+You can access the value of a specific element in your vector using
+squared brackets:
+
+```{r}
+my.first.vector[8] # the value of the eighth element in our vector
+my.first.vector[1] # the value of the first element in our vector
+```
+
+We can also store string elements in our vector:
+
+```{r}
+a.string.vector <- c("here", "are", "some", "elements")
+a.string.vector
+```
+
+What data type is in the vector?
+
+```{r}
+class(my.first.vector)
+class(a.string.vector)
+```
+
+paste() is a useful function to use with strings:
+
+```{r}
+c <- "hello"
+d <- "world"
+paste(c, d, sep = "")
+c(c, d)
+paste(c, d, sep = ",") # specifies the separator of the two objects!
+```
+
+paste0() is a similar function,which by default puts no separator:
+
+```{r}
+paste0(c, d)
+```
+
+Our vector can be a vector of factors. This is used to create
+categorical variables.
+
+### Matrix
+
+A matrix is a two-dimensional vector. Besides being two-dimensional, the
+same rules of vectors apply to matrix: a matrix can only contain data of
+the same type.\
+Suppose we want a 3x4 matrix with numbers from 1 to 12 in its cells:
+
+```{r}
+m <- matrix(data = 1:12,  # the data in our matrix. Pick all integers from 1 to 12 (included)
+            nrow = 3,     # the number of rows 
+            ncol = 4,     # the number of columns
+            byrow = TRUE) # do we want data to be stored in cells by row or by column?
+m
+```
+
+We can access an individual element of a matrix in R by specifying its
+position.
+
+```{r}
+m[2,4] # the object in the 2nd row, 4th column
+m[,1]  # all the first column
+m[1,]  # all the first row
+```
+
+We can also give names to columns and rows.
+
+```{r}
+colnames(m) <- c("one", "two", "three", "four")
+rownames(m) <- c("a", "b", "c")
+m
+```
+
+I won't be showing you matrix algebra in action during this class
+(you're unlikely to need it outside of introductory exercises and
+advanced programming). But to summarise the available functions:
+
+-   $+$ matrix addition
+-   $*$ multiplication by a scalar
+-   $%*%$ matrix multiplication
+-   t( ) transpose
+-   solve( ) inverse
+-   diag( ) get the diagonal
+
+### Data Frame
+
+They are perhaps the most common object we will deal with in R. Most
+databases are imported automatically as data frames. They have multiple
+variables organized in columns, and each row represents one observation.
+
+Before importing one, let's create one from scratch and see how it looks
+like.
+
+```{r}
+datafr <- data.frame(
+  var1 = c(rep("a", 3), rep("b", 4), rep("c", 2), "d"),
+  var2 = rnorm(n = 10, mean = 0, sd = 1.3), # here we are drawing 10 random values from a 
+  # normal distribution with mean = 0 and sd = 1.3
+  var3 = c(1, -4, 2, 4.2, 5.3333, 1/9, 7.5, 0.000, 1-12, sqrt(2)) # notice that here we are
+  # creating a vector where the elements are expressions! We also include the squared root of 2
+)
+
+datafr
+
+```
+
+Each variable within our data frame is a vector, and the rules of
+vectors apply to them. All variables in a data frame must have the same
+length. But we might have variables with missing values. In R these
+missing values are called NA:
+
+```{r}
+df <- data.frame(var1 = c(rep("a", 3), rep("b", 4), rep("c", 2), "d"),
+                 var2 = c(1,2,3,4,5,NA,7,8,9,10))
+df # we have a missing value in var2
+
+class(datafr)
+```
+
+We can assess information in one column of our data frame using **\$**
+operator:
+
+```{r}
+datafr$var1 # this gives us precisely the object we want.
+datafr$var3
+
+datafr$var2
+df$var2
+
+class(datafr)
+class(datafr$var1)
+class(datafr$var2)
+class(datafr$var3)
+```
+
+### List
+
+Lists are the last object type that we briefly introduce today. Lists
+are objects that include different other objects in R, of whatever type.
+A list can even contain another list.
+
+```{r}
+ls <- list(df, datafr, datafr$var2)
+ls
+
+ls2 <- list(df, ls)
+ls2
+```
+
+There are many functions that allow you to try to coerce the nature of
+an object:\
+- as.numeric() tries to coerce its argument into a numeric.\
+- as.integer() tries to coerce its argument into an integer.\
+- as.character() tries to coerce its argument into a character.\
+- as.factor() tries to coerce its argument into a factor.\
+
+And also its class! - as.matrix() - as.data.frame() - as.array() -
+as.list()
+
+# Import and Manage Datasets
+
+## Import Datasets
+
+Now, we will learn how to import different types of databases from
+outside. First, let's clean our enviornment before dealing with
+databases.
+
+```{r}
+rm(list = ls())
+```
+
+Or by clicking on session -\> clear workspace -\> yes.\
+
+If you do it by code, make sure to keep that line **at the top** of your
+script. It's really important that you start fresh each time you do work
+in R, to make sure that your workflow (the order you do things) is
+replicable. In other words, it helps make sure that your future self or
+someone else can open up your script,run everything, and get the same
+result every time.\
+
+Then, we must set up our working directory, the folder on our computer
+where we are going to work from, where we store our data and where
+perhaps we might want to save our plots or the outputs from the
+analysis.\
+
+In R, we do it using the setwd() function:
+
+```{r}
+setwd("~/Desktop/ESS_Intro_to_R/Shiyi_Xia_ESS_Intro_to_R")
+```
+
+
+Now import data from a csv file and save it in a named object.
+
+The choice across various functions of importing data depends on the
+data type, e.g. **.dta**, **.csv**, or **.xlsx**.
+
+```{r}
+ANES <- read_dta("anesByState.dta")
+head(ANES)
+```
+
+```{r}
+csvfile <- "https://raw.githubusercontent.com/lorenzo-crippa/Intro_to_R/master/2021/baseball.csv"
+baseball <- read.csv(csvfile)
+head(baseball)
+```
+
+Yes! We could import a data file from a URL:
+
+```{r}
+url <- "http://www.principlesofeconometrics.com/stata/broiler.dta"
+data.df <- read_dta(url)
+head(data.df)
+```
+
+In addition, although we won't get into the details of this method, some
+packages allow users to search and download data, e.g. **WDI**, **V-Dem,
+democracyData**. Here is an example of importing World Bank Data
+automatically.
+
+```{r}
+wdi_data <- WDI(country = "all", 
+               indicator = c(population = "SP.POP.TOTL",
+                             gdp_percapita = "NY.GDP.PCAP.KD"), 
+               start = 2000, end = 2020, extra = TRUE)
+head(wdi_data)
+```
+
+Here is the common data types, and the corresponding functions and
+packages.
+
+| Data Type | Function   | Package |
+|-----------|------------|---------|
+| **.dta**  | read_dta   | haven   |
+|           | read.dta   | foreign |
+| **.csv**  | read_csv   | readr   |
+|           | read.csv   |         |
+| **.xls**  | read_excel | readxl  |
+| **.xlsx** | read_excek | readxl  |
+| **.txt**  | read.delim |         |
+
+## Manage datasets
+
+Database management like dropping observations and variables,sorting the
+data and the other, can be done using the basic R language.\
+
+However, a suite of packages has also been developed to write code in R
+in much more natural syntax. The suite is called tidyverse. We can
+install it by running:\
+
+In what follows, you'll see code for managing datasets in base R,and
+next you'll see the (more intuitive) tidyverse version of the same
+operations. It's important to know both.
+
+Suppose now we want to drop from our baseball data all observations that
+refer to the CLE team (no offense to its fans). Doing it in base R would
+be:
+
+```{r}
+baseball.no.CLE <- baseball[baseball$team != "CLE", ]
+```
+
+Suppose now we want to get rid of all observations that are not for New
+York Yankees (NYY) and also we want to drop the column "name". Yet, we
+don't want to overwrite the "baseball" object because we might need the
+information we're dropping later. We can do the following:
+
+```{r}
+baseball.2 <- baseball[baseball$team == "NYY", 2:4]
+```
+
+These operations are made smoother by tidverse Let's do something
+similar on ANES. Let's remove all observations from the year 2000, then
+remove the variable turnout:
+
+```{r}
+ANES <- filter(ANES, # what is your data frame? 
+               year != 2000) # the condition you impose
+ANES <- select(ANES, 
+               -turnout) # keep everything BUT the variable named "turnout"
+
+```
+
+Now suppose we want to sort observations in our ANES dataset based on
+state, then year.We can do it by:
+
+```{r}
+ANES[order(ANES[,2], ANES[,1]),]
+```
+
+By doing this we have taken ANES and we have asked R to reorder its rows
+first based on the second column (state), then by its first column
+(year). Notice that this time we have not saved the data frame obtained
+into an object!
+
+Another useful function is unique(). It tells us what values a vector
+takes:
+
+```{r}
+unique(ANES$year) # all possible years in the ANES dataset
+# we might want to have it sorted:
+sort(unique(ANES$year)) # years from 1952 to 2008 by 2-year distance. 
+
+```
+
+We can also add variables to our data frames. What if we wanted to add
+the squared valueof "poor" in the ANES data frame? In base R this is
+done by doing:
+
+```{r}
+ANES$new.var <- ANES$poor^2
+
+# we can also do it in tidyverse by doing:
+ANES <- mutate(ANES,
+               new.var2 = poor*2)
+```
+
+ifelse() is a function that is very useful to know. If its "test"
+argument (a condition) is verified, it does what the "yes" argument
+says. Otherwise, it executes the "no" argument. For instance, in ANES we
+might want to have a variable that takes value 0, if the year is before
+2000, and 1 otherwise. We can do it like this:
+
+```{r}
+ANES$indicator <- ifelse(test = ANES$year >= 2000, yes = 1, no = 0)
+unique(ANES$indicator)
+```
+
+# Get Summary Stats and Plots
+
+## Summary Statistics
+
+When we first obtain a data object in R, there are several things that
+we could do:
+
+```{r}
+names(ANES)   # obtain all the variable names of a dataset
+head(ANES)    
+glimpse(ANES) # get a glimpse of your data.
+```
+
+If we want to get some description of our data.
+
+```{r}
+summary(ANES$poor)
+```
+
+We can also ask for specific information:
+
+```{r}
+mean(ANES$voteDem) 
+sd(ANES$poor)
+median(ANES$dem)
+min(ANES$year)
+max(ANES$voteDem)
+quantile(ANES$poor, 0.3) # the observation that leaves 30% of the observations to its left
+quantile(ANES$poor, 0.5) # this will be the median of course!
+median(ANES$poor)
+var(ANES$dem) # the variance
+table(ANES$year) # how often does each occurrence appear?
+range(ANES$year)
+```
+
+## Basic plots
+
+We now want to obtain some plots about our data. We will see how to:
+
+1)  obtain boxplots
+
+2)  obtain histograms
+
+3)  obtain density plots
+
+4)  obtain twoway plots
+
+### Boxplots
+
+To create a boxplot:
+
+```{r}
+boxplot(ANES$white)
+
+# we can then intervene on options and modify its appearance:
+boxplot(ANES$white, frame = F, ylab = "white", main = "A boxplot")
+?boxplot
+```
+
+We could also:
+
+```{r}
+# this would be the tidyverse way of doing it:
+ggplot(ANES, aes(y = white)) +
+         geom_boxplot() +
+         theme_minimal()
+```
+
+### Histograms
+
+Plotting a histogram is also easy and similar to create a boxplot:
+
+```{r}
+hist(ANES$FTM, main = "Histogram of FTM", xlab = "FTM")
+
+# and we can also intervene in the plot with options:
+hist(ANES$FTM, main = "Histogram of FTM", xlab = "FTM", probability = TRUE) # to have probabilities
+```
+
+Again, in tidyverse:
+
+```{r}
+ggplot(ANES, aes(x = FTM)) +
+  geom_histogram(binwidth = 5) +
+  theme_minimal()
+```
+
+### Density Plots
+
+We can also obtain kernel densities of our data:
+
+```{r}
+density(ANES$dem)
+plot(density(ANES$dem))
+```
+
+### Twoway Plots
+
+Suppose now we want to explore two-way relations in our data. For
+instance the two-way relation between height and weight of baseball
+players:
+
+```{r}
+plot(x = baseball$heightinches, y = baseball$weightpounds,
+     frame.plot = FALSE, xlab = "height", ylab = "weight",
+     pch = 20) # pch is an option that selects the shape of dots we want 
+
+# what if we want to add lines on this plot? We use the abline() function
+# Maybe we want to plot a line corresponding to the mean height 
+# lwd makes it thicker
+abline(v = mean(baseball$heightinches, na.rm = TRUE), col = "red", lwd = 5) 
+```
+
+Again, tidyverse makes things much easier. Let's re-do all the steps we
+did before. First, we created a scatter plot. This time, let's save the
+plot in an object:
+
+```{r}
+my.plot <- ggplot(baseball, aes(x = heightinches, y = weightpounds)) +
+  geom_point() +
+  theme_minimal()
+my.plot
+```
+
+tidyverse makes it also simpler to save tidyverse plots:
+
+```{r}
+ggsave(my.plot, filename = "my_first_ggplot.pdf")
+```
+
+# Run Basic Statistical Analyses
+
+## T-Tests
+
+Suppose we would like to run a test to see if the population mean of a
+random variable is distinguishable from 0 based on the data:
+
+```{r}
+t.test(ANES$poor) # by defaul it's a two-tailed t-test with null-value = 0
+```
+
+Or you can also test if the true value is equal to other values:
+
+```{r}
+t.test(ANES$FTM, mu = 60)
+
+# ...and you can ask the test be one-sided:
+t.test(ANES$FTM, mu = 60, alternative = "less")
+t.test(ANES$FTM, mu = 60, alternative = "greater")
+```
+
+We could also run difference-in-means tests. Suppose you want to test if
+the mean height of players in the NYY team is different from the mean
+height of players in the MIN team:
+
+```{r}
+t.test(x = baseball$heightinches[baseball$team == "NYY"],
+       y = baseball$heightinches[baseball$team == "MIN"])
+```
+
+**YES, THEY ARE**. Players in the Yankees are taller on average.
+
+## Statistical models
+
+### Linear Models
+
+Now, we want to estimate a linear model using OLS. To do that, we first
+import a dataset from an article by David Card (1993) on NBER:
+
+```{r}
+card <- read_dta("Card_data.dta")
+head(card)
+```
+
+Okay, let's run a linear regression.
+
+```{r}
+model1 <- lm(wage ~ exper, # your formula
+             data = card) # where are the data stored
+summary(model1)
+```
+
+We probably would like to include some control variables in this model
+specifications.
+
+```{r}
+model2 <- lm(wage ~ exper + motheduc + fatheduc,
+             data = card)
+summary(model2)
+```
+
+From time to time, we need to transform some variables:
+
+```{r}
+model3 <- lm(log(wage) ~ exper + motheduc + fatheduc,
+             data = card)
+summary(model3)
+```
+
+And we could use extract_eq() to obtain the equation of the model
+output:
+
+```{r}
+extract_eq(model3,wrap = TRUE, use_coefs = TRUE)
+```
+
+There are some very good packages to produce neat regression tables out
+there to present our results. The choice between them depends mostly on
+the type of models that they can support. Two equally good choices are
+**stargazer** and **texreg**.
+
+We'll use stargazer today:
+
+```{r}
+# let's see how stargazer works
+stargazer(model1, model2, model3, type = "text",
+          keep.stat = c("n", "rsq", "adj.rsq", "f"), df = FALSE)
+?stargazer
+```
+
+```{r}
+# we can also extract statistics and information from our model objects:
+model3$coefficients
+# model3$residuals
+fit <- model3$fitted.values
+
+# and more:
+summary(model3)$coefficients[,1] # these are the coefficients (the betas)
+summary(model3)$coefficients[,2] # these are the standard errors of our coefficients
+summary(model3)$coefficients[,3] # these are the t-statistics
+summary(model3)$coefficients[,4] # these are the p-values
+# of course we could save this information in R objects
+```
+
+### Generalized Linear Models
+
+Most statistical models in R have a syntax very similar to the one
+adopted by lm().Covering these models is not part of today's class, but
+we might want to show that other models, such as those in the family of
+the generalized linear model (GLM),work very similarly. Suppose we want
+to explain if a person went to college based on the years of education
+of the father and mother. A logit or probit model would be appropriate:
+
+```{r}
+mod.glm <- glm(enroll ~ fatheduc + motheduc +
+                 black + smsa + south + IQ,
+               data = card,
+               family = binomial(link = "logit"))
+summary(mod.glm)
+screenreg(mod.glm)
+```
+
+# Additional Sources
+
+## Some additional packages
+
+| Type            | Package Name         | Aim                                                                      |
+|---------------|---------------|------------------------------------------|
+| Data import     | readr                | Import files from various formats                                        |
+|                 | foreign              |                                                                          |
+| Data Cleaning   | reshape              | Turning long datasets into wide and vice versa                           |
+| Plots           | ggplot2              | Plots based on grammar of graphics                                       |
+|                 | ggpubr               | ggplot2-based publication-ready plots                                    |
+| Standard errors | sandwich + lmtest    | Robust and cluster + test coeffcients                                    |
+| Modelling       | plm                  | Panel data models                                                        |
+|                 | margins or ggeffects | Marginal effects from models                                             |
+|                 | marginaleffects      | Marginal effects from models                                             |
+|                 | AER                  | Various (Instrumental variable, tobit models)                            |
+|                 | mlogit or mnlogit    | Multinominal logit models                                                |
+|                 | lme4                 | Multilevel models                                                        |
+|                 | rdd                  | Regression discontinuity design                                          |
+|                 | zoo or forecast      | Time series tools                                                        |
+| Latent Variable | psych                | Exploratory Factor Analysis                                              |
+|                 | lavaan               | CFA/SEM                                                                  |
+| Webscraping     | rvest                | Webscraping                                                              |
+|                 | httr                 | Webscraping, APIs                                                        |
+|                 | RSelenium            | Scraping dynamic websites                                                |
+| Text Data       | quanteda             | Text data mining and wrangling                                           |
+| Twitter Data    | rtweet               | Mining Tweets                                                            |
+| Spatial Data    | tmap                 | Drawing thematic maps                                                    |
+|                 | sf                   | Spatial Manipulaytion                                                    |
+| Color Palette   | MetBrewer            | Palettes inspired by works at the Metropolitan Museum of Art in New York |
+
+## User-written functions
+
+User-written **functions** allow you to create a function which runs a
+series of commands, it can include and input and output variable. You
+must also name the function yourself. Once the function has been run, it
+is saved in your work environment by R and you can run data through it
+by calling it as you would do with any other function in R (I.e.
+myfunction(data)).
+
+The general structure looks like:
+
+## Loop
+
+A loop is a means to repeat code under defined conditions. This is a
+great way for reducing the amount of code you may need to write. For
+example, you could use the loop to iterate a series of commands through
+a number of different positions (i.e. rows) in a data frame.
+
+The most basic means of looping commands in R is known as the for loop.
+To implement it, you run the `for()` function and within the parameters,
+you define the sequence through which the loop will input data. Usually,
+an argument is assigned (i) and given a range of numerical positions
+(i.e. `in 2:5` which runs from position 2 to position 5). You next enter
+the commands which the loop will run within curly brackets following the
+parameters. The defined argument (i) is used to determine the input data
+for each iteration. This has been demonstrated in the example below
+which loops the code for four columns of our data frame.
+
+## If/else statements
+
+There are various commands we can run within for loops to edit their
+functionality. If-else statements allow us to change the outcome of the
+loop depending on a particular statement. For instance, if a value is
+below a certain threshold, you can tell the loop to round it up,
+otherwise (else) do nothing.
+
+# Appendix: R Script
+
+```{r ref.label=knitr::all_labels(), echo=TRUE, eval=FALSE}
+```
+

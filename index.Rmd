@@ -1,0 +1,36 @@
+---
+title: "3X: Introduction to R"
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+Slides prepared for the [ESS Summer
+School](https://essexsummerschool.com), 7 August, 2022; see also the
+[Course
+Page](https://essexsummerschool.com/summer-school-facts/courses/ess-2022-course-list/1x-2x-3x-introduction-to-r-course/).
+
+# Introduction
+
+## Course Objectives
+
+## Course Structure
+
+-   Introduction to R and Rstudio
+-   Learn about data types, R objects and how to create them
+-   Learn how to import and manage datasets (Part I)
+-   Short break
+-   Learn how to generate basic plots and summary statistics (Part II)
+
+## Context
+
+-   **What is R?** A **programming language** developed specifically for
+    **professional** data analysis.
+-   **Why with R?** Because R is an open source environment **made for
+    data analysis and graphics** that **runs on all the platforms**. And
+    R is free and open source,and there is an incredible community that
+    uses the language and contributes to it.
+-   **What can we do with R?** We could employ packages and functions
+    that were already written. We could also do some programming work,
+    like writing new functions and contribute to the language.
+-   **What is Rstudio?** It is an integrated development environment.
