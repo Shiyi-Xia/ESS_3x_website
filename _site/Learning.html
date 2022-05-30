@@ -411,7 +411,7 @@ div.tocify {
   <a href="Learning.html">Learning</a>
 </li>
 <li>
-  <a href="Exercise.html">Exercies</a>
+  <a href="Exercise.html">Exercises</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -584,17 +584,17 @@ looks like.</p>
 <span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>datafr</span></code></pre></div>
-<pre><code>##    var1       var2        var3
-## 1     a -1.6634324   1.0000000
-## 2     a -0.8107370  -4.0000000
-## 3     a  3.5109910   2.0000000
-## 4     b -0.8479887   4.2000000
-## 5     b  0.1608029   5.3333000
-## 6     b -0.6960608   0.1111111
-## 7     b -0.4999258   7.5000000
-## 8     c  0.6436059   0.0000000
-## 9     c  0.5656313 -11.0000000
-## 10    d -0.1534103   1.4142136</code></pre>
+<pre><code>##    var1        var2        var3
+## 1     a -2.09307943   1.0000000
+## 2     a -0.93089850  -4.0000000
+## 3     a -0.24588183   2.0000000
+## 4     b  0.89622906   4.2000000
+## 5     b -0.95382101   5.3333000
+## 6     b  1.47512272   0.1111111
+## 7     b -1.03661712   7.5000000
+## 8     c  1.55966956   0.0000000
+## 9     c  0.08440345 -11.0000000
+## 10    d -0.67053171   1.4142136</code></pre>
 <p>Each variable within our data frame is a vector, and the rules of
 vectors apply to them. All variables in a data frame must have the same
 length. But we might have variables with missing values. In R these
@@ -623,8 +623,8 @@ missing values are called NA:</p>
 <pre><code>##  [1]   1.0000000  -4.0000000   2.0000000   4.2000000   5.3333000   0.1111111
 ##  [7]   7.5000000   0.0000000 -11.0000000   1.4142136</code></pre>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>datafr<span class="sc">$</span>var2</span></code></pre></div>
-<pre><code>##  [1] -1.6634324 -0.8107370  3.5109910 -0.8479887  0.1608029 -0.6960608
-##  [7] -0.4999258  0.6436059  0.5656313 -0.1534103</code></pre>
+<pre><code>##  [1] -2.09307943 -0.93089850 -0.24588183  0.89622906 -0.95382101  1.47512272
+##  [7] -1.03661712  1.55966956  0.08440345 -0.67053171</code></pre>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>var2</span></code></pre></div>
 <pre><code>##  [1]  1  2  3  4  5 NA  7  8  9 10</code></pre>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(datafr)</span></code></pre></div>
@@ -657,21 +657,21 @@ A list can even contain another list.</p>
 ## 10    d   10
 ## 
 ## [[2]]
-##    var1       var2        var3
-## 1     a -1.6634324   1.0000000
-## 2     a -0.8107370  -4.0000000
-## 3     a  3.5109910   2.0000000
-## 4     b -0.8479887   4.2000000
-## 5     b  0.1608029   5.3333000
-## 6     b -0.6960608   0.1111111
-## 7     b -0.4999258   7.5000000
-## 8     c  0.6436059   0.0000000
-## 9     c  0.5656313 -11.0000000
-## 10    d -0.1534103   1.4142136
+##    var1        var2        var3
+## 1     a -2.09307943   1.0000000
+## 2     a -0.93089850  -4.0000000
+## 3     a -0.24588183   2.0000000
+## 4     b  0.89622906   4.2000000
+## 5     b -0.95382101   5.3333000
+## 6     b  1.47512272   0.1111111
+## 7     b -1.03661712   7.5000000
+## 8     c  1.55966956   0.0000000
+## 9     c  0.08440345 -11.0000000
+## 10    d -0.67053171   1.4142136
 ## 
 ## [[3]]
-##  [1] -1.6634324 -0.8107370  3.5109910 -0.8479887  0.1608029 -0.6960608
-##  [7] -0.4999258  0.6436059  0.5656313 -0.1534103</code></pre>
+##  [1] -2.09307943 -0.93089850 -0.24588183  0.89622906 -0.95382101  1.47512272
+##  [7] -1.03661712  1.55966956  0.08440345 -0.67053171</code></pre>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>ls2 <span class="ot">&lt;-</span> <span class="fu">list</span>(df, ls)</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>ls2</span></code></pre></div>
 <pre><code>## [[1]]
@@ -702,21 +702,21 @@ A list can even contain another list.</p>
 ## 10    d   10
 ## 
 ## [[2]][[2]]
-##    var1       var2        var3
-## 1     a -1.6634324   1.0000000
-## 2     a -0.8107370  -4.0000000
-## 3     a  3.5109910   2.0000000
-## 4     b -0.8479887   4.2000000
-## 5     b  0.1608029   5.3333000
-## 6     b -0.6960608   0.1111111
-## 7     b -0.4999258   7.5000000
-## 8     c  0.6436059   0.0000000
-## 9     c  0.5656313 -11.0000000
-## 10    d -0.1534103   1.4142136
+##    var1        var2        var3
+## 1     a -2.09307943   1.0000000
+## 2     a -0.93089850  -4.0000000
+## 3     a -0.24588183   2.0000000
+## 4     b  0.89622906   4.2000000
+## 5     b -0.95382101   5.3333000
+## 6     b  1.47512272   0.1111111
+## 7     b -1.03661712   7.5000000
+## 8     c  1.55966956   0.0000000
+## 9     c  0.08440345 -11.0000000
+## 10    d -0.67053171   1.4142136
 ## 
 ## [[2]][[3]]
-##  [1] -1.6634324 -0.8107370  3.5109910 -0.8479887  0.1608029 -0.6960608
-##  [7] -0.4999258  0.6436059  0.5656313 -0.1534103</code></pre>
+##  [1] -2.09307943 -0.93089850 -0.24588183  0.89622906 -0.95382101  1.47512272
+##  [7] -1.03661712  1.55966956  0.08440345 -0.67053171</code></pre>
 <p>There are many functions that allow you to try to coerce the nature
 of an object:<br />
 - as.numeric() tries to coerce its argument into a numeric.<br />
@@ -753,7 +753,7 @@ where perhaps we might want to save our plots or the outputs from the
 analysis.<br />
 </p>
 <p>In R, we do it using the setwd() function:</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Desktop/ESS_Intro_to_R/Shiyi_Xia_ESS_Intro_to_R&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Desktop/ESS_3x_website&quot;</span>)</span></code></pre></div>
 <p>Now import data from a csv file and save it in a named object.</p>
 <p>The choice across various functions of importing data depends on the
 data type, e.g. <strong>.dta</strong>, <strong>.csv</strong>, or
@@ -1708,7 +1708,7 @@ class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="#cb1
 <span id="cb166-73"><a href="#cb166-73" aria-hidden="true" tabindex="-1"></a>ls2 <span class="ot">&lt;-</span> <span class="fu">list</span>(df, ls)</span>
 <span id="cb166-74"><a href="#cb166-74" aria-hidden="true" tabindex="-1"></a>ls2</span>
 <span id="cb166-75"><a href="#cb166-75" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
-<span id="cb166-76"><a href="#cb166-76" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Desktop/ESS_Intro_to_R/Shiyi_Xia_ESS_Intro_to_R&quot;</span>)</span>
+<span id="cb166-76"><a href="#cb166-76" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Desktop/ESS_3x_website&quot;</span>)</span>
 <span id="cb166-77"><a href="#cb166-77" aria-hidden="true" tabindex="-1"></a>ANES <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">&quot;anesByState.dta&quot;</span>)</span>
 <span id="cb166-78"><a href="#cb166-78" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ANES)</span>
 <span id="cb166-79"><a href="#cb166-79" aria-hidden="true" tabindex="-1"></a>csvfile <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/lorenzo-crippa/Intro_to_R/master/2021/baseball.csv&quot;</span></span>

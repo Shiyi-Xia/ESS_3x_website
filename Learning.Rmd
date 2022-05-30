@@ -271,7 +271,7 @@ analysis.\
 In R, we do it using the setwd() function:
 
 ```{r}
-setwd("~/Desktop/ESS_Intro_to_R/Shiyi_Xia_ESS_Intro_to_R")
+setwd("~/Desktop/ESS_3x_website")
 ```
 
 
