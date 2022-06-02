@@ -274,7 +274,6 @@ In R, we do it using the setwd() function:
 setwd("~/Desktop/ESS_3x_website")
 ```
 
-
 Now import data from a csv file and save it in a named object.
 
 The choice across various functions of importing data depends on the
@@ -669,7 +668,7 @@ screenreg(mod.glm)
 ## Some additional packages
 
 | Type            | Package Name         | Aim                                                                      |
-|---------------|---------------|------------------------------------------|
+|-----------------|----------------------|--------------------------------------------------------------------------|
 | Data import     | readr                | Import files from various formats                                        |
 |                 | foreign              |                                                                          |
 | Data Cleaning   | reshape              | Turning long datasets into wide and vice versa                           |
@@ -735,4 +734,3 @@ otherwise (else) do nothing.
 
 ```{r ref.label=knitr::all_labels(), echo=TRUE, eval=FALSE}
 ```
-
