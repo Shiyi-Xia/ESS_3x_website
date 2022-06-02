@@ -1,3 +1,31 @@
 ---
-title: "Untitled"
+title: "Exercises"
 ---
+
+# Part I:
+
+1)  Create a vector of even numbers, from 2 to 100. and store it in an object.
+
+2)  Create another vector ranging from 1 to 50 and store it in an object
+
+3)  Run the below lines of code. Put the 'binary' vector along with the two vectors you just made in a data frame and store it in an object. set.seed(42) binary \<- rbinom(50, 1, 0.5)
+
+4)  Filter the data frame you just made for rows where the binary variable is equal to 1. Store the output in a new object
+
+5)  Pull the first vector you made in question 1 out of the object from question 4. Try doing this with both the \$ operator and doubled-up square brackets [[]]
+
+# Part II:
+
+1)  read in the simpsons_episodes.csv file from the 'data' folder and store it in an object. Take a moment to explore it (hint - names() and str() will be useful here).
+
+2)  make a vector denoting whether the IMBD rating for an episode is above 8. Try to do this using both base R and the tidyverse.
+
+3)  Filter for the first ten season and select, IMDB ratings, episode id, season number, title, and view number. Try to do it with both base R and the tidyverse. Store the output in a new object.
+
+4)  In this object, create a new variable showing the rating per views. Try doing this with both base R and the tidyverse.
+
+5)  Check out the write.csv function. Save the data frame you've ended up with after question 4 in the 'data' folder UNDER A DIFFERENT NAME! (Tips: ? write.csv)
+
+# Part III:
+
+# Part IV:

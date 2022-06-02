@@ -14,23 +14,40 @@ Page](https://essexsummerschool.com/summer-school-facts/courses/ess-2022-course-
 
 ## Course Objectives
 
+**Getting you ready to use R in the future.**
+
 ## Course Structure
 
 -   Introduction to R and Rstudio
--   Learn about data types, R objects and how to create them
--   Learn how to import and manage datasets (Part I)
+-   Using RStudio, data types, data structures
+-   Importing datasets, manipulating data
 -   Short break
--   Learn how to generate basic plots and summary statistics (Part II)
+-   Descriptive statistics, plots
+-   Statistical tests and models\
+
+Each section will be roughly an hour to an hour and a half long. Each
+section will include a set of exercises so you can practice what we've
+learned.\
+
+I'm not necessarily expecting you to finish the exercises today - it's
+okay if you don't! I will be uploading a solutions sheet to the Box
+folder later and as before will be available for contact throughout the
+second session of ESS.\
 
 ## Context
 
 -   **What is R?** A **programming language** developed specifically for
     **professional** data analysis.
+
 -   **Why with R?** Because R is an open source environment **made for
     data analysis and graphics** that **runs on all the platforms**. And
     R is free and open source,and there is an incredible community that
     uses the language and contributes to it.
+
 -   **What can we do with R?** We could employ packages and functions
     that were already written. We could also do some programming work,
     like writing new functions and contribute to the language.
+
 -   **What is Rstudio?** It is an integrated development environment.
+
+# Questions before we finish?

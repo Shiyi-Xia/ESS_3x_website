@@ -48,7 +48,12 @@ They can be:\
 
 3.  Categories: [England, Scotland, Wales, Northern Ireland]
 
-4.  Logical:
+4.  Logical (MUST use uppercase):\
+
+-   **TRUE**
+-   **FALSE**\
+
+Or we can use **T** and **F**.
 
 ## Creating objects
 
@@ -57,7 +62,21 @@ In RStudio we make vast use of the \<- operator to assign values to
 objects. We can obtain the operator quickly by typing the "alt" + "-"
 keys together.
 
-## Types of objects
+```{r}
+a <- 2
+```
+
+The above code assigns the value of '2' to an object called a.\
+Notice that a is now in our *global environment* in the top-right part
+of RStudio (unless you've changed your settings).
+
+We can access the contents of a by running it as code:
+
+```{r}
+a
+```
+
+## Data Structures
 
 There are many types of objects in R. Today we focus our attention on:\
 1) Vectors\
@@ -668,7 +687,7 @@ screenreg(mod.glm)
 ## Some additional packages
 
 | Type            | Package Name         | Aim                                                                      |
-|-----------------|----------------------|--------------------------------------------------------------------------|
+|-------------------|-------------------|----------------------------------|
 | Data import     | readr                | Import files from various formats                                        |
 |                 | foreign              |                                                                          |
 | Data Cleaning   | reshape              | Turning long datasets into wide and vice versa                           |
