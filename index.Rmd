@@ -50,4 +50,10 @@ second session of ESS.\
 
 -   **What is Rstudio?** It is an integrated development environment.
 
+# Installation
+
+-   Download R from [here](https://cran.r-project.org/).
+-   Download RStudio from
+    [here](https://www.rstudio.com/products/rstudio/download/).
+
 # Questions before we finish?

@@ -32,7 +32,7 @@ library(equatiomatic) # Provide an automatic way to show the equations of models
 
 What are the main types of data we will deal with?\
 They can be:\
-1. Numbers
+1. **Number**
 
 ```{r, results='hide'}
 0
@@ -40,25 +40,32 @@ They can be:\
 3/4
 ```
 
-2.  Strings:
+2.  **String or Character**:
 
 ```{r, results='hide'}
 "Hello world"
 ```
 
-3.  Categories: [England, Scotland, Wales, Northern Ireland]
+3.  **Category**: [England, Scotland, Wales, Northern Ireland]
 
-4.  Logical (MUST use uppercase):\
+4.  **Logical**: (MUST use uppercase):
 
--   **TRUE**
--   **FALSE**\
+    -   **TRUE**
+
+    -   **FALSE**
 
 Or we can use **T** and **F**.
 
 ## Creating objects
 
-Data types can be contained in R objects.\
-In RStudio we make vast use of the \<- operator to assign values to
+-   **Everything that exits in R is an object.**
+
+Data types can be contained in R objects. By creating an object, we save
+the information to our working environment so that we can recall it
+whenever we want by just running the name of the object.
+
+\
+In RStudio we make vast use of the `<-` operator to assign values to
 objects. We can obtain the operator quickly by typing the "alt" + "-"
 keys together.
 
@@ -76,13 +83,55 @@ We can access the contents of a by running it as code:
 a
 ```
 
+Normally, we could give the self-explanatory names to the objects:
+
+```{r}
+my_string <- c("hello","world","today","is","amazing")
+```
+
+## Logical Operators
+
+### Equal
+
+`==`asks whether two values are the same or equal
+
+```{r}
+a == my_string
+```
+
+### Not Equal
+
+`!=` asks whether two values are not the same or equal.
+
+```{r}
+a != my_string
+```
+
+### Greater or Smaller
+
+We can also test whether certain values are:
+
+-   `>`greater than;
+
+-   `<` smaller than;
+
+-   `>=` greater or equals
+
+-   `<=` smaller or equals
+
+### Combine Logical Operators
+
+-   `&` stands for "and" (not very surprising)
+
+-   `|` stands for "or"
+
 ## Data Structures
 
 There are many types of objects in R. Today we focus our attention on:\
 1) Vectors\
 2) Matrices (2-dimensional vectors)\
 3) Data Frames\
-4) Lists\
+4) Lists
 
 ### Vectors
 
@@ -273,7 +322,7 @@ databases.
 rm(list = ls())
 ```
 
-Or by clicking on session -\> clear workspace -\> yes.\
+Or by clicking on session -\> clear workspace -\> yes.
 
 If you do it by code, make sure to keep that line **at the top** of your
 script. It's really important that you start fresh each time you do work
@@ -346,11 +395,16 @@ packages.
 ## Manage datasets
 
 Database management like dropping observations and variables,sorting the
-data and the other, can be done using the basic R language.\
+data and the other, can be done using the basic R language.
 
 However, a suite of packages has also been developed to write code in R
 in much more natural syntax. The suite is called tidyverse. We can
-install it by running:\
+install it by running:
+
+```{r}
+#install.packages("tidyverse")
+library(tidyverse)
+```
 
 In what follows, you'll see code for managing datasets in base R,and
 next you'll see the (more intuitive) tidyverse version of the same
@@ -687,7 +741,7 @@ screenreg(mod.glm)
 ## Some additional packages
 
 | Type            | Package Name         | Aim                                                                      |
-|-----------------|----------------------|--------------------------------------------------------------------------|
+|------------------|------------------|-----------------------------------|
 | Data import     | readr                | Import files from various formats                                        |
 |                 | foreign              |                                                                          |
 | Data Cleaning   | reshape              | Turning long datasets into wide and vice versa                           |
@@ -723,6 +777,19 @@ by calling it as you would do with any other function in R (I.e.
 myfunction(data)).
 
 The general structure looks like:
+
+```{r}
+myfunction <- function(x){
+  a <- x/2
+  return(a)
+}
+```
+
+Let's test the newly-created function:
+
+```{r}
+myfunction(4)
+```
 
 ## Loop
 
