@@ -741,7 +741,7 @@ screenreg(mod.glm)
 ## Some additional packages
 
 | Type            | Package Name         | Aim                                                                      |
-|-----------------|----------------------|--------------------------------------------------------------------------|
+|-----------------|-----------------|---------------------------------------|
 | Data import     | readr                | Import files from various formats                                        |
 |                 | foreign              |                                                                          |
 | Data Cleaning   | reshape              | Turning long datasets into wide and vice versa                           |
