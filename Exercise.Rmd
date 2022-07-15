@@ -27,5 +27,34 @@ title: "Exercises"
 5)  Check out the write.csv function. Save the data frame you've ended up with after question 4 in the 'data' folder UNDER A DIFFERENT NAME! (Tips: ? write.csv)
 
 # Part III:
+1) Get a summary of the 'redistribution' variable from the CHES dataset. Put the same variable through Psych's describe() function
+
+
+2) Describe the redistribution variable by party for the German (country = 3) data in CHES. Feel free to use any mix of base R or tidyverse you want.
+
+
+3) Read in the simpsons_episodes.csv file from the 'data' folder. Make a boxplot of the IMDB ratings variable in base R.
+
+
+4) Make a scatter plot of IMDB ratings and season. Store the plot in an object.
+
+
+5) Add a theme and a regression line to the object you just made - so if your object is called myPlot, myPlot + theme() will for instance work. I.e. you can keep adding to ggplots after you've stored them in an object! (note that this won't overwrite the object unless you assign it)
+
 
 # Part IV:
+1) Run a t-test on the mean user rating in the books data frame.
+
+
+2) Run another t-test, this time testing the difference in mean price between fiction and non-fiction books. Feel free to use either Base R or the tidyverse.
+
+
+3) Read in the simpsons_episodes.csv file from the data folder and store
+it in an object. Build and run an OLS model regressing IMDB rating on season.
+ tore the result in an object.
+
+
+4) Run another model regressing IMDB rating on both season and views. Store this in another object.
+
+
+5) Print out the results from questions 3 and 4 next to each other using screenreg(). If you're feeling brave, check out the help file and try to customise the output.
