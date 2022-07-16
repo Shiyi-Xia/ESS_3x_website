@@ -46,7 +46,9 @@ They can be:\
 "Hello world"
 ```
 
-3.  **Category**: [England, Scotland, Wales, Northern Ireland]
+3.  **Category**:
+
+    We will talk about this in a bit.
 
 4.  **Logical**: (MUST use uppercase):
 
@@ -56,7 +58,17 @@ They can be:\
 
 Or we can use **T** and **F**.
 
-## Creating objects
+5.  Special Cases
+
+    -   NA: missing data - the most important for today's purposes
+
+    -   NaN: not a number - will only happen if something has gone
+        wrong!
+
+    -   NULL: basically an undefined value - there's nothing there (not
+        even missing data!)
+
+## Creating and assigning objects
 
 -   **Everything that exits in R is an object.**
 
@@ -93,7 +105,7 @@ my_string <- c("hello","world","today","is","amazing")
 
 ### Equal
 
-`==`asks whether two values are the same or equal
+`==` asks whether two values are the same or equal
 
 ```{r}
 a == my_string
@@ -111,7 +123,7 @@ a != my_string
 
 We can also test whether certain values are:
 
--   `>`greater than;
+-   `>` greater than;
 
 -   `<` smaller than;
 
@@ -124,6 +136,96 @@ We can also test whether certain values are:
 -   `&` stands for "and" (not very surprising)
 
 -   `|` stands for "or"
+
+## Functions
+
+You may have noticed that so far we've seen the following math
+operators: `*` `/` `+` `-` `^` (multiplication, division, addition,
+subtraction, exponentiation). But how do we get the square root of
+something?
+
+We use the sqrt() function:
+
+```{r}
+sqrt(4)
+```
+
+The real power of R is in its functions. Both base R and many packages
+(we'll get onto these in a bit) have many useful functions for us to
+use. The trick of course is in learning how to understand and find
+functions. The best place to begin (if you know a function's name) is by
+putting a question mark before it, dropping the parentheses and running
+it:
+
+```{r}
+?sqrt
+```
+
+As you can see, this opens the function's documentation in the help
+panel in the bottom-right of RStudio. These documents can be a little
+daunting sometimes, but you'll get used to them. The most important
+parts are:
+
+-   Usage - this shows us what order the arguments are in and what
+    defaults if there are any.
+
+-   Arguments - these tell us what \*inputs\* the function is expecting
+
+-   Value - this tells us what \*output\* we expect from the function -
+    note that sqrt()'s documentation doesn't have the value header but
+    DOES describe the output under details
+
+-   Many documentations also include examples at the bottom.
+
+That may have been a lot - let's look at another example:
+
+```{r}
+?log
+```
+
+Notice for log() we have TWO arguments. The first is our input (x), the
+second is the base of the logarithm. Notice that the default is that we
+use the natural logarithm. If there is a default argument, R will use
+this UNLESS you overwrite it!
+
+To take the base 10 logarithm of the number 2:
+
+```{r}
+log(2, 10)
+```
+
+Notice that we don't need to explicitly name arguments. If we don't name
+our arguments, R will assume that we're giving them in the order listed
+in the 'usage' section of the documentation. Notice also that we can
+'chain' functions together:
+
+```{r}
+log(sqrt(4), 10) # gives exactly the same as log(2, 10) above as sqrt(4) = 2
+```
+
+The evaluation order for R is inside to outside. In other words, R will
+evaluate the function on the inside first, and the one on the outside
+second. If you don't know the name of a function or want to find one,
+google is your best friend. A big chunk of getting good at R is going to
+be getting good at finding what you need via google.
+
+For example, to find the [exponential
+function](https://www.google.com/search?q=r+exponential+function&oq=R+exponential+function&aqs=chrome.0.0l2j0i22i30l4j69i60l2.3764j0j4&sourceid=chrome&ie=UTF-8).
+
+Let's try one more before we move on:
+
+```{r}
+?paste
+paste("This", "is", "a", "full", "sentence")
+```
+
+Notice the "..." in the arguments. This means we can give it as many
+inputs as we want, BUT we'll need to explicity name any further
+arguments:
+
+```{r}
+paste("This", "is", "a", "full", "sentence", sep="-")
+```
 
 ## Data Structures
 
@@ -173,7 +275,7 @@ class(my.first.vector)
 class(a.string.vector)
 ```
 
-paste() is a useful function to use with strings:
+Again, paste() is a useful function to use with strings:
 
 ```{r}
 c <- "hello"
@@ -741,7 +843,7 @@ screenreg(mod.glm)
 ## Some additional packages
 
 | Type            | Package Name         | Aim                                                                      |
-|-----------------|-----------------|---------------------------------------|
+|-------------------|-------------------|----------------------------------|
 | Data import     | readr                | Import files from various formats                                        |
 |                 | foreign              |                                                                          |
 | Data Cleaning   | reshape              | Turning long datasets into wide and vice versa                           |
@@ -815,6 +917,19 @@ functionality. If-else statements allow us to change the outcome of the
 loop depending on a particular statement. For instance, if a value is
 below a certain threshold, you can tell the loop to round it up,
 otherwise (else) do nothing.
+
+Okay, let's take a look at the WDI dataset again.
+```{r}
+glimpse(wdi_data)
+```
+
+If we would like to create a new binary variable based whether the country is located in Europe and Central Asia, we could write:
+
+```{r}
+wdi_data$euro_central <- ifelse(wdi_data$region == "Europe & Central Asia", TRUE, FALSE)
+table(wdi_data$region)
+table(wdi_data$euro_central)
+```
 
 # Appendix: R Script
 

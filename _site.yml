@@ -10,10 +10,9 @@ navbar:
     - text: "Exercises"
       href: Exercise.html
 output:
-  html_document:
-    theme: yeti
+  rmdformats::robobook:
+    self_contained: true
+    thumbnails: true
+    lightbox: true
+    gallery: false
     highlight: tango
-    toc: true
-    toc_float: true
-    number_sections: true
-    css: style.css
