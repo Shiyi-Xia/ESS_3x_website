@@ -12,7 +12,7 @@ title: "Exercises"
 
 4)  Filter the data frame you just made for rows where the binary variable is equal to 1. Store the output in a new object
 
-5)  Pull the first vector you made in question 1 out of the object from question 4. Try doing this with both the \$ operator and doubled-up square brackets [[]]
+5)  Pull the first vector you made in question 1 out of the object from question 4. Try doing this with both the `$` operator and doubled-up square brackets `[[]]`.
 
 # Part II:
 
