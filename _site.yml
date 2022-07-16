@@ -10,7 +10,7 @@ navbar:
     - text: "Exercises"
       href: Exercise.html
 output:
-  rmdformats::downcute:
+  rmdformats::robobook:
     self_contained: true
     thumbnails: true
     lightbox: true
