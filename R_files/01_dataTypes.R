@@ -48,16 +48,13 @@
 # There are four main data types in R. We'll go over the first three now, and 
 # talk about the last one later.
 
-# 1) Numbers (we've seen these already)
+# 1) Number (we've seen these already)
 0
 1.5
-3 ^ 4 # this would be 3 to the power of 4. 3^2 would be 3 squared, etc
-pi # pi is coded in, should you ever need it
-2e+10 # R can handle some pretty big numbers!
+3/4 
 
-# 2) Strings
-"abc"
-"hello, world!"
+# 2) String
+"Hello, world"
 'notice Strings can use double or single quotes'
 "strings can also contain hastags without a problem #"
 # "but a hastag BEFORE the quotes will mean it's a comment"
@@ -66,15 +63,15 @@ pi # pi is coded in, should you ever need it
 "or you can use a backslash to include the same kind of quotes in the same kind of string: \"hello!\""
 'as above: it\'s' # if you forget the backslash, bad things will happen
 
-# 3) Logical (MUST be capitalised):
+# 3) Categories:
+# We'll talk about this one in a bit
+
+# 4) Logical (MUST be capitalised):
 TRUE
 FALSE
 # Notice we can just use T or F
 T
 F
-
-# 4) Categories: [England, Scotland, Wales, Northern Ireland]
-# We'll talk about this one in a bit
 
 # 5) Special cases
 # Not really a data type in their own right, but can be important:
@@ -86,11 +83,9 @@ NULL # basically an undefined value - there's nothing there (not even missing da
 
 # 2 Creating and assigning objects ----
 
-# In R (and other programming languages), it's useful to be able to access the
-# same value again and again.
-
-# So, we store data in *objects*, so we can keep accessing it (and to avoid using
-# the wrong value later on!)
+# Data types can be contained in R objects. By creating an object, we save information
+# to our working environment so that we can recall it whenever we want by just running
+# the name of the object.
 
 # To assign something to an object in R, we use an arrow: <-
 # The name we want to give the object goes on the left-hand side, the data we want
@@ -102,36 +97,38 @@ a <- 2
 # Notice that a is now in our *global environment* in the top-right part of 
 # RStudio (unless you've changed your settings)
 
-# Notice also that this time, the value of 2 didn't paste to our console like
-# before!
-
 # We can access the contents of a by running it as code:
 
 a
 
-# The name of 'a' is arbitrary. With a few limits (like not using NULL as a
-# name, and not using spaces in the name), we can name objects whatever we want:
+# Normally, we could give the self-explanatory names to the objects:
 
-banana <- 10
-banana
+my_string <- c("hello","world","today","is","amazing")
 
-# Most importantly, we can use objects in operations:
+# 3 Logical Operators ----
 
-a * banana
-a + banana
+# Equal
+# == asks whether two values are the same or equal
 
-# Note that objects in R are *mutable*. This means we can overwrite them:
+a == my_string
 
-a <- 5
-a * banana
-a + banana
+# Not Equal 
+# != asks whether two values are not the same or equal
 
-# So be careful - only overwrite when you're sure you want to!
+a != my_string
 
+# Greater or Smaller
+# We can also test whether certain values are:
+# > greater than
+# < smaller than
+# >= greater or equals
+# <= smaller or equals 
 
+# Combine Logical Operators
+# & stands for and (not very surprising)
+# | stands for "or"
 
-
-# 3 Using Functions ----
+# 4 Using Functions ----
 
 # You may have noticed that so far we've seen the following math operators:
 # * / + - ^ (multiplication, division, addition, subtraction, exponentiation)
@@ -215,7 +212,7 @@ paste("This", "is", "a", "full", "sentence", sep="-")
 
 
 
-# 4 Data Structures ----
+# 5 Data Structures ----
 
 # It's not very useful to use just one value on its own a time!
 # We can store lots of data in larger *data structures*.
@@ -239,7 +236,7 @@ paste("This", "is", "a", "full", "sentence", sep="-")
 
 
 
-## 4.1 vectors ----
+## 5.1 vectors ----
 
 #	               | Homogeneous |	Heterogeneous |
 # ---------------+-------------+----------------+
@@ -283,7 +280,7 @@ class(vec1)
 
 
 
-### 4.1.1 Subsetting ----
+### 5.1.1 Subsetting ----
 
 # It's useful to be able to access or recode certain parts. We can access parts
 # of our vector using square brackets [] immediately after their name.
@@ -316,7 +313,7 @@ vec4[1]
 
 
 
-### 4.1.2 Logical expressions ----
+### 5.1.2 Logical expressions ----
 
 # This becomes useful once we introduce two further concepts: logical expressions
 # and vectorisation.
@@ -337,20 +334,6 @@ vec4[1]
 # this to work:
 1:10 + 1:3 # Gives a warning because 10 isn't a multiple of 3 - this is usually bad!
 
-
-
-
-# On to logical operations. To introduce the main ones:
-
-# == equal to
-# != is not equal to
-# > greater than
-# < less than
-# >= greater than or equal to
-# <= less than or equal to
-# | or
-# & and
-# ! not
 
 # These can seem like a lot at first. Let's see them in action:
 
@@ -420,7 +403,7 @@ is.atomic(100)
 
 
 
-### 4.1.3 Recoding ----
+### 5.1.3 Recoding ----
 
 # We can also use the square brackets to recode subsections of our vector. Let's
 # say I want to change the second word in vec2 to "banana":
@@ -439,7 +422,7 @@ vec1
 
 
 
-### 4.1.4 Coercion ----
+### 5.1.4 Coercion ----
 
 # We can change vectors of one data type to another using the following functions:
 
@@ -479,7 +462,7 @@ vec2
 
 
 
-### 4.1.5 Factors ----
+### 5.1.5 Factors ----
 
 # Factor variables are the last data type. They can be a little finciky to
 # work with and only really make sense to use once you're using vectors.
@@ -529,7 +512,7 @@ is.ordered(sizeFac) #tests whether a factor is ordered
 
 
 
-## 4.2 matrices ----
+## 5.2 matrices ----
 
 #	               | Homogeneous |	Heterogeneous |
 # ---------------+-------------+----------------+
@@ -592,7 +575,7 @@ is.matrix(myMatrix)
 
 
 
-## 4.3 data frames ----
+## 5.3 data frames ----
 
 #	               | Homogeneous |	Heterogeneous |
 # ---------------+-------------+----------------+
@@ -688,7 +671,7 @@ mydf$var4 <- 10:1 #this works in reverse!
 
 
 
-## 4.4 lists ----
+## 5.4 lists ----
 
 #	               | Homogeneous |	Heterogeneous |
 # ---------------+-------------+----------------+
@@ -744,7 +727,7 @@ is.list(mydf)
 
 
 
-## 4.5 Coercion ----
+## 5.5 Coercion ----
 
 # Just like vectors, we can coerce R data structures of one kind to another
 # kind, again with varying degrees of success depending on how well they fit

@@ -8,12 +8,12 @@
 
 
 
-# 1 Importing datasets ----
+# 1 Import and Manage datasets ----
 
-## 1.1 Clearing the environment ----
+## Import Datasets ----
 
-# Before we begin, let's make sure to clear our global environment. We can do
-# this either with the following line of code:
+# Now, we will learn how to import different types of databases from outside.
+# First, let's clean our environment before dealing with databases
 
 rm(list = ls())
 
@@ -28,128 +28,58 @@ rm(list = ls())
 
 
 
-## 1.2 Working directories ----
+## Working directories ----
 
-# To read in and save files, R needs to know where in your computer to look.
-# One way of doing this is by using the setwd() function to set your *working
-# directory*. This is basically a location in your files that R will try and
-# read files from and will save files to:
+# Then, we must set up our working directory, the folder on our computer 
+# where we are going to work from, where we store our data and 
+# where perhaps we might want to save our plots or the outputs from the analysis.
+# In R, we do it using the setwd() function:
 
-setwd("C:/Users/User/Documents/Projects/ESS2022-1X-Intro-To-R") #this is the file path where I have the course files - you'd need to fill in your own
+setwd("~/Desktop/ESS_3x_website")#this is the file path where I have the course files - you'd need to fill in your own
 
 
-# you can view your current working director with getwd():
+ # you can view your current working director with getwd():
 getwd()
 
 
-# However, an easier and better way of managing this is with R projects. By
-# opening a project in RStudio, your working directory will automatically be
-# set to the location the project is in.
+## Import Data ----
 
-# This is especially useful if you ever need to move your files around or
-# work with collaborators - it gets rid of all the hassle of file paths.
+# The choice across various functions of importing data
+# depends on the data type, e.g. .dta, .csv, or .xlsx.
+library(haven)
+ANES <- read_dta("anesByState.dta")
 
-# In our class files I've included a project called 2X.Rproj. Go to file ->
-# Open Project and open it now.
+# Now, let's try to import data from a csv file and save it in a names object
+csvfile <- "https://raw.githubusercontent.com/lorenzo-crippa/Intro_to_R/master/2021/baseball.csv"
+baseball <- read.csv(csvfile)
 
-# You can create a new project from the file window. Doing so will also create
-# a new folder with the project inside.
+# Yes! We could import a data file from a URL
+url <- "http://www.principlesofeconometrics.com/stata/broiler.dta"
+data.df <- read_dta(url)
 
-# In general, I would *strongly* recommend using R projects to manage your
-# file paths.
-
-
-
-
-## 1.3 CSV files ----
-
-# csv (comma separated values) are a common file format across the world. R
-# comes with a ready-made read.csv() function for csv files. Let's use it to
-# read in match_players.csv:
-
-aoe <- read.csv("data/match_players.csv") #data/ is because it's stored in the 'data' folder of these files
-class(aoe)
-
-# match_players.csv contains player data from matches from the game Age of 
-# Empires 2. You can find the full version of the dataset on Kaggle at
-# https://www.kaggle.com/jerkeeler/age-of-empires-ii-de-match-data?select=match_players.csv
+# In addition, although we won't get into the details of this method,
+# some package 
+library(WDI)
+wdi_data <- WDI(country = "all", 
+                indicator = c(population = "SP.POP.TOTL",
+                              gdp_percapita = "NY.GDP.PCAP.KD"), 
+                start = 2000, end = 2020, extra = TRUE)
 
 
 # We can view a dataset in a pane either by clicking on its name in the global
 # environemnt or with the View() function (note the capital V):
-View(aoe)
+View(ANES)
 
 # We can get a sense of our dataset by looking at the top few rows:
-head(aoe)
+head(ANES)
+glimpse(ANES)
 ?head
 
 # And we can use the str() function to see what types of variable we have in
 # our data frame:
-str(aoe) # 'int' or 'integer' is one kind of numeric. The other you'll likely see is 'dbl' or 'double'. In R, 99% (or more) of the time you won't need to worry about this distinction
+str(ANES) # 'int' or 'integer' is one kind of numeric. The other you'll likely see is 'dbl' or 'double'. In R, 99% (or more) of the time you won't need to worry about this distinction
 
-names(aoe)
-
-
-# We can remove columns we don't need by assigning NULL to them:
-aoe$X <- NULL
-head(aoe)
-
-
-
-
-## 1.4 Other file types ----
-
-# Often, you won't find files in a csv format. One format that's very common
-# (at least in political science) is STATA's dta file format. For this, we need
-# to use an R package because base R doesn't have the functionality to import
-# them.
-
-# R packages contain code written by other R users that have been bundled up and
-# made available on CRAN (from where you downloaded R).
-
-# Often, if you need to do something in R, you'll probably be using a package to
-# do it. The best way to find them is by using google, but I'll include some
-# recommendations at the end of today's class.
-
-# I've downloaded the 2019 Chapel Hill Expert survey from their website
-# (https://www.chesdata.eu/our-surveys). But I've downloaded it in dta format.
-
-# Since it's a fairly recent file (STATA version 13 or later), we'll use the
-# readstat13 package. To install it, we use the install.packages function:
-
-install.packages("readstata13")
-
-
-# You only need to install a package once. However, since we don't want all
-# of our packages in memory all the time when using R, we have to explicitly
-# load them for each fresh R session. We do this with the library() function:
-library(readstata13)
-
-
-# While I've written this library call here, normally it's a good
-# idea to have library calls at the TOP of your script. This helps your future
-# self, collaborators, and replicators know in advance what packages you used.
-
-# Now, we'll use the read.dta13 function from readstata13 to load in the CHES
-# dataset:
-ches <- read.dta13("data/1999-2019_CHES_dataset_means(v3).dta")
-
-
-# Some other packages you'll want installed are the foreign and readxl packages:
-install.packages(c("foreign", "readxl"))
-
-# Foreign is a good workhorse package for reading in data. It has read.dta (for
-# STATA versions prior to 13 - probably more common that later dta files) and
-# read.spss() among other functions.
-
-# readxl is the package you want for reading in excel files - read_xls() and
-# read_xlsx() depending on your need.
-
-# We'll also be installing readr later on in this class - I'll mention when we
-# do.
-
-
-
+names(ANES)
 
 # 2 Manage datasets ----
 
