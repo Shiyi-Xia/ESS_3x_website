@@ -575,17 +575,6 @@ ANES <- mutate(ANES,
                new.var2 = poor*2)
 ```
 
-ifelse() is a function that is very useful to know. If its "test"
-argument (a condition) is verified, it does what the "yes" argument
-says. Otherwise, it executes the "no" argument. For instance, in ANES we
-might want to have a variable that takes value 0, if the year is before
-2000, and 1 otherwise. We can do it like this:
-
-```{r}
-ANES$indicator <- ifelse(test = ANES$year >= 2000, yes = 1, no = 0)
-unique(ANES$indicator)
-```
-
 # Get Summary Stats and Plots
 
 ## Summary Statistics
@@ -714,6 +703,50 @@ tidyverse makes it also simpler to save tidyverse plots:
 
 ```{r}
 ggsave(my.plot, filename = "my_first_ggplot.pdf")
+```
+
+### Some advanced examples
+
+Okay, let's take a complex example to go through everything we've
+learned about managing data and visualisation.
+
+```{r}
+library(WDI)
+library(tidyverse)
+library(ggplot2)
+library(hrbrthemes)
+library(MetBrewer)
+wdi_data <- WDI(country = "all",
+                indicator = c(population = "SP.POP.TOTL",
+                              gdp_percapita = "NY.GDP.PCAP.KD"), 
+                start = 1996, end = 2020, extra = TRUE)
+
+north_ame <- wdi_data |>
+  filter(country == "United States" | country == "Canada" |
+           country == "Mexico") |>
+  mutate(GDP = log(gdp_percapita))
+
+north_ame |>
+  ggplot(aes(x = year, y = population, color = country)) +
+  geom_line() +
+  scale_color_manual(values= met.brewer("Renoir", 3)) +
+  theme_ipsum_rc() +
+  labs(x = "Year",
+       y = "Population",
+       title = "World Bank Data")
+  
+
+# Or
+north_ame |>
+  ggplot(aes(x = year, y = population)) +
+  geom_line() +
+  xlab('Year') +
+  ylab("Population") +
+  facet_wrap(~country) +
+  scale_color_manual(values= met.brewer("Renoir", 3)) +
+  theme_ipsum_rc() +
+  theme(axis.text.x = element_text(angle = 90))
+
 ```
 
 # Run Basic Statistical Analyses
@@ -913,23 +946,27 @@ which loops the code for four columns of our data frame.
 ## If/else statements
 
 There are various commands we can run within for loops to edit their
-functionality. If-else statements allow us to change the outcome of the
-loop depending on a particular statement. For instance, if a value is
-below a certain threshold, you can tell the loop to round it up,
-otherwise (else) do nothing.
+functionality.
 
 Okay, let's take a look at the WDI dataset again.
+
 ```{r}
 glimpse(wdi_data)
 ```
 
-If we would like to create a new binary variable based whether the country is located in Europe and Central Asia, we could write:
+If we would like to create a new binary variable based on whether the
+country is located in Europe and Central Asia, we could write:
 
 ```{r}
 wdi_data$euro_central <- ifelse(wdi_data$region == "Europe & Central Asia", TRUE, FALSE)
 table(wdi_data$region)
 table(wdi_data$euro_central)
 ```
+
+So, if-else statements allow us to change the outcome of the loop
+depending on a particular statement. For instance, if a value is below a
+certain threshold, you can tell the loop to round it up, otherwise
+(else) do nothing.
 
 # Appendix: R Script
 

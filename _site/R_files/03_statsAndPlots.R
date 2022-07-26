@@ -21,17 +21,16 @@ rm(list=ls())
 
 
 ## Packages
-install.packages("psych") # normally I wouldn't include this line in a script, but today we're installing as we go
+# install.packages("psych") # normally I wouldn't include this line in a script, but today we're installing as we go
 library(tidyverse)
 library(readstata13)
 library(psych)
 
 
 ## Data
-aoe <- read.csv("data/match_players.csv")
-ches <- read.dta13("data/1999-2019_CHES_dataset_means(v3).dta")
-
-
+library(haven)
+setwd("~/Desktop/ESS_3x_website")
+ANES <- read_dta("anesByState.dta")
 
 
 # 1 Summary statistics ----
@@ -39,45 +38,31 @@ ches <- read.dta13("data/1999-2019_CHES_dataset_means(v3).dta")
 ## 1.1 Summary statistics ----
 
 # base R's summary function is a good workhorse function for descriptive stats:
-summary(aoe$rating)
+summary(ANES$poor)
 
 # it can be used for an entire dataset:
-summary(aoe)
-summary(ches)
-
-# we can store summaries like any other object:
-aoeSummary <- summary(aoe)
-class(aoeSummary)
+summary(ANES)
 
 
 # the stats package is installed with base R and doesn't need to be called via
 # the library() function. That means we have functions for most descriptive
 # statistics:
 
-mean(ches$eu_position)
-sd(ches$eu_position)
+mean(ANES$voteDem)
+sd(ANES$poor)
 var(ches$eu_position)
-median(ches$eu_position)
-min(ches$eu_position)
-max(ches$eu_position)
-quantile(ches$eu_position, 0.3) # the observation that leaves 30% of the observations to its left
-quantile(ches$eu_position, 0.5) # this will be the median
-
-# note one important behaviour of missing data:
-2 + NA
-
-# which means if we use these functions with missing data:
-mean(aoe$rating)
-
-# pay attention to the arguments of these functions:
-?mean
-mean(aoe$rating, na.rm=T) #note we need to explicitly name na.rm as we aren't using the trim argument
-
+median(ANES$dem)
+min(ANES$year)
+max(ANES$voteDem)
+quantile(ANES$poor, 0.3) # the observation that leaves 30% of the observations to its left
+quantile(ANES$poor, 0.5) # this will be the median
+var(ANES$dem)
 
 # some useful functions for categorical data (especially if it's in character form):
-table(aoe$civ)
-prop.table(table(aoe$civ)) # note that prop.table takes a table as input
+table(ANES$year)
+prop.table(table(ANES$year)) # note that prop.table takes a table as input
 
+range(ANES$year)
 
 
 
@@ -164,19 +149,18 @@ ches |>
 # packages)
 
 
-
-
 ## 2.1 Boxplots ----
 
 # In base R we use the boxplot() function:
-boxplot(aoe$rating)
+boxplot(ANES$white)
 
 # We can use arguments to modify its appearance:
-boxplot(aoe$rating, frame = F, ylab = "Rating", main = "AOE2 Player Ratings")
+boxplot(ANES$white, frame = F, ylab = "white", main = "A boxplot")
 
 # It's a little more involved in the tidyverse:
-ggplot(aoe, aes(y = rating)) + 
-  geom_boxplot()
+ggplot(ANES, aes(y = white)) +
+  geom_boxplot() +
+  theme_minimal()
 
 # We start by using the ggplot() function to create a graph. Here we tell it
 # what dataset to use, and what the relevant 'aesthetics' to use are. The most
@@ -279,56 +263,31 @@ ggplot(ches, aes(x = lrecon)) +
 # the relationship between how left-wing a party is and its EU position. Let's
 # focus on the case of the UK to begin with:
 
-chesUK <- ches |> filter(country == 11 & year == 2019)
+csvfile <- "https://raw.githubusercontent.com/lorenzo-crippa/Intro_to_R/master/2021/baseball.csv"
+baseball <- read.csv(csvfile)
 
-# To make a scatter plot in base R:
-plot(x = chesUK$lrecon, y = chesUK$eu_position,
-     frame.plot = F, xlab = "Left-Right", ylab = "Anti-Pro EU",
-     pch=20) #pch chooses the style of the points
+plot(x = baseball$heightinches, y = baseball$weightpounds,
+     frame.plot = FALSE, xlab = "height", ylab = "weight",
+     pch = 20) # pch is an option that selects the shape of dots we want 
 
-# We can add lines to the plot with the abline function. For instance, mean lrecon:
+# what if we want to add lines on this plot? We use the abline() function
 # Maybe we want to plot a line corresponding to the mean height 
-abline(v = mean(chesUK$lrecon, na.rm = TRUE), col = "red", lwd = 2.5) # lwd sets thickness
-
-# We could also add a regression line to the plot:
-abline(lm(lrecon ~ eu_position, data = chesUK), col = "blue", lwd = 2.5)
-# ... we'll talk more about regression in part 04!
-
-# To save a base R plot, we use pdf() and dev.off()
-pdf("my_first_plot.pdf") # this creates a pdf file in which we put the following:
-plot(x = chesUK$lrecon, y = chesUK$eu_position,
-     frame.plot = F, xlab = "Left-Right", ylab = "Anti-Pro EU",
-     pch=20) #pch chooses the style of the points
-abline(v = mean(chesUK$lrecon, na.rm = TRUE), col = "red", lwd = 2.5)
-abline(lm(lrecon ~ eu_position, data = chesUK), col = "blue", lwd = 2.5)
-dev.off() # this closes and saves the pdf file.
+# lwd makes it thicker
+abline(v = mean(baseball$heightinches, na.rm = TRUE), col = "red", lwd = 5) 
 
 
+# Again, tidyverse makes things much easier. Let’s re-do all the steps we did before. 
+# First, we created a scatter plot. This time, l
+# let’s save the plot in an object:
 
-# While we can customise the above to make a nicer plot, it's much easier to 
-# do so in the tidyverse:
-
-# The basic plot
-ggplot(chesUK, aes(x=lrecon, y=eu_position)) +
-  geom_point()
-
-# Bells and whistles:
-ggplot(chesUK, aes(x=lrecon, y=eu_position, fill=party)) +
-  geom_point(shape=21, colour="black", size=3) +
-  scale_x_continuous(limits = c(0,10), breaks=seq(0,10,2)) +
-  scale_y_continuous(limits = c(1,7), breaks=seq(1,7,2)) +
-  scale_fill_manual(values = c("Cyan3","Blue4","Green","Red","Orange","Chartreuse4","Yellow","Purple")) +
-  geom_vline(xintercept=mean(chesUK$lrecon), colour="red", size=1) + # this adds the vertical line
-  geom_smooth(aes(group=1), method=lm, fullrange=T, show.legend=F, se=F) + # this adds the regression line
-  labs(y="Anti-Pro EU", x= "Left-Right", fill="Party") +
-  theme_classic() +
-  theme(aspect.ratio = 1)
-
+my.plot <- ggplot(baseball, aes(x = heightinches, y = weightpounds)) +
+  geom_point() +
+  theme_minimal()
+my.plot
 
 # It's much simpler to save plots in the tidyverse:
-ggsave(filename = "my_first_ggplot.pdf")
+ggsave(my.plot, filename = "my_first_ggplot.pdf")
 ?ggsave #saves the last created plot by default, else specify plot in plot argument
-
 
 
 

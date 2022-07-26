@@ -501,16 +501,16 @@ looks like.</p>
 <span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>datafr</span></code></pre></div>
 <pre><code>##    var1        var2        var3
-## 1     a -1.01232121   1.0000000
-## 2     a -0.04761299  -4.0000000
-## 3     a  1.20558205   2.0000000
-## 4     b  1.26396546   4.2000000
-## 5     b -0.65507976   5.3333000
-## 6     b  0.52927069   0.1111111
-## 7     b -0.61224097   7.5000000
-## 8     c  0.94587598   0.0000000
-## 9     c  1.66394135 -11.0000000
-## 10    d -0.79557489   1.4142136</code></pre>
+## 1     a  1.36546906   1.0000000
+## 2     a  2.22257734  -4.0000000
+## 3     a  1.18475676   2.0000000
+## 4     b -0.06962277   4.2000000
+## 5     b -2.51747254   5.3333000
+## 6     b  0.61733561   0.1111111
+## 7     b  0.82873889   7.5000000
+## 8     c  1.20710533   0.0000000
+## 9     c -1.74554279 -11.0000000
+## 10    d -0.66633818   1.4142136</code></pre>
 <p>Each variable within our data frame is a vector, and the rules of
 vectors apply to them. All variables in a data frame must have the same
 length. But we might have variables with missing values. In R these
@@ -539,8 +539,8 @@ missing values are called NA:</p>
 <pre><code>##  [1]   1.0000000  -4.0000000   2.0000000   4.2000000   5.3333000   0.1111111
 ##  [7]   7.5000000   0.0000000 -11.0000000   1.4142136</code></pre>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>datafr<span class="sc">$</span>var2</span></code></pre></div>
-<pre><code>##  [1] -1.01232121 -0.04761299  1.20558205  1.26396546 -0.65507976  0.52927069
-##  [7] -0.61224097  0.94587598  1.66394135 -0.79557489</code></pre>
+<pre><code>##  [1]  1.36546906  2.22257734  1.18475676 -0.06962277 -2.51747254  0.61733561
+##  [7]  0.82873889  1.20710533 -1.74554279 -0.66633818</code></pre>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>var2</span></code></pre></div>
 <pre><code>##  [1]  1  2  3  4  5 NA  7  8  9 10</code></pre>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(datafr)</span></code></pre></div>
@@ -574,20 +574,20 @@ A list can even contain another list.</p>
 ## 
 ## [[2]]
 ##    var1        var2        var3
-## 1     a -1.01232121   1.0000000
-## 2     a -0.04761299  -4.0000000
-## 3     a  1.20558205   2.0000000
-## 4     b  1.26396546   4.2000000
-## 5     b -0.65507976   5.3333000
-## 6     b  0.52927069   0.1111111
-## 7     b -0.61224097   7.5000000
-## 8     c  0.94587598   0.0000000
-## 9     c  1.66394135 -11.0000000
-## 10    d -0.79557489   1.4142136
+## 1     a  1.36546906   1.0000000
+## 2     a  2.22257734  -4.0000000
+## 3     a  1.18475676   2.0000000
+## 4     b -0.06962277   4.2000000
+## 5     b -2.51747254   5.3333000
+## 6     b  0.61733561   0.1111111
+## 7     b  0.82873889   7.5000000
+## 8     c  1.20710533   0.0000000
+## 9     c -1.74554279 -11.0000000
+## 10    d -0.66633818   1.4142136
 ## 
 ## [[3]]
-##  [1] -1.01232121 -0.04761299  1.20558205  1.26396546 -0.65507976  0.52927069
-##  [7] -0.61224097  0.94587598  1.66394135 -0.79557489</code></pre>
+##  [1]  1.36546906  2.22257734  1.18475676 -0.06962277 -2.51747254  0.61733561
+##  [7]  0.82873889  1.20710533 -1.74554279 -0.66633818</code></pre>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>ls2 <span class="ot">&lt;-</span> <span class="fu">list</span>(df, ls)</span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>ls2</span></code></pre></div>
 <pre><code>## [[1]]
@@ -619,20 +619,20 @@ A list can even contain another list.</p>
 ## 
 ## [[2]][[2]]
 ##    var1        var2        var3
-## 1     a -1.01232121   1.0000000
-## 2     a -0.04761299  -4.0000000
-## 3     a  1.20558205   2.0000000
-## 4     b  1.26396546   4.2000000
-## 5     b -0.65507976   5.3333000
-## 6     b  0.52927069   0.1111111
-## 7     b -0.61224097   7.5000000
-## 8     c  0.94587598   0.0000000
-## 9     c  1.66394135 -11.0000000
-## 10    d -0.79557489   1.4142136
+## 1     a  1.36546906   1.0000000
+## 2     a  2.22257734  -4.0000000
+## 3     a  1.18475676   2.0000000
+## 4     b -0.06962277   4.2000000
+## 5     b -2.51747254   5.3333000
+## 6     b  0.61733561   0.1111111
+## 7     b  0.82873889   7.5000000
+## 8     c  1.20710533   0.0000000
+## 9     c -1.74554279 -11.0000000
+## 10    d -0.66633818   1.4142136
 ## 
 ## [[2]][[3]]
-##  [1] -1.01232121 -0.04761299  1.20558205  1.26396546 -0.65507976  0.52927069
-##  [7] -0.61224097  0.94587598  1.66394135 -0.79557489</code></pre>
+##  [1]  1.36546906  2.22257734  1.18475676 -0.06962277 -2.51747254  0.61733561
+##  [7]  0.82873889  1.20710533 -1.74554279 -0.66633818</code></pre>
 <p>There are many functions that allow you to try to coerce the nature
 of an object:<br />
 - as.numeric() tries to coerce its argument into a numeric.<br />
@@ -674,7 +674,7 @@ data type, e.g. <strong>.dta</strong>, <strong>.csv</strong>, or
 <strong>.xlsx</strong>.</p>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>ANES <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">&quot;anesByState.dta&quot;</span>)</span>
 <span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ANES)</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 8
+<pre><code>## # A tibble: 6 × 8
 ##    year     state   FTM white   poor turnout voteDem   dem
 ##   &lt;dbl&gt; &lt;dbl+lbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
 ## 1  1984    4 [NH]  73.6 1     0.118     1.81   0.231 0.205
@@ -697,7 +697,7 @@ data type, e.g. <strong>.dta</strong>, <strong>.csv</strong>, or
 <div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;http://www.principlesofeconometrics.com/stata/broiler.dta&quot;</span></span>
 <span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>data.df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(url)</span>
 <span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data.df)</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 12
+<pre><code>## # A tibble: 6 × 12
 ##    year     q     y pchick pbeef  pcor    pf   cpi  qproda   pop meatex  time
 ##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
 ## 1  1950  14.3  7863   69.5  31.2  59.8    NA  24.1 2628500  152.     NA    41
@@ -715,20 +715,20 @@ is an example of importing World Bank Data automatically.</p>
 <span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a>                             <span class="at">gdp_percapita =</span> <span class="st">&quot;NY.GDP.PCAP.KD&quot;</span>), </span>
 <span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">start =</span> <span class="dv">2000</span>, <span class="at">end =</span> <span class="dv">2020</span>, <span class="at">extra =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(wdi_data)</span></code></pre></div>
-<pre><code>##   iso2c    country year population gdp_percapita iso3c     region capital
-## 1    1A Arab World 2005  314965776      5532.099   ARB Aggregates        
-## 2    1A Arab World 2004  307862846      5363.638   ARB Aggregates        
-## 3    1A Arab World 2017  411942825      6386.722   ARB Aggregates        
-## 4    1A Arab World 2016  404042892      6431.676   ARB Aggregates        
-## 5    1A Arab World 2008  338395936      6029.585   ARB Aggregates        
-## 6    1A Arab World 2006  322452764      5732.229   ARB Aggregates        
-##   longitude latitude     income    lending
-## 1                    Aggregates Aggregates
-## 2                    Aggregates Aggregates
-## 3                    Aggregates Aggregates
-## 4                    Aggregates Aggregates
-## 5                    Aggregates Aggregates
-## 6                    Aggregates Aggregates</code></pre>
+<pre><code>##   iso2c    country year status lastupdated population gdp_percapita iso3c
+## 1    1A Arab World 2000         2022-06-30  282344141      5002.817   ARB
+## 2    1A Arab World 2001         2022-06-30  288432153      4981.074   ARB
+## 3    1A Arab World 2004         2022-06-30  307862846      5363.638   ARB
+## 4    1A Arab World 2005         2022-06-30  314965776      5532.099   ARB
+## 5    1A Arab World 2002         2022-06-30  294665202      4908.939   ARB
+## 6    1A Arab World 2007         2022-06-30  330290752      5852.098   ARB
+##       region capital longitude latitude     income    lending
+## 1 Aggregates                            Aggregates Aggregates
+## 2 Aggregates                            Aggregates Aggregates
+## 3 Aggregates                            Aggregates Aggregates
+## 4 Aggregates                            Aggregates Aggregates
+## 5 Aggregates                            Aggregates Aggregates
+## 6 Aggregates                            Aggregates Aggregates</code></pre>
 <p>Here is the common data types, and the corresponding functions and
 packages.</p>
 <table>
@@ -787,39 +787,42 @@ R in much more natural syntax. The suite is called tidyverse. We can
 install it by running:</p>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;tidyverse&quot;)</span></span>
 <span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
-<pre><code>## ✓ tibble  3.1.2     ✓ purrr   0.3.4
-## ✓ tidyr   1.1.3     ✓ forcats 0.5.1</code></pre>
-<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## x psych::%+%()             masks ggplot2::%+%()
-## x psych::alpha()           masks ggplot2::alpha()
-## x tidyr::extract()         masks texreg::extract()
-## x dplyr::filter()          masks stats::filter()
-## x kableExtra::group_rows() masks dplyr::group_rows()
-## x dplyr::lag()             masks stats::lag()</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+## ✔ tibble  3.1.7     ✔ purrr   0.3.4
+## ✔ tidyr   1.2.0     ✔ forcats 0.5.1
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ psych::%+%()             masks ggplot2::%+%()
+## ✖ psych::alpha()           masks ggplot2::alpha()
+## ✖ tidyr::extract()         masks texreg::extract()
+## ✖ dplyr::filter()          masks stats::filter()
+## ✖ kableExtra::group_rows() masks dplyr::group_rows()
+## ✖ dplyr::lag()             masks stats::lag()</code></pre>
 <p>In what follows, you’ll see code for managing datasets in base R,and
 next you’ll see the (more intuitive) tidyverse version of the same
 operations. It’s important to know both.</p>
 <p>Suppose now we want to drop from our baseball data all observations
 that refer to the CLE team (no offense to its fans). Doing it in base R
 would be:</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>baseball.no.CLE <span class="ot">&lt;-</span> baseball[baseball<span class="sc">$</span>team <span class="sc">!=</span> <span class="st">&quot;CLE&quot;</span>, ]</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>baseball.no.CLE <span class="ot">&lt;-</span> baseball[baseball<span class="sc">$</span>team <span class="sc">!=</span> <span class="st">&quot;CLE&quot;</span>, ]</span></code></pre></div>
 <p>Suppose now we want to get rid of all observations that are not for
 New York Yankees (NYY) and also we want to drop the column “name”. Yet,
 we don’t want to overwrite the “baseball” object because we might need
 the information we’re dropping later. We can do the following:</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>baseball<span class="fl">.2</span> <span class="ot">&lt;-</span> baseball[baseball<span class="sc">$</span>team <span class="sc">==</span> <span class="st">&quot;NYY&quot;</span>, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>baseball<span class="fl">.2</span> <span class="ot">&lt;-</span> baseball[baseball<span class="sc">$</span>team <span class="sc">==</span> <span class="st">&quot;NYY&quot;</span>, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span></code></pre></div>
 <p>These operations are made smoother by tidverse Let’s do something
 similar on ANES. Let’s remove all observations from the year 2000, then
 remove the variable turnout:</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>ANES <span class="ot">&lt;-</span> <span class="fu">filter</span>(ANES, <span class="co"># what is your data frame? </span></span>
-<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>               year <span class="sc">!=</span> <span class="dv">2000</span>) <span class="co"># the condition you impose</span></span>
-<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a>ANES <span class="ot">&lt;-</span> <span class="fu">select</span>(ANES, </span>
-<span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a>               <span class="sc">-</span>turnout) <span class="co"># keep everything BUT the variable named &quot;turnout&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>ANES <span class="ot">&lt;-</span> <span class="fu">filter</span>(ANES, <span class="co"># what is your data frame? </span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>               year <span class="sc">!=</span> <span class="dv">2000</span>) <span class="co"># the condition you impose</span></span>
+<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a>ANES <span class="ot">&lt;-</span> <span class="fu">select</span>(ANES, </span>
+<span id="cb96-4"><a href="#cb96-4" aria-hidden="true" tabindex="-1"></a>               <span class="sc">-</span>turnout) <span class="co"># keep everything BUT the variable named &quot;turnout&quot;</span></span></code></pre></div>
 <p>Now suppose we want to sort observations in our ANES dataset based on
 state, then year.We can do it by:</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>ANES[<span class="fu">order</span>(ANES[,<span class="dv">2</span>], ANES[,<span class="dv">1</span>]),]</span></code></pre></div>
-<pre><code>## # A tibble: 249 x 7
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>ANES[<span class="fu">order</span>(ANES[,<span class="dv">2</span>], ANES[,<span class="dv">1</span>]),]</span></code></pre></div>
+<pre><code>## Warning in xtfrm.data.frame(x): cannot xtfrm data frames
+
+## Warning in xtfrm.data.frame(x): cannot xtfrm data frames</code></pre>
+<pre><code>## # A tibble: 249 × 7
 ##     year     state   FTM white   poor voteDem    dem
 ##    &lt;dbl&gt; &lt;dbl+lbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
 ##  1  1984    4 [NH]  73.6 1     0.118    0.231 0.205 
@@ -832,40 +835,32 @@ state, then year.We can do it by:</p>
 ##  8  1998    4 [NH]  41.8 1     0.0833   0     0.25  
 ##  9  2002    4 [NH]  72.6 0.923 0        0     0.0769
 ## 10  2004    4 [NH]  51.6 0.917 0.167    0.308 0.308 
-## # … with 239 more rows</code></pre>
+## # … with 239 more rows
+## # ℹ Use `print(n = ...)` to see more rows</code></pre>
 <p>By doing this we have taken ANES and we have asked R to reorder its
 rows first based on the second column (state), then by its first column
 (year). Notice that this time we have not saved the data frame obtained
 into an object!</p>
 <p>Another useful function is unique(). It tells us what values a vector
 takes:</p>
-<div class="sourceCode" id="cb101"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(ANES<span class="sc">$</span>year) <span class="co"># all possible years in the ANES dataset</span></span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(ANES<span class="sc">$</span>year) <span class="co"># all possible years in the ANES dataset</span></span></code></pre></div>
 <pre><code>##  [1] 1984 1986 1988 1990 1992 1994 1996 1998 2002 2004 1952 1956 1958 1960 1962
 ## [16] 1964 1966 1968 1970 1972 1974 1976 1978 1980 1982 2008</code></pre>
-<div class="sourceCode" id="cb103"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we might want to have it sorted:</span></span>
-<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">unique</span>(ANES<span class="sc">$</span>year)) <span class="co"># years from 1952 to 2008 by 2-year distance. </span></span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we might want to have it sorted:</span></span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">unique</span>(ANES<span class="sc">$</span>year)) <span class="co"># years from 1952 to 2008 by 2-year distance. </span></span></code></pre></div>
 <pre><code>##  [1] 1952 1956 1958 1960 1962 1964 1966 1968 1970 1972 1974 1976 1978 1980 1982
 ## [16] 1984 1986 1988 1990 1992 1994 1996 1998 2002 2004 2008</code></pre>
 <p>We can also add variables to our data frames. What if we wanted to
 add the squared valueof “poor” in the ANES data frame? In base R this is
 done by doing:</p>
-<div class="sourceCode" id="cb105"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a>ANES<span class="sc">$</span>new.var <span class="ot">&lt;-</span> ANES<span class="sc">$</span>poor<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb105-3"><a href="#cb105-3" aria-hidden="true" tabindex="-1"></a><span class="co"># we can also do it in tidyverse by doing:</span></span>
-<span id="cb105-4"><a href="#cb105-4" aria-hidden="true" tabindex="-1"></a>ANES <span class="ot">&lt;-</span> <span class="fu">mutate</span>(ANES,</span>
-<span id="cb105-5"><a href="#cb105-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">new.var2 =</span> poor<span class="sc">*</span><span class="dv">2</span>)</span></code></pre></div>
-<p>ifelse() is a function that is very useful to know. If its “test”
-argument (a condition) is verified, it does what the “yes” argument
-says. Otherwise, it executes the “no” argument. For instance, in ANES we
-might want to have a variable that takes value 0, if the year is before
-2000, and 1 otherwise. We can do it like this:</p>
-<div class="sourceCode" id="cb106"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>ANES<span class="sc">$</span>indicator <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="at">test =</span> ANES<span class="sc">$</span>year <span class="sc">&gt;=</span> <span class="dv">2000</span>, <span class="at">yes =</span> <span class="dv">1</span>, <span class="at">no =</span> <span class="dv">0</span>)</span>
-<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(ANES<span class="sc">$</span>indicator)</span></code></pre></div>
-<pre><code>## [1] 0 1</code></pre>
+<div class="sourceCode" id="cb104"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>ANES<span class="sc">$</span>new.var <span class="ot">&lt;-</span> ANES<span class="sc">$</span>poor<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a><span class="co"># we can also do it in tidyverse by doing:</span></span>
+<span id="cb104-4"><a href="#cb104-4" aria-hidden="true" tabindex="-1"></a>ANES <span class="ot">&lt;-</span> <span class="fu">mutate</span>(ANES,</span>
+<span id="cb104-5"><a href="#cb104-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">new.var2 =</span> poor<span class="sc">*</span><span class="dv">2</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="get-summary-stats-and-plots" class="section level1">
@@ -874,79 +869,78 @@ class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="#cb1
 <h2>Summary Statistics</h2>
 <p>When we first obtain a data object in R, there are several things
 that we could do:</p>
-<div class="sourceCode" id="cb108"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ANES)   <span class="co"># obtain all the variable names of a dataset</span></span></code></pre></div>
-<pre><code>##  [1] &quot;year&quot;      &quot;state&quot;     &quot;FTM&quot;       &quot;white&quot;     &quot;poor&quot;      &quot;voteDem&quot;  
-##  [7] &quot;dem&quot;       &quot;new.var&quot;   &quot;new.var2&quot;  &quot;indicator&quot;</code></pre>
-<div class="sourceCode" id="cb110"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ANES)    </span></code></pre></div>
-<pre><code>## # A tibble: 6 x 10
-##    year     state   FTM white   poor voteDem   dem new.var new.var2 indicator
-##   &lt;dbl&gt; &lt;dbl+lbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-## 1  1984    4 [NH]  73.6 1     0.118    0.231 0.205 0.0138    0.235          0
-## 2  1986    4 [NH]  76.7 0.944 0.154    0     0.333 0.0237    0.308          0
-## 3  1988    4 [NH]  66.3 0.935 0.0667   0.161 0.194 0.00444   0.133          0
-## 4  1990    4 [NH]  72.6 0.959 0.0476   0     0.184 0.00227   0.0952         0
-## 5  1992    4 [NH]  50.6 0.914 0.0909   0.278 0.25  0.00826   0.182          0
-## 6  1994    4 [NH]  52.7 1     0.286    0     0.133 0.0816    0.571          0</code></pre>
-<div class="sourceCode" id="cb112"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(ANES) <span class="co"># get a glimpse of your data.</span></span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ANES)   <span class="co"># obtain all the variable names of a dataset</span></span></code></pre></div>
+<pre><code>## [1] &quot;year&quot;     &quot;state&quot;    &quot;FTM&quot;      &quot;white&quot;    &quot;poor&quot;     &quot;voteDem&quot;  &quot;dem&quot;     
+## [8] &quot;new.var&quot;  &quot;new.var2&quot;</code></pre>
+<div class="sourceCode" id="cb107"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ANES)    </span></code></pre></div>
+<pre><code>## # A tibble: 6 × 9
+##    year     state   FTM white   poor voteDem   dem new.var new.var2
+##   &lt;dbl&gt; &lt;dbl+lbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
+## 1  1984    4 [NH]  73.6 1     0.118    0.231 0.205 0.0138    0.235 
+## 2  1986    4 [NH]  76.7 0.944 0.154    0     0.333 0.0237    0.308 
+## 3  1988    4 [NH]  66.3 0.935 0.0667   0.161 0.194 0.00444   0.133 
+## 4  1990    4 [NH]  72.6 0.959 0.0476   0     0.184 0.00227   0.0952
+## 5  1992    4 [NH]  50.6 0.914 0.0909   0.278 0.25  0.00826   0.182 
+## 6  1994    4 [NH]  52.7 1     0.286    0     0.133 0.0816    0.571</code></pre>
+<div class="sourceCode" id="cb109"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(ANES) <span class="co"># get a glimpse of your data.</span></span></code></pre></div>
 <pre><code>## Rows: 249
-## Columns: 10
-## $ year      &lt;dbl&gt; 1984, 1986, 1988, 1990, 1992, 1994, 1996, 1998, 2002, 2004, …
-## $ state     &lt;dbl+lbl&gt;  4,  4,  4,  4,  4,  4,  4,  4,  4,  4, 13, 13, 13, 13, …
-## $ FTM       &lt;dbl&gt; 73.61539, 76.73333, 66.31035, 72.63265, 50.61111, 52.66667, …
-## $ white     &lt;dbl&gt; 1.0000000, 0.9444444, 0.9354839, 0.9591837, 0.9142857, 1.000…
-## $ poor      &lt;dbl&gt; 0.11764706, 0.15384616, 0.06666667, 0.04761905, 0.09090909, …
-## $ voteDem   &lt;dbl&gt; 0.2307692, 0.0000000, 0.1612903, 0.0000000, 0.2777778, 0.000…
-## $ dem       &lt;dbl&gt; 0.20512821, 0.33333334, 0.19354838, 0.18367347, 0.25000000, …
-## $ new.var   &lt;dbl&gt; 0.013840831, 0.023668641, 0.004444445, 0.002267574, 0.008264…
-## $ new.var2  &lt;dbl&gt; 0.2352941, 0.3076923, 0.1333333, 0.0952381, 0.1818182, 0.571…
-## $ indicator &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</code></pre>
+## Columns: 9
+## $ year     &lt;dbl&gt; 1984, 1986, 1988, 1990, 1992, 1994, 1996, 1998, 2002, 2004, 1…
+## $ state    &lt;dbl+lbl&gt;  4,  4,  4,  4,  4,  4,  4,  4,  4,  4, 13, 13, 13, 13, 1…
+## $ FTM      &lt;dbl&gt; 73.61539, 76.73333, 66.31035, 72.63265, 50.61111, 52.66667, 5…
+## $ white    &lt;dbl&gt; 1.0000000, 0.9444444, 0.9354839, 0.9591837, 0.9142857, 1.0000…
+## $ poor     &lt;dbl&gt; 0.11764706, 0.15384616, 0.06666667, 0.04761905, 0.09090909, 0…
+## $ voteDem  &lt;dbl&gt; 0.2307692, 0.0000000, 0.1612903, 0.0000000, 0.2777778, 0.0000…
+## $ dem      &lt;dbl&gt; 0.20512821, 0.33333334, 0.19354838, 0.18367347, 0.25000000, 0…
+## $ new.var  &lt;dbl&gt; 0.013840831, 0.023668641, 0.004444445, 0.002267574, 0.0082644…
+## $ new.var2 &lt;dbl&gt; 0.2352941, 0.3076923, 0.1333333, 0.0952381, 0.1818182, 0.5714…</code></pre>
 <p>If we want to get some description of our data.</p>
-<div class="sourceCode" id="cb114"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ANES<span class="sc">$</span>poor)</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ANES<span class="sc">$</span>poor)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##  0.0000  0.1093  0.1667  0.1825  0.2297  0.6923</code></pre>
 <p>We can also ask for specific information:</p>
-<div class="sourceCode" id="cb116"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(ANES<span class="sc">$</span>voteDem) </span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(ANES<span class="sc">$</span>voteDem) </span></code></pre></div>
 <pre><code>## [1] 0.1580367</code></pre>
-<div class="sourceCode" id="cb118"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(ANES<span class="sc">$</span>poor)</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(ANES<span class="sc">$</span>poor)</span></code></pre></div>
 <pre><code>## [1] 0.1167872</code></pre>
-<div class="sourceCode" id="cb120"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(ANES<span class="sc">$</span>dem)</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(ANES<span class="sc">$</span>dem)</span></code></pre></div>
 <pre><code>## [1] 0.3415638</code></pre>
-<div class="sourceCode" id="cb122"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(ANES<span class="sc">$</span>year)</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(ANES<span class="sc">$</span>year)</span></code></pre></div>
 <pre><code>## [1] 1952</code></pre>
-<div class="sourceCode" id="cb124"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(ANES<span class="sc">$</span>voteDem)</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(ANES<span class="sc">$</span>voteDem)</span></code></pre></div>
 <pre><code>## [1] 0.6666667</code></pre>
-<div class="sourceCode" id="cb126"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(ANES<span class="sc">$</span>poor, <span class="fl">0.3</span>) <span class="co"># the observation that leaves 30% of the observations to its left</span></span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(ANES<span class="sc">$</span>poor, <span class="fl">0.3</span>) <span class="co"># the observation that leaves 30% of the observations to its left</span></span></code></pre></div>
 <pre><code>##       30% 
 ## 0.1275826</code></pre>
-<div class="sourceCode" id="cb128"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(ANES<span class="sc">$</span>poor, <span class="fl">0.5</span>) <span class="co"># this will be the median of course!</span></span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(ANES<span class="sc">$</span>poor, <span class="fl">0.5</span>) <span class="co"># this will be the median of course!</span></span></code></pre></div>
 <pre><code>##       50% 
 ## 0.1666667</code></pre>
-<div class="sourceCode" id="cb130"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(ANES<span class="sc">$</span>poor)</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(ANES<span class="sc">$</span>poor)</span></code></pre></div>
 <pre><code>## [1] 0.1666667</code></pre>
-<div class="sourceCode" id="cb132"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(ANES<span class="sc">$</span>dem) <span class="co"># the variance</span></span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(ANES<span class="sc">$</span>dem) <span class="co"># the variance</span></span></code></pre></div>
 <pre><code>## [1] 0.03924865</code></pre>
-<div class="sourceCode" id="cb134"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ANES<span class="sc">$</span>year) <span class="co"># how often does each occurrence appear?</span></span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ANES<span class="sc">$</span>year) <span class="co"># how often does each occurrence appear?</span></span></code></pre></div>
 <pre><code>## 
 ## 1952 1956 1958 1960 1962 1964 1966 1968 1970 1972 1974 1976 1978 1980 1982 1984 
 ##    9    8    8    8    9    9    9    9    9   10   10   10   10   10   10   10 
 ## 1986 1988 1990 1992 1994 1996 1998 2002 2004 2008 
 ##   10   10   10   10   10   11    9   12    9   10</code></pre>
-<div class="sourceCode" id="cb136"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(ANES<span class="sc">$</span>year)</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(ANES<span class="sc">$</span>year)</span></code></pre></div>
 <pre><code>## [1] 1952 2008</code></pre>
 </div>
 <div id="basic-plots" class="section level2">
@@ -962,47 +956,47 @@ to:</p>
 <div id="boxplots" class="section level3">
 <h3>Boxplots</h3>
 <p>To create a boxplot:</p>
-<div class="sourceCode" id="cb138"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ANES<span class="sc">$</span>white)</span></code></pre></div>
-<p><img src="Learning_files/figure-html/unnamed-chunk-47-1.png" width="576" /></p>
-<div class="sourceCode" id="cb139"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we can then intervene on options and modify its appearance:</span></span>
-<span id="cb139-2"><a href="#cb139-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ANES<span class="sc">$</span>white, <span class="at">frame =</span> F, <span class="at">ylab =</span> <span class="st">&quot;white&quot;</span>, <span class="at">main =</span> <span class="st">&quot;A boxplot&quot;</span>)</span></code></pre></div>
-<p><img src="Learning_files/figure-html/unnamed-chunk-47-2.png" width="576" /></p>
-<div class="sourceCode" id="cb140"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a>?boxplot</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ANES<span class="sc">$</span>white)</span></code></pre></div>
+<p><img src="Learning_files/figure-html/unnamed-chunk-46-1.png" width="576" /></p>
+<div class="sourceCode" id="cb136"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we can then intervene on options and modify its appearance:</span></span>
+<span id="cb136-2"><a href="#cb136-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ANES<span class="sc">$</span>white, <span class="at">frame =</span> F, <span class="at">ylab =</span> <span class="st">&quot;white&quot;</span>, <span class="at">main =</span> <span class="st">&quot;A boxplot&quot;</span>)</span></code></pre></div>
+<p><img src="Learning_files/figure-html/unnamed-chunk-46-2.png" width="576" /></p>
+<div class="sourceCode" id="cb137"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a>?boxplot</span></code></pre></div>
 <p>We could also:</p>
-<div class="sourceCode" id="cb141"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this would be the tidyverse way of doing it:</span></span>
-<span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ANES, <span class="fu">aes</span>(<span class="at">y =</span> white)) <span class="sc">+</span></span>
-<span id="cb141-3"><a href="#cb141-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb141-4"><a href="#cb141-4" aria-hidden="true" tabindex="-1"></a>         <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="Learning_files/figure-html/unnamed-chunk-48-1.png" width="576" /></p>
+<div class="sourceCode" id="cb138"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this would be the tidyverse way of doing it:</span></span>
+<span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ANES, <span class="fu">aes</span>(<span class="at">y =</span> white)) <span class="sc">+</span></span>
+<span id="cb138-3"><a href="#cb138-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb138-4"><a href="#cb138-4" aria-hidden="true" tabindex="-1"></a>         <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="Learning_files/figure-html/unnamed-chunk-47-1.png" width="576" /></p>
 </div>
 <div id="histograms" class="section level3">
 <h3>Histograms</h3>
 <p>Plotting a histogram is also easy and similar to create a
 boxplot:</p>
-<div class="sourceCode" id="cb142"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ANES<span class="sc">$</span>FTM, <span class="at">main =</span> <span class="st">&quot;Histogram of FTM&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;FTM&quot;</span>)</span></code></pre></div>
-<p><img src="Learning_files/figure-html/unnamed-chunk-49-1.png" width="576" /></p>
-<div class="sourceCode" id="cb143"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="co"># and we can also intervene in the plot with options:</span></span>
-<span id="cb143-2"><a href="#cb143-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ANES<span class="sc">$</span>FTM, <span class="at">main =</span> <span class="st">&quot;Histogram of FTM&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;FTM&quot;</span>, <span class="at">probability =</span> <span class="cn">TRUE</span>) <span class="co"># to have probabilities</span></span></code></pre></div>
-<p><img src="Learning_files/figure-html/unnamed-chunk-49-2.png" width="576" /></p>
+<div class="sourceCode" id="cb139"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ANES<span class="sc">$</span>FTM, <span class="at">main =</span> <span class="st">&quot;Histogram of FTM&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;FTM&quot;</span>)</span></code></pre></div>
+<p><img src="Learning_files/figure-html/unnamed-chunk-48-1.png" width="576" /></p>
+<div class="sourceCode" id="cb140"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="co"># and we can also intervene in the plot with options:</span></span>
+<span id="cb140-2"><a href="#cb140-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ANES<span class="sc">$</span>FTM, <span class="at">main =</span> <span class="st">&quot;Histogram of FTM&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;FTM&quot;</span>, <span class="at">probability =</span> <span class="cn">TRUE</span>) <span class="co"># to have probabilities</span></span></code></pre></div>
+<p><img src="Learning_files/figure-html/unnamed-chunk-48-2.png" width="576" /></p>
 <p>Again, in tidyverse:</p>
-<div class="sourceCode" id="cb144"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ANES, <span class="fu">aes</span>(<span class="at">x =</span> FTM)) <span class="sc">+</span></span>
-<span id="cb144-2"><a href="#cb144-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb144-3"><a href="#cb144-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ANES, <span class="fu">aes</span>(<span class="at">x =</span> FTM)) <span class="sc">+</span></span>
+<span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb141-3"><a href="#cb141-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <pre><code>## Warning: Removed 60 rows containing non-finite values (stat_bin).</code></pre>
-<p><img src="Learning_files/figure-html/unnamed-chunk-50-1.png" width="576" /></p>
+<p><img src="Learning_files/figure-html/unnamed-chunk-49-1.png" width="576" /></p>
 </div>
 <div id="density-plots" class="section level3">
 <h3>Density Plots</h3>
 <p>We can also obtain kernel densities of our data:</p>
-<div class="sourceCode" id="cb146"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">density</span>(ANES<span class="sc">$</span>dem)</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">density</span>(ANES<span class="sc">$</span>dem)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ##  density.default(x = ANES$dem)
@@ -1016,38 +1010,84 @@ class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="#cb1
 ##  Mean   : 0.36842   Mean   :0.9147635  
 ##  3rd Qu.: 0.64135   3rd Qu.:1.5971476  
 ##  Max.   : 0.91428   Max.   :2.5217948</code></pre>
-<div class="sourceCode" id="cb148"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(ANES<span class="sc">$</span>dem))</span></code></pre></div>
-<p><img src="Learning_files/figure-html/unnamed-chunk-51-1.png" width="576" /></p>
+<div class="sourceCode" id="cb145"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(ANES<span class="sc">$</span>dem))</span></code></pre></div>
+<p><img src="Learning_files/figure-html/unnamed-chunk-50-1.png" width="576" /></p>
 </div>
 <div id="twoway-plots" class="section level3">
 <h3>Twoway Plots</h3>
 <p>Suppose now we want to explore two-way relations in our data. For
 instance the two-way relation between height and weight of baseball
 players:</p>
-<div class="sourceCode" id="cb149"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> baseball<span class="sc">$</span>heightinches, <span class="at">y =</span> baseball<span class="sc">$</span>weightpounds,</span>
-<span id="cb149-2"><a href="#cb149-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">frame.plot =</span> <span class="cn">FALSE</span>, <span class="at">xlab =</span> <span class="st">&quot;height&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;weight&quot;</span>,</span>
-<span id="cb149-3"><a href="#cb149-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">20</span>) <span class="co"># pch is an option that selects the shape of dots we want </span></span>
-<span id="cb149-4"><a href="#cb149-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb149-5"><a href="#cb149-5" aria-hidden="true" tabindex="-1"></a><span class="co"># what if we want to add lines on this plot? We use the abline() function</span></span>
-<span id="cb149-6"><a href="#cb149-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Maybe we want to plot a line corresponding to the mean height </span></span>
-<span id="cb149-7"><a href="#cb149-7" aria-hidden="true" tabindex="-1"></a><span class="co"># lwd makes it thicker</span></span>
-<span id="cb149-8"><a href="#cb149-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="fu">mean</span>(baseball<span class="sc">$</span>heightinches, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">5</span>) </span></code></pre></div>
-<p><img src="Learning_files/figure-html/unnamed-chunk-52-1.png" width="576" /></p>
+<div class="sourceCode" id="cb146"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> baseball<span class="sc">$</span>heightinches, <span class="at">y =</span> baseball<span class="sc">$</span>weightpounds,</span>
+<span id="cb146-2"><a href="#cb146-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">frame.plot =</span> <span class="cn">FALSE</span>, <span class="at">xlab =</span> <span class="st">&quot;height&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;weight&quot;</span>,</span>
+<span id="cb146-3"><a href="#cb146-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">20</span>) <span class="co"># pch is an option that selects the shape of dots we want </span></span>
+<span id="cb146-4"><a href="#cb146-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb146-5"><a href="#cb146-5" aria-hidden="true" tabindex="-1"></a><span class="co"># what if we want to add lines on this plot? We use the abline() function</span></span>
+<span id="cb146-6"><a href="#cb146-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Maybe we want to plot a line corresponding to the mean height </span></span>
+<span id="cb146-7"><a href="#cb146-7" aria-hidden="true" tabindex="-1"></a><span class="co"># lwd makes it thicker</span></span>
+<span id="cb146-8"><a href="#cb146-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="fu">mean</span>(baseball<span class="sc">$</span>heightinches, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">5</span>) </span></code></pre></div>
+<p><img src="Learning_files/figure-html/unnamed-chunk-51-1.png" width="576" /></p>
 <p>Again, tidyverse makes things much easier. Let’s re-do all the steps
 we did before. First, we created a scatter plot. This time, let’s save
 the plot in an object:</p>
-<div class="sourceCode" id="cb150"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="#cb150-1" aria-hidden="true" tabindex="-1"></a>my.plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(baseball, <span class="fu">aes</span>(<span class="at">x =</span> heightinches, <span class="at">y =</span> weightpounds)) <span class="sc">+</span></span>
-<span id="cb150-2"><a href="#cb150-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb150-3"><a href="#cb150-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb150-4"><a href="#cb150-4" aria-hidden="true" tabindex="-1"></a>my.plot</span></code></pre></div>
-<p><img src="Learning_files/figure-html/unnamed-chunk-53-1.png" width="576" /></p>
+<div class="sourceCode" id="cb147"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a>my.plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(baseball, <span class="fu">aes</span>(<span class="at">x =</span> heightinches, <span class="at">y =</span> weightpounds)) <span class="sc">+</span></span>
+<span id="cb147-2"><a href="#cb147-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb147-3"><a href="#cb147-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb147-4"><a href="#cb147-4" aria-hidden="true" tabindex="-1"></a>my.plot</span></code></pre></div>
+<p><img src="Learning_files/figure-html/unnamed-chunk-52-1.png" width="576" /></p>
 <p>tidyverse makes it also simpler to save tidyverse plots:</p>
-<div class="sourceCode" id="cb151"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(my.plot, <span class="at">filename =</span> <span class="st">&quot;my_first_ggplot.pdf&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(my.plot, <span class="at">filename =</span> <span class="st">&quot;my_first_ggplot.pdf&quot;</span>)</span></code></pre></div>
 <pre><code>## Saving 6 x 6 in image</code></pre>
+</div>
+<div id="some-advanced-examples" class="section level3">
+<h3>Some advanced examples</h3>
+<p>Okay, let’s take a complex example to go through everything we’ve
+learned about managing data and visualisation.</p>
+<div class="sourceCode" id="cb150"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(WDI)</span>
+<span id="cb150-2"><a href="#cb150-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb150-3"><a href="#cb150-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb150-4"><a href="#cb150-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hrbrthemes)</span></code></pre></div>
+<pre><code>## NOTE: Either Arial Narrow or Roboto Condensed fonts are required to use these themes.</code></pre>
+<pre><code>##       Please use hrbrthemes::import_roboto_condensed() to install Roboto Condensed and</code></pre>
+<pre><code>##       if Arial Narrow is not on your system, please see https://bit.ly/arialnarrow</code></pre>
+<div class="sourceCode" id="cb154"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MetBrewer)</span>
+<span id="cb154-2"><a href="#cb154-2" aria-hidden="true" tabindex="-1"></a>wdi_data <span class="ot">&lt;-</span> <span class="fu">WDI</span>(<span class="at">country =</span> <span class="st">&quot;all&quot;</span>,</span>
+<span id="cb154-3"><a href="#cb154-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">indicator =</span> <span class="fu">c</span>(<span class="at">population =</span> <span class="st">&quot;SP.POP.TOTL&quot;</span>,</span>
+<span id="cb154-4"><a href="#cb154-4" aria-hidden="true" tabindex="-1"></a>                              <span class="at">gdp_percapita =</span> <span class="st">&quot;NY.GDP.PCAP.KD&quot;</span>), </span>
+<span id="cb154-5"><a href="#cb154-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">start =</span> <span class="dv">1996</span>, <span class="at">end =</span> <span class="dv">2020</span>, <span class="at">extra =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb154-6"><a href="#cb154-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-7"><a href="#cb154-7" aria-hidden="true" tabindex="-1"></a>north_ame <span class="ot">&lt;-</span> wdi_data <span class="sc">|&gt;</span></span>
+<span id="cb154-8"><a href="#cb154-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">&quot;United States&quot;</span> <span class="sc">|</span> country <span class="sc">==</span> <span class="st">&quot;Canada&quot;</span> <span class="sc">|</span></span>
+<span id="cb154-9"><a href="#cb154-9" aria-hidden="true" tabindex="-1"></a>           country <span class="sc">==</span> <span class="st">&quot;Mexico&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb154-10"><a href="#cb154-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">GDP =</span> <span class="fu">log</span>(gdp_percapita))</span>
+<span id="cb154-11"><a href="#cb154-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-12"><a href="#cb154-12" aria-hidden="true" tabindex="-1"></a>north_ame <span class="sc">|&gt;</span></span>
+<span id="cb154-13"><a href="#cb154-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> population, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb154-14"><a href="#cb154-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb154-15"><a href="#cb154-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span> <span class="fu">met.brewer</span>(<span class="st">&quot;Renoir&quot;</span>, <span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="cb154-16"><a href="#cb154-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ipsum_rc</span>() <span class="sc">+</span></span>
+<span id="cb154-17"><a href="#cb154-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Year&quot;</span>,</span>
+<span id="cb154-18"><a href="#cb154-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Population&quot;</span>,</span>
+<span id="cb154-19"><a href="#cb154-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;World Bank Data&quot;</span>)</span></code></pre></div>
+<p><img src="Learning_files/figure-html/unnamed-chunk-54-1.png" width="576" /></p>
+<div class="sourceCode" id="cb155"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Or</span></span>
+<span id="cb155-2"><a href="#cb155-2" aria-hidden="true" tabindex="-1"></a>north_ame <span class="sc">|&gt;</span></span>
+<span id="cb155-3"><a href="#cb155-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> population)) <span class="sc">+</span></span>
+<span id="cb155-4"><a href="#cb155-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb155-5"><a href="#cb155-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&#39;Year&#39;</span>) <span class="sc">+</span></span>
+<span id="cb155-6"><a href="#cb155-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Population&quot;</span>) <span class="sc">+</span></span>
+<span id="cb155-7"><a href="#cb155-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>country) <span class="sc">+</span></span>
+<span id="cb155-8"><a href="#cb155-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span> <span class="fu">met.brewer</span>(<span class="st">&quot;Renoir&quot;</span>, <span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="cb155-9"><a href="#cb155-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ipsum_rc</span>() <span class="sc">+</span></span>
+<span id="cb155-10"><a href="#cb155-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>))</span></code></pre></div>
+<p><img src="Learning_files/figure-html/unnamed-chunk-54-2.png" width="576" /></p>
 </div>
 </div>
 </div>
@@ -1057,8 +1097,8 @@ class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="#cb1
 <h2>T-Tests</h2>
 <p>Suppose we would like to run a test to see if the population mean of
 a random variable is distinguishable from 0 based on the data:</p>
-<div class="sourceCode" id="cb153"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ANES<span class="sc">$</span>poor) <span class="co"># by defaul it&#39;s a two-tailed t-test with null-value = 0</span></span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ANES<span class="sc">$</span>poor) <span class="co"># by defaul it&#39;s a two-tailed t-test with null-value = 0</span></span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -1071,8 +1111,8 @@ class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="#cb1
 ## mean of x 
 ## 0.1825192</code></pre>
 <p>Or you can also test if the true value is equal to other values:</p>
-<div class="sourceCode" id="cb155"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ANES<span class="sc">$</span>FTM, <span class="at">mu =</span> <span class="dv">60</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ANES<span class="sc">$</span>FTM, <span class="at">mu =</span> <span class="dv">60</span>)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -1084,9 +1124,9 @@ class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="#cb1
 ## sample estimates:
 ## mean of x 
 ##  58.78462</code></pre>
-<div class="sourceCode" id="cb157"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...and you can ask the test be one-sided:</span></span>
-<span id="cb157-2"><a href="#cb157-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ANES<span class="sc">$</span>FTM, <span class="at">mu =</span> <span class="dv">60</span>, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ...and you can ask the test be one-sided:</span></span>
+<span id="cb160-2"><a href="#cb160-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ANES<span class="sc">$</span>FTM, <span class="at">mu =</span> <span class="dv">60</span>, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -1098,8 +1138,8 @@ class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="#cb1
 ## sample estimates:
 ## mean of x 
 ##  58.78462</code></pre>
-<div class="sourceCode" id="cb159"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ANES<span class="sc">$</span>FTM, <span class="at">mu =</span> <span class="dv">60</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ANES<span class="sc">$</span>FTM, <span class="at">mu =</span> <span class="dv">60</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -1114,9 +1154,9 @@ class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="#cb1
 <p>We could also run difference-in-means tests. Suppose you want to test
 if the mean height of players in the NYY team is different from the mean
 height of players in the MIN team:</p>
-<div class="sourceCode" id="cb161"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> baseball<span class="sc">$</span>heightinches[baseball<span class="sc">$</span>team <span class="sc">==</span> <span class="st">&quot;NYY&quot;</span>],</span>
-<span id="cb161-2"><a href="#cb161-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> baseball<span class="sc">$</span>heightinches[baseball<span class="sc">$</span>team <span class="sc">==</span> <span class="st">&quot;MIN&quot;</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> baseball<span class="sc">$</span>heightinches[baseball<span class="sc">$</span>team <span class="sc">==</span> <span class="st">&quot;NYY&quot;</span>],</span>
+<span id="cb164-2"><a href="#cb164-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> baseball<span class="sc">$</span>heightinches[baseball<span class="sc">$</span>team <span class="sc">==</span> <span class="st">&quot;MIN&quot;</span>])</span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -1137,25 +1177,26 @@ average.</p>
 <h3>Linear Models</h3>
 <p>Now, we want to estimate a linear model using OLS. To do that, we
 first import a dataset from an article by David Card (1993) on NBER:</p>
-<div class="sourceCode" id="cb163"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a>card <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">&quot;Card_data.dta&quot;</span>)</span>
-<span id="cb163-2"><a href="#cb163-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(card)</span></code></pre></div>
-<pre><code>## # A tibble: 6 x 17
-##      id nearc2 nearc4  educ   age fatheduc motheduc weight black  smsa south
-##   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-## 1     2      0      0     7    29       NA       NA 158413     1     1     0
-## 2     3      0      0    12    27        8        8 380166     0     1     0
-## 3     4      0      0    12    34       14       12 367470     0     1     0
-## 4     5      1      1    11    27       11       12 380166     0     1     0
-## 5     6      1      1    12    34        8        7 367470     0     1     0
-## 6     7      1      1    12    26        9       12 380166     0     1     0
-## # … with 6 more variables: wage &lt;dbl&gt;, enroll &lt;dbl&gt;, IQ &lt;dbl&gt;, married &lt;dbl&gt;,
-## #   exper &lt;dbl&gt;, expersq &lt;dbl&gt;</code></pre>
+<div class="sourceCode" id="cb166"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="#cb166-1" aria-hidden="true" tabindex="-1"></a>card <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">&quot;Card_data.dta&quot;</span>)</span>
+<span id="cb166-2"><a href="#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(card)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 17
+##      id nearc2 nearc4  educ   age fathe…¹ mothe…² weight black  smsa south  wage
+##   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     2      0      0     7    29      NA      NA 158413     1     1     0   548
+## 2     3      0      0    12    27       8       8 380166     0     1     0   481
+## 3     4      0      0    12    34      14      12 367470     0     1     0   721
+## 4     5      1      1    11    27      11      12 380166     0     1     0   250
+## 5     6      1      1    12    34       8       7 367470     0     1     0   729
+## 6     7      1      1    12    26       9      12 380166     0     1     0   500
+## # … with 5 more variables: enroll &lt;dbl&gt;, IQ &lt;dbl&gt;, married &lt;dbl&gt;, exper &lt;dbl&gt;,
+## #   expersq &lt;dbl&gt;, and abbreviated variable names ¹​fatheduc, ²​motheduc
+## # ℹ Use `colnames()` to see all variable names</code></pre>
 <p>Okay, let’s run a linear regression.</p>
-<div class="sourceCode" id="cb165"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="#cb165-1" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(wage <span class="sc">~</span> exper, <span class="co"># your formula</span></span>
-<span id="cb165-2"><a href="#cb165-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> card) <span class="co"># where are the data stored</span></span>
-<span id="cb165-3"><a href="#cb165-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="#cb168-1" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(wage <span class="sc">~</span> exper, <span class="co"># your formula</span></span>
+<span id="cb168-2"><a href="#cb168-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> card) <span class="co"># where are the data stored</span></span>
+<span id="cb168-3"><a href="#cb168-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = wage ~ exper, data = card)
@@ -1176,10 +1217,10 @@ class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="#cb1
 ## F-statistic: 2.716 on 1 and 3008 DF,  p-value: 0.09945</code></pre>
 <p>We probably would like to include some control variables in this
 model specifications.</p>
-<div class="sourceCode" id="cb167"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="#cb167-1" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(wage <span class="sc">~</span> exper <span class="sc">+</span> motheduc <span class="sc">+</span> fatheduc,</span>
-<span id="cb167-2"><a href="#cb167-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> card)</span>
-<span id="cb167-3"><a href="#cb167-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model2)</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="#cb170-1" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(wage <span class="sc">~</span> exper <span class="sc">+</span> motheduc <span class="sc">+</span> fatheduc,</span>
+<span id="cb170-2"><a href="#cb170-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> card)</span>
+<span id="cb170-3"><a href="#cb170-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model2)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = wage ~ exper + motheduc + fatheduc, data = card)
@@ -1202,10 +1243,10 @@ class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="#cb1
 ## Multiple R-squared:  0.07555,    Adjusted R-squared:  0.0743 
 ## F-statistic: 60.37 on 3 and 2216 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>From time to time, we need to transform some variables:</p>
-<div class="sourceCode" id="cb169"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="#cb169-1" aria-hidden="true" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(wage) <span class="sc">~</span> exper <span class="sc">+</span> motheduc <span class="sc">+</span> fatheduc,</span>
-<span id="cb169-2"><a href="#cb169-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> card)</span>
-<span id="cb169-3"><a href="#cb169-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="#cb172-1" aria-hidden="true" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(wage) <span class="sc">~</span> exper <span class="sc">+</span> motheduc <span class="sc">+</span> fatheduc,</span>
+<span id="cb172-2"><a href="#cb172-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> card)</span>
+<span id="cb172-3"><a href="#cb172-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = log(wage) ~ exper + motheduc + fatheduc, data = card)
@@ -1229,8 +1270,8 @@ class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="#cb1
 ## F-statistic: 58.12 on 3 and 2216 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>And we could use extract_eq() to obtain the equation of the model
 output:</p>
-<div class="sourceCode" id="cb171"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="fu">extract_eq</span>(model3,<span class="at">wrap =</span> <span class="cn">TRUE</span>, <span class="at">use_coefs =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">extract_eq</span>(model3,<span class="at">wrap =</span> <span class="cn">TRUE</span>, <span class="at">use_coefs =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{\widehat{log(wage)}} &amp;= 5.7 +
@@ -1243,10 +1284,10 @@ out there to present our results. The choice between them depends mostly
 on the type of models that they can support. Two equally good choices
 are <strong>stargazer</strong> and <strong>texreg</strong>.</p>
 <p>We’ll use stargazer today:</p>
-<div class="sourceCode" id="cb172"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="co"># let&#39;s see how stargazer works</span></span>
-<span id="cb172-2"><a href="#cb172-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(model1, model2, model3, <span class="at">type =</span> <span class="st">&quot;text&quot;</span>,</span>
-<span id="cb172-3"><a href="#cb172-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">keep.stat =</span> <span class="fu">c</span>(<span class="st">&quot;n&quot;</span>, <span class="st">&quot;rsq&quot;</span>, <span class="st">&quot;adj.rsq&quot;</span>, <span class="st">&quot;f&quot;</span>), <span class="at">df =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="co"># let&#39;s see how stargazer works</span></span>
+<span id="cb175-2"><a href="#cb175-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(model1, model2, model3, <span class="at">type =</span> <span class="st">&quot;text&quot;</span>,</span>
+<span id="cb175-3"><a href="#cb175-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">keep.stat =</span> <span class="fu">c</span>(<span class="st">&quot;n&quot;</span>, <span class="st">&quot;rsq&quot;</span>, <span class="st">&quot;adj.rsq&quot;</span>, <span class="st">&quot;f&quot;</span>), <span class="at">df =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## 
 ## ============================================
 ##                    Dependent variable:      
@@ -1273,35 +1314,35 @@ class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="#cb1
 ## F Statistic    2.716*   60.366***  58.117***
 ## ============================================
 ## Note:            *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
-<div class="sourceCode" id="cb174"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="#cb174-1" aria-hidden="true" tabindex="-1"></a>?stargazer</span></code></pre></div>
-<div class="sourceCode" id="cb175"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we can also extract statistics and information from our model objects:</span></span>
-<span id="cb175-2"><a href="#cb175-2" aria-hidden="true" tabindex="-1"></a>model3<span class="sc">$</span>coefficients</span></code></pre></div>
-<pre><code>## (Intercept)       exper    motheduc    fatheduc 
-##  5.69703504  0.01975653  0.02291837  0.01800203</code></pre>
 <div class="sourceCode" id="cb177"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="co"># model3$residuals</span></span>
-<span id="cb177-2"><a href="#cb177-2" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> model3<span class="sc">$</span>fitted.values</span>
-<span id="cb177-3"><a href="#cb177-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb177-4"><a href="#cb177-4" aria-hidden="true" tabindex="-1"></a><span class="co"># and more:</span></span>
-<span id="cb177-5"><a href="#cb177-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)<span class="sc">$</span>coefficients[,<span class="dv">1</span>] <span class="co"># these are the coefficients (the betas)</span></span></code></pre></div>
+class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="#cb177-1" aria-hidden="true" tabindex="-1"></a>?stargazer</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we can also extract statistics and information from our model objects:</span></span>
+<span id="cb178-2"><a href="#cb178-2" aria-hidden="true" tabindex="-1"></a>model3<span class="sc">$</span>coefficients</span></code></pre></div>
 <pre><code>## (Intercept)       exper    motheduc    fatheduc 
 ##  5.69703504  0.01975653  0.02291837  0.01800203</code></pre>
-<div class="sourceCode" id="cb179"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)<span class="sc">$</span>coefficients[,<span class="dv">2</span>] <span class="co"># these are the standard errors of our coefficients</span></span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="co"># model3$residuals</span></span>
+<span id="cb180-2"><a href="#cb180-2" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> model3<span class="sc">$</span>fitted.values</span>
+<span id="cb180-3"><a href="#cb180-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb180-4"><a href="#cb180-4" aria-hidden="true" tabindex="-1"></a><span class="co"># and more:</span></span>
+<span id="cb180-5"><a href="#cb180-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)<span class="sc">$</span>coefficients[,<span class="dv">1</span>] <span class="co"># these are the coefficients (the betas)</span></span></code></pre></div>
+<pre><code>## (Intercept)       exper    motheduc    fatheduc 
+##  5.69703504  0.01975653  0.02291837  0.01800203</code></pre>
+<div class="sourceCode" id="cb182"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)<span class="sc">$</span>coefficients[,<span class="dv">2</span>] <span class="co"># these are the standard errors of our coefficients</span></span></code></pre></div>
 <pre><code>## (Intercept)       exper    motheduc    fatheduc 
 ## 0.046391537 0.002467970 0.003832941 0.003210862</code></pre>
-<div class="sourceCode" id="cb181"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)<span class="sc">$</span>coefficients[,<span class="dv">3</span>] <span class="co"># these are the t-statistics</span></span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)<span class="sc">$</span>coefficients[,<span class="dv">3</span>] <span class="co"># these are the t-statistics</span></span></code></pre></div>
 <pre><code>## (Intercept)       exper    motheduc    fatheduc 
 ##  122.803326    8.005173    5.979318    5.606604</code></pre>
-<div class="sourceCode" id="cb183"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)<span class="sc">$</span>coefficients[,<span class="dv">4</span>] <span class="co"># these are the p-values</span></span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)<span class="sc">$</span>coefficients[,<span class="dv">4</span>] <span class="co"># these are the p-values</span></span></code></pre></div>
 <pre><code>##  (Intercept)        exper     motheduc     fatheduc 
 ## 0.000000e+00 1.906293e-15 2.604881e-09 2.320346e-08</code></pre>
-<div class="sourceCode" id="cb185"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="co"># of course we could save this information in R objects</span></span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="co"># of course we could save this information in R objects</span></span></code></pre></div>
 </div>
 <div id="generalized-linear-models" class="section level3">
 <h3>Generalized Linear Models</h3>
@@ -1312,12 +1353,12 @@ the generalized linear model (GLM),work very similarly. Suppose we want
 to explain if a person went to college based on the years of education
 of the father and mother. A logit or probit model would be
 appropriate:</p>
-<div class="sourceCode" id="cb186"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="#cb186-1" aria-hidden="true" tabindex="-1"></a>mod.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(enroll <span class="sc">~</span> fatheduc <span class="sc">+</span> motheduc <span class="sc">+</span></span>
-<span id="cb186-2"><a href="#cb186-2" aria-hidden="true" tabindex="-1"></a>                 black <span class="sc">+</span> smsa <span class="sc">+</span> south <span class="sc">+</span> IQ,</span>
-<span id="cb186-3"><a href="#cb186-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> card,</span>
-<span id="cb186-4"><a href="#cb186-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>))</span>
-<span id="cb186-5"><a href="#cb186-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod.glm)</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="#cb189-1" aria-hidden="true" tabindex="-1"></a>mod.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(enroll <span class="sc">~</span> fatheduc <span class="sc">+</span> motheduc <span class="sc">+</span></span>
+<span id="cb189-2"><a href="#cb189-2" aria-hidden="true" tabindex="-1"></a>                 black <span class="sc">+</span> smsa <span class="sc">+</span> south <span class="sc">+</span> IQ,</span>
+<span id="cb189-3"><a href="#cb189-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> card,</span>
+<span id="cb189-4"><a href="#cb189-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb189-5"><a href="#cb189-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod.glm)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = enroll ~ fatheduc + motheduc + black + smsa + south + 
@@ -1347,8 +1388,8 @@ class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="#cb1
 ## AIC: 1100.2
 ## 
 ## Number of Fisher Scoring iterations: 5</code></pre>
-<div class="sourceCode" id="cb188"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="fu">screenreg</span>(mod.glm)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">screenreg</span>(mod.glm)</span></code></pre></div>
 <pre><code>## 
 ## ===========================
 ##                 Model 1    
@@ -1529,14 +1570,14 @@ function has been run, it is saved in your work environment by R and you
 can run data through it by calling it as you would do with any other
 function in R (I.e. myfunction(data)).</p>
 <p>The general structure looks like:</p>
-<div class="sourceCode" id="cb190"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="#cb190-1" aria-hidden="true" tabindex="-1"></a>myfunction <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
-<span id="cb190-2"><a href="#cb190-2" aria-hidden="true" tabindex="-1"></a>  a <span class="ot">&lt;-</span> x<span class="sc">/</span><span class="dv">2</span></span>
-<span id="cb190-3"><a href="#cb190-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(a)</span>
-<span id="cb190-4"><a href="#cb190-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="#cb193-1" aria-hidden="true" tabindex="-1"></a>myfunction <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb193-2"><a href="#cb193-2" aria-hidden="true" tabindex="-1"></a>  a <span class="ot">&lt;-</span> x<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb193-3"><a href="#cb193-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(a)</span>
+<span id="cb193-4"><a href="#cb193-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Let’s test the newly-created function:</p>
-<div class="sourceCode" id="cb191"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myfunction</span>(<span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="fu">myfunction</span>(<span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 </div>
 <div id="loop" class="section level2">
@@ -1559,20 +1600,19 @@ four columns of our data frame.</p>
 <div id="ifelse-statements" class="section level2">
 <h2>If/else statements</h2>
 <p>There are various commands we can run within for loops to edit their
-functionality. If-else statements allow us to change the outcome of the
-loop depending on a particular statement. For instance, if a value is
-below a certain threshold, you can tell the loop to round it up,
-otherwise (else) do nothing.</p>
+functionality.</p>
 <p>Okay, let’s take a look at the WDI dataset again.</p>
-<div class="sourceCode" id="cb193"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(wdi_data)</span></code></pre></div>
-<pre><code>## Rows: 5,586
-## Columns: 12
+<div class="sourceCode" id="cb196"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(wdi_data)</span></code></pre></div>
+<pre><code>## Rows: 6,650
+## Columns: 14
 ## $ iso2c         &lt;chr&gt; &quot;1A&quot;, &quot;1A&quot;, &quot;1A&quot;, &quot;1A&quot;, &quot;1A&quot;, &quot;1A&quot;, &quot;1A&quot;, &quot;1A&quot;, &quot;1A&quot;, &quot;1…
 ## $ country       &lt;chr&gt; &quot;Arab World&quot;, &quot;Arab World&quot;, &quot;Arab World&quot;, &quot;Arab World&quot;, …
-## $ year          &lt;int&gt; 2005, 2004, 2017, 2016, 2008, 2006, 2003, 2007, 2012, 20…
-## $ population    &lt;dbl&gt; 314965776, 307862846, 411942825, 404042892, 338395936, 3…
-## $ gdp_percapita &lt;dbl&gt; 5532.099, 5363.638, 6386.722, 6431.676, 6029.585, 5732.2…
+## $ year          &lt;int&gt; 1997, 1998, 1996, 2009, 2010, 1999, 2000, 2001, 2002, 20…
+## $ status        &lt;chr&gt; &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, …
+## $ lastupdated   &lt;chr&gt; &quot;2022-06-30&quot;, &quot;2022-06-30&quot;, &quot;2022-06-30&quot;, &quot;2022-06-30&quot;, …
+## $ population    &lt;dbl&gt; 264822167, 270575777, 259000937, 346629179, 354890097, 2…
+## $ gdp_percapita &lt;dbl&gt; 4676.450, 4812.031, 4565.366, 5910.793, 6047.616, 4796.7…
 ## $ iso3c         &lt;chr&gt; &quot;ARB&quot;, &quot;ARB&quot;, &quot;ARB&quot;, &quot;ARB&quot;, &quot;ARB&quot;, &quot;ARB&quot;, &quot;ARB&quot;, &quot;ARB&quot;, …
 ## $ region        &lt;chr&gt; &quot;Aggregates&quot;, &quot;Aggregates&quot;, &quot;Aggregates&quot;, &quot;Aggregates&quot;, …
 ## $ capital       &lt;chr&gt; &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, …
@@ -1580,249 +1620,287 @@ class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="#cb1
 ## $ latitude      &lt;chr&gt; &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, …
 ## $ income        &lt;chr&gt; &quot;Aggregates&quot;, &quot;Aggregates&quot;, &quot;Aggregates&quot;, &quot;Aggregates&quot;, …
 ## $ lending       &lt;chr&gt; &quot;Aggregates&quot;, &quot;Aggregates&quot;, &quot;Aggregates&quot;, &quot;Aggregates&quot;, …</code></pre>
-<p>If we would like to create a new binary variable based whether the
+<p>If we would like to create a new binary variable based on whether the
 country is located in Europe and Central Asia, we could write:</p>
-<div class="sourceCode" id="cb195"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="#cb195-1" aria-hidden="true" tabindex="-1"></a>wdi_data<span class="sc">$</span>euro_central <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(wdi_data<span class="sc">$</span>region <span class="sc">==</span> <span class="st">&quot;Europe &amp; Central Asia&quot;</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
-<span id="cb195-2"><a href="#cb195-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(wdi_data<span class="sc">$</span>region)</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="#cb198-1" aria-hidden="true" tabindex="-1"></a>wdi_data<span class="sc">$</span>euro_central <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(wdi_data<span class="sc">$</span>region <span class="sc">==</span> <span class="st">&quot;Europe &amp; Central Asia&quot;</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb198-2"><a href="#cb198-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(wdi_data<span class="sc">$</span>region)</span></code></pre></div>
 <pre><code>## 
 ##                 Aggregates        East Asia &amp; Pacific 
-##                        945                        756 
+##                       1175                        925 
 ##      Europe &amp; Central Asia  Latin America &amp; Caribbean 
-##                       1197                        882 
+##                       1450                       1050 
 ## Middle East &amp; North Africa              North America 
-##                        441                         63 
+##                        525                         75 
 ##                 South Asia         Sub-Saharan Africa 
-##                        168                       1008</code></pre>
-<div class="sourceCode" id="cb197"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(wdi_data<span class="sc">$</span>euro_central)</span></code></pre></div>
+##                        200                       1200</code></pre>
+<div class="sourceCode" id="cb200"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(wdi_data<span class="sc">$</span>euro_central)</span></code></pre></div>
 <pre><code>## 
 ## FALSE  TRUE 
-##  4263  1197</code></pre>
+##  5150  1450</code></pre>
+<p>So, if-else statements allow us to change the outcome of the loop
+depending on a particular statement. For instance, if a value is below a
+certain threshold, you can tell the loop to round it up, otherwise
+(else) do nothing.</p>
 </div>
 </div>
 <div id="appendix-r-script" class="section level1">
 <h1>Appendix: R Script</h1>
-<div class="sourceCode" id="cb199"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="#cb199-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb199-2"><a href="#cb199-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(c(&quot;dplyr&quot;,&quot;haven&quot;,&quot;readr&quot;, &quot;tidyr&quot;,&quot;ggplot2&quot;,&quot;texreg&quot;,&quot;stringr&quot;,&quot;stringi&quot;,&quot;WDI&quot;))</span></span>
-<span id="cb199-3"><a href="#cb199-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)        <span class="co"># Import Data</span></span>
-<span id="cb199-4"><a href="#cb199-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)        <span class="co"># Import Data</span></span>
-<span id="cb199-5"><a href="#cb199-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)        <span class="co"># Data manipulation</span></span>
-<span id="cb199-6"><a href="#cb199-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)      <span class="co"># Creating graphics</span></span>
-<span id="cb199-7"><a href="#cb199-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)      <span class="co"># Deal with string data</span></span>
-<span id="cb199-8"><a href="#cb199-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)   <span class="co"># Build complex tables and manipulate table styles</span></span>
-<span id="cb199-9"><a href="#cb199-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(WDI)          <span class="co"># Get data from the World Bank&#39;s API</span></span>
-<span id="cb199-10"><a href="#cb199-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)        <span class="co"># We use the describe() function from this package for summary statistics.</span></span>
-<span id="cb199-11"><a href="#cb199-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(texreg)       <span class="co"># Convert regression output to Table</span></span>
-<span id="cb199-12"><a href="#cb199-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)    <span class="co"># Convert regression output to Table</span></span>
-<span id="cb199-13"><a href="#cb199-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(equatiomatic) <span class="co"># Provide an automatic way to show the equations of models fitted in R.</span></span>
-<span id="cb199-14"><a href="#cb199-14" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span>
-<span id="cb199-15"><a href="#cb199-15" aria-hidden="true" tabindex="-1"></a><span class="fl">1.5</span></span>
-<span id="cb199-16"><a href="#cb199-16" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">/</span><span class="dv">4</span></span>
-<span id="cb199-17"><a href="#cb199-17" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;Hello world&quot;</span></span>
-<span id="cb199-18"><a href="#cb199-18" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb199-19"><a href="#cb199-19" aria-hidden="true" tabindex="-1"></a>a</span>
-<span id="cb199-20"><a href="#cb199-20" aria-hidden="true" tabindex="-1"></a>my_string <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;hello&quot;</span>,<span class="st">&quot;world&quot;</span>,<span class="st">&quot;today&quot;</span>,<span class="st">&quot;is&quot;</span>,<span class="st">&quot;amazing&quot;</span>)</span>
-<span id="cb199-21"><a href="#cb199-21" aria-hidden="true" tabindex="-1"></a>a <span class="sc">==</span> my_string</span>
-<span id="cb199-22"><a href="#cb199-22" aria-hidden="true" tabindex="-1"></a>a <span class="sc">!=</span> my_string</span>
-<span id="cb199-23"><a href="#cb199-23" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">4</span>)</span>
-<span id="cb199-24"><a href="#cb199-24" aria-hidden="true" tabindex="-1"></a>?sqrt</span>
-<span id="cb199-25"><a href="#cb199-25" aria-hidden="true" tabindex="-1"></a>?log</span>
-<span id="cb199-26"><a href="#cb199-26" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">2</span>, <span class="dv">10</span>)</span>
-<span id="cb199-27"><a href="#cb199-27" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="fu">sqrt</span>(<span class="dv">4</span>), <span class="dv">10</span>) <span class="co"># gives exactly the same as log(2, 10) above as sqrt(4) = 2</span></span>
-<span id="cb199-28"><a href="#cb199-28" aria-hidden="true" tabindex="-1"></a>?paste</span>
-<span id="cb199-29"><a href="#cb199-29" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&quot;This&quot;</span>, <span class="st">&quot;is&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;full&quot;</span>, <span class="st">&quot;sentence&quot;</span>)</span>
-<span id="cb199-30"><a href="#cb199-30" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&quot;This&quot;</span>, <span class="st">&quot;is&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;full&quot;</span>, <span class="st">&quot;sentence&quot;</span>, <span class="at">sep=</span><span class="st">&quot;-&quot;</span>)</span>
-<span id="cb199-31"><a href="#cb199-31" aria-hidden="true" tabindex="-1"></a>my.first.vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="fl">2.4</span>, <span class="fl">0.3</span>, <span class="sc">-</span><span class="fl">2.56</span>, <span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>, <span class="dv">2</span><span class="sc">+</span><span class="dv">3</span>)</span>
-<span id="cb199-32"><a href="#cb199-32" aria-hidden="true" tabindex="-1"></a><span class="co"># the c() function stands for &quot;concatenate&quot; and is used to join objects together</span></span>
-<span id="cb199-33"><a href="#cb199-33" aria-hidden="true" tabindex="-1"></a>my.first.vector</span>
-<span id="cb199-34"><a href="#cb199-34" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(my.first.vector)</span>
-<span id="cb199-35"><a href="#cb199-35" aria-hidden="true" tabindex="-1"></a>my.first.vector[<span class="dv">8</span>] <span class="co"># the value of the eighth element in our vector</span></span>
-<span id="cb199-36"><a href="#cb199-36" aria-hidden="true" tabindex="-1"></a>my.first.vector[<span class="dv">1</span>] <span class="co"># the value of the first element in our vector</span></span>
-<span id="cb199-37"><a href="#cb199-37" aria-hidden="true" tabindex="-1"></a>a.string.vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;here&quot;</span>, <span class="st">&quot;are&quot;</span>, <span class="st">&quot;some&quot;</span>, <span class="st">&quot;elements&quot;</span>)</span>
-<span id="cb199-38"><a href="#cb199-38" aria-hidden="true" tabindex="-1"></a>a.string.vector</span>
-<span id="cb199-39"><a href="#cb199-39" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(my.first.vector)</span>
-<span id="cb199-40"><a href="#cb199-40" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(a.string.vector)</span>
-<span id="cb199-41"><a href="#cb199-41" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="st">&quot;hello&quot;</span></span>
-<span id="cb199-42"><a href="#cb199-42" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="st">&quot;world&quot;</span></span>
-<span id="cb199-43"><a href="#cb199-43" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(c, d, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb199-44"><a href="#cb199-44" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(c, d)</span>
-<span id="cb199-45"><a href="#cb199-45" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(c, d, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>) <span class="co"># specifies the separator of the two objects!</span></span>
-<span id="cb199-46"><a href="#cb199-46" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(c, d)</span>
-<span id="cb199-47"><a href="#cb199-47" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>,  <span class="co"># the data in our matrix. Pick all integers from 1 to 12 (included)</span></span>
-<span id="cb199-48"><a href="#cb199-48" aria-hidden="true" tabindex="-1"></a>            <span class="at">nrow =</span> <span class="dv">3</span>,     <span class="co"># the number of rows </span></span>
-<span id="cb199-49"><a href="#cb199-49" aria-hidden="true" tabindex="-1"></a>            <span class="at">ncol =</span> <span class="dv">4</span>,     <span class="co"># the number of columns</span></span>
-<span id="cb199-50"><a href="#cb199-50" aria-hidden="true" tabindex="-1"></a>            <span class="at">byrow =</span> <span class="cn">TRUE</span>) <span class="co"># do we want data to be stored in cells by row or by column?</span></span>
-<span id="cb199-51"><a href="#cb199-51" aria-hidden="true" tabindex="-1"></a>m</span>
-<span id="cb199-52"><a href="#cb199-52" aria-hidden="true" tabindex="-1"></a>m[<span class="dv">2</span>,<span class="dv">4</span>] <span class="co"># the object in the 2nd row, 4th column</span></span>
-<span id="cb199-53"><a href="#cb199-53" aria-hidden="true" tabindex="-1"></a>m[,<span class="dv">1</span>]  <span class="co"># all the first column</span></span>
-<span id="cb199-54"><a href="#cb199-54" aria-hidden="true" tabindex="-1"></a>m[<span class="dv">1</span>,]  <span class="co"># all the first row</span></span>
-<span id="cb199-55"><a href="#cb199-55" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(m) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>, <span class="st">&quot;four&quot;</span>)</span>
-<span id="cb199-56"><a href="#cb199-56" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(m) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
-<span id="cb199-57"><a href="#cb199-57" aria-hidden="true" tabindex="-1"></a>m</span>
-<span id="cb199-58"><a href="#cb199-58" aria-hidden="true" tabindex="-1"></a>datafr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb199-59"><a href="#cb199-59" aria-hidden="true" tabindex="-1"></a>  <span class="at">var1 =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;a&quot;</span>, <span class="dv">3</span>), <span class="fu">rep</span>(<span class="st">&quot;b&quot;</span>, <span class="dv">4</span>), <span class="fu">rep</span>(<span class="st">&quot;c&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;d&quot;</span>),</span>
-<span id="cb199-60"><a href="#cb199-60" aria-hidden="true" tabindex="-1"></a>  <span class="at">var2 =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">1.3</span>), <span class="co"># here we are drawing 10 random values from a </span></span>
-<span id="cb199-61"><a href="#cb199-61" aria-hidden="true" tabindex="-1"></a>  <span class="co"># normal distribution with mean = 0 and sd = 1.3</span></span>
-<span id="cb199-62"><a href="#cb199-62" aria-hidden="true" tabindex="-1"></a>  <span class="at">var3 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="fl">4.2</span>, <span class="fl">5.3333</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">9</span>, <span class="fl">7.5</span>, <span class="fl">0.000</span>, <span class="dv">1-12</span>, <span class="fu">sqrt</span>(<span class="dv">2</span>)) <span class="co"># notice that here we are</span></span>
-<span id="cb199-63"><a href="#cb199-63" aria-hidden="true" tabindex="-1"></a>  <span class="co"># creating a vector where the elements are expressions! We also include the squared root of 2</span></span>
-<span id="cb199-64"><a href="#cb199-64" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb199-65"><a href="#cb199-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-66"><a href="#cb199-66" aria-hidden="true" tabindex="-1"></a>datafr</span>
-<span id="cb199-67"><a href="#cb199-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-68"><a href="#cb199-68" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">var1 =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;a&quot;</span>, <span class="dv">3</span>), <span class="fu">rep</span>(<span class="st">&quot;b&quot;</span>, <span class="dv">4</span>), <span class="fu">rep</span>(<span class="st">&quot;c&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;d&quot;</span>),</span>
-<span id="cb199-69"><a href="#cb199-69" aria-hidden="true" tabindex="-1"></a>                 <span class="at">var2 =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="cn">NA</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>))</span>
-<span id="cb199-70"><a href="#cb199-70" aria-hidden="true" tabindex="-1"></a>df <span class="co"># we have a missing value in var2</span></span>
-<span id="cb199-71"><a href="#cb199-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-72"><a href="#cb199-72" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(datafr)</span>
-<span id="cb199-73"><a href="#cb199-73" aria-hidden="true" tabindex="-1"></a>datafr<span class="sc">$</span>var1 <span class="co"># this gives us precisely the object we want.</span></span>
-<span id="cb199-74"><a href="#cb199-74" aria-hidden="true" tabindex="-1"></a>datafr<span class="sc">$</span>var3</span>
-<span id="cb199-75"><a href="#cb199-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-76"><a href="#cb199-76" aria-hidden="true" tabindex="-1"></a>datafr<span class="sc">$</span>var2</span>
-<span id="cb199-77"><a href="#cb199-77" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>var2</span>
-<span id="cb199-78"><a href="#cb199-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-79"><a href="#cb199-79" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(datafr)</span>
-<span id="cb199-80"><a href="#cb199-80" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(datafr<span class="sc">$</span>var1)</span>
-<span id="cb199-81"><a href="#cb199-81" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(datafr<span class="sc">$</span>var2)</span>
-<span id="cb199-82"><a href="#cb199-82" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(datafr<span class="sc">$</span>var3)</span>
-<span id="cb199-83"><a href="#cb199-83" aria-hidden="true" tabindex="-1"></a>ls <span class="ot">&lt;-</span> <span class="fu">list</span>(df, datafr, datafr<span class="sc">$</span>var2)</span>
-<span id="cb199-84"><a href="#cb199-84" aria-hidden="true" tabindex="-1"></a>ls</span>
-<span id="cb199-85"><a href="#cb199-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-86"><a href="#cb199-86" aria-hidden="true" tabindex="-1"></a>ls2 <span class="ot">&lt;-</span> <span class="fu">list</span>(df, ls)</span>
-<span id="cb199-87"><a href="#cb199-87" aria-hidden="true" tabindex="-1"></a>ls2</span>
-<span id="cb199-88"><a href="#cb199-88" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
-<span id="cb199-89"><a href="#cb199-89" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Desktop/ESS_3x_website&quot;</span>)</span>
-<span id="cb199-90"><a href="#cb199-90" aria-hidden="true" tabindex="-1"></a>ANES <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">&quot;anesByState.dta&quot;</span>)</span>
-<span id="cb199-91"><a href="#cb199-91" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ANES)</span>
-<span id="cb199-92"><a href="#cb199-92" aria-hidden="true" tabindex="-1"></a>csvfile <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/lorenzo-crippa/Intro_to_R/master/2021/baseball.csv&quot;</span></span>
-<span id="cb199-93"><a href="#cb199-93" aria-hidden="true" tabindex="-1"></a>baseball <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(csvfile)</span>
-<span id="cb199-94"><a href="#cb199-94" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(baseball)</span>
-<span id="cb199-95"><a href="#cb199-95" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;http://www.principlesofeconometrics.com/stata/broiler.dta&quot;</span></span>
-<span id="cb199-96"><a href="#cb199-96" aria-hidden="true" tabindex="-1"></a>data.df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(url)</span>
-<span id="cb199-97"><a href="#cb199-97" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data.df)</span>
-<span id="cb199-98"><a href="#cb199-98" aria-hidden="true" tabindex="-1"></a>wdi_data <span class="ot">&lt;-</span> <span class="fu">WDI</span>(<span class="at">country =</span> <span class="st">&quot;all&quot;</span>, </span>
-<span id="cb199-99"><a href="#cb199-99" aria-hidden="true" tabindex="-1"></a>               <span class="at">indicator =</span> <span class="fu">c</span>(<span class="at">population =</span> <span class="st">&quot;SP.POP.TOTL&quot;</span>,</span>
-<span id="cb199-100"><a href="#cb199-100" aria-hidden="true" tabindex="-1"></a>                             <span class="at">gdp_percapita =</span> <span class="st">&quot;NY.GDP.PCAP.KD&quot;</span>), </span>
-<span id="cb199-101"><a href="#cb199-101" aria-hidden="true" tabindex="-1"></a>               <span class="at">start =</span> <span class="dv">2000</span>, <span class="at">end =</span> <span class="dv">2020</span>, <span class="at">extra =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb199-102"><a href="#cb199-102" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(wdi_data)</span>
-<span id="cb199-103"><a href="#cb199-103" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;tidyverse&quot;)</span></span>
-<span id="cb199-104"><a href="#cb199-104" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb199-105"><a href="#cb199-105" aria-hidden="true" tabindex="-1"></a>baseball.no.CLE <span class="ot">&lt;-</span> baseball[baseball<span class="sc">$</span>team <span class="sc">!=</span> <span class="st">&quot;CLE&quot;</span>, ]</span>
-<span id="cb199-106"><a href="#cb199-106" aria-hidden="true" tabindex="-1"></a>baseball<span class="fl">.2</span> <span class="ot">&lt;-</span> baseball[baseball<span class="sc">$</span>team <span class="sc">==</span> <span class="st">&quot;NYY&quot;</span>, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span>
-<span id="cb199-107"><a href="#cb199-107" aria-hidden="true" tabindex="-1"></a>ANES <span class="ot">&lt;-</span> <span class="fu">filter</span>(ANES, <span class="co"># what is your data frame? </span></span>
-<span id="cb199-108"><a href="#cb199-108" aria-hidden="true" tabindex="-1"></a>               year <span class="sc">!=</span> <span class="dv">2000</span>) <span class="co"># the condition you impose</span></span>
-<span id="cb199-109"><a href="#cb199-109" aria-hidden="true" tabindex="-1"></a>ANES <span class="ot">&lt;-</span> <span class="fu">select</span>(ANES, </span>
-<span id="cb199-110"><a href="#cb199-110" aria-hidden="true" tabindex="-1"></a>               <span class="sc">-</span>turnout) <span class="co"># keep everything BUT the variable named &quot;turnout&quot;</span></span>
-<span id="cb199-111"><a href="#cb199-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-112"><a href="#cb199-112" aria-hidden="true" tabindex="-1"></a>ANES[<span class="fu">order</span>(ANES[,<span class="dv">2</span>], ANES[,<span class="dv">1</span>]),]</span>
-<span id="cb199-113"><a href="#cb199-113" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(ANES<span class="sc">$</span>year) <span class="co"># all possible years in the ANES dataset</span></span>
-<span id="cb199-114"><a href="#cb199-114" aria-hidden="true" tabindex="-1"></a><span class="co"># we might want to have it sorted:</span></span>
-<span id="cb199-115"><a href="#cb199-115" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">unique</span>(ANES<span class="sc">$</span>year)) <span class="co"># years from 1952 to 2008 by 2-year distance. </span></span>
-<span id="cb199-116"><a href="#cb199-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-117"><a href="#cb199-117" aria-hidden="true" tabindex="-1"></a>ANES<span class="sc">$</span>new.var <span class="ot">&lt;-</span> ANES<span class="sc">$</span>poor<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb199-118"><a href="#cb199-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-119"><a href="#cb199-119" aria-hidden="true" tabindex="-1"></a><span class="co"># we can also do it in tidyverse by doing:</span></span>
-<span id="cb199-120"><a href="#cb199-120" aria-hidden="true" tabindex="-1"></a>ANES <span class="ot">&lt;-</span> <span class="fu">mutate</span>(ANES,</span>
-<span id="cb199-121"><a href="#cb199-121" aria-hidden="true" tabindex="-1"></a>               <span class="at">new.var2 =</span> poor<span class="sc">*</span><span class="dv">2</span>)</span>
-<span id="cb199-122"><a href="#cb199-122" aria-hidden="true" tabindex="-1"></a>ANES<span class="sc">$</span>indicator <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="at">test =</span> ANES<span class="sc">$</span>year <span class="sc">&gt;=</span> <span class="dv">2000</span>, <span class="at">yes =</span> <span class="dv">1</span>, <span class="at">no =</span> <span class="dv">0</span>)</span>
-<span id="cb199-123"><a href="#cb199-123" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(ANES<span class="sc">$</span>indicator)</span>
-<span id="cb199-124"><a href="#cb199-124" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ANES)   <span class="co"># obtain all the variable names of a dataset</span></span>
-<span id="cb199-125"><a href="#cb199-125" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ANES)    </span>
-<span id="cb199-126"><a href="#cb199-126" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(ANES) <span class="co"># get a glimpse of your data.</span></span>
-<span id="cb199-127"><a href="#cb199-127" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ANES<span class="sc">$</span>poor)</span>
-<span id="cb199-128"><a href="#cb199-128" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(ANES<span class="sc">$</span>voteDem) </span>
-<span id="cb199-129"><a href="#cb199-129" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(ANES<span class="sc">$</span>poor)</span>
-<span id="cb199-130"><a href="#cb199-130" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(ANES<span class="sc">$</span>dem)</span>
-<span id="cb199-131"><a href="#cb199-131" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(ANES<span class="sc">$</span>year)</span>
-<span id="cb199-132"><a href="#cb199-132" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(ANES<span class="sc">$</span>voteDem)</span>
-<span id="cb199-133"><a href="#cb199-133" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(ANES<span class="sc">$</span>poor, <span class="fl">0.3</span>) <span class="co"># the observation that leaves 30% of the observations to its left</span></span>
-<span id="cb199-134"><a href="#cb199-134" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(ANES<span class="sc">$</span>poor, <span class="fl">0.5</span>) <span class="co"># this will be the median of course!</span></span>
-<span id="cb199-135"><a href="#cb199-135" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(ANES<span class="sc">$</span>poor)</span>
-<span id="cb199-136"><a href="#cb199-136" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(ANES<span class="sc">$</span>dem) <span class="co"># the variance</span></span>
-<span id="cb199-137"><a href="#cb199-137" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ANES<span class="sc">$</span>year) <span class="co"># how often does each occurrence appear?</span></span>
-<span id="cb199-138"><a href="#cb199-138" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(ANES<span class="sc">$</span>year)</span>
-<span id="cb199-139"><a href="#cb199-139" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ANES<span class="sc">$</span>white)</span>
-<span id="cb199-140"><a href="#cb199-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-141"><a href="#cb199-141" aria-hidden="true" tabindex="-1"></a><span class="co"># we can then intervene on options and modify its appearance:</span></span>
-<span id="cb199-142"><a href="#cb199-142" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ANES<span class="sc">$</span>white, <span class="at">frame =</span> F, <span class="at">ylab =</span> <span class="st">&quot;white&quot;</span>, <span class="at">main =</span> <span class="st">&quot;A boxplot&quot;</span>)</span>
-<span id="cb199-143"><a href="#cb199-143" aria-hidden="true" tabindex="-1"></a>?boxplot</span>
-<span id="cb199-144"><a href="#cb199-144" aria-hidden="true" tabindex="-1"></a><span class="co"># this would be the tidyverse way of doing it:</span></span>
-<span id="cb199-145"><a href="#cb199-145" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ANES, <span class="fu">aes</span>(<span class="at">y =</span> white)) <span class="sc">+</span></span>
-<span id="cb199-146"><a href="#cb199-146" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb199-147"><a href="#cb199-147" aria-hidden="true" tabindex="-1"></a>         <span class="fu">theme_minimal</span>()</span>
-<span id="cb199-148"><a href="#cb199-148" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ANES<span class="sc">$</span>FTM, <span class="at">main =</span> <span class="st">&quot;Histogram of FTM&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;FTM&quot;</span>)</span>
-<span id="cb199-149"><a href="#cb199-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-150"><a href="#cb199-150" aria-hidden="true" tabindex="-1"></a><span class="co"># and we can also intervene in the plot with options:</span></span>
-<span id="cb199-151"><a href="#cb199-151" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ANES<span class="sc">$</span>FTM, <span class="at">main =</span> <span class="st">&quot;Histogram of FTM&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;FTM&quot;</span>, <span class="at">probability =</span> <span class="cn">TRUE</span>) <span class="co"># to have probabilities</span></span>
-<span id="cb199-152"><a href="#cb199-152" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ANES, <span class="fu">aes</span>(<span class="at">x =</span> FTM)) <span class="sc">+</span></span>
-<span id="cb199-153"><a href="#cb199-153" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb199-154"><a href="#cb199-154" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb199-155"><a href="#cb199-155" aria-hidden="true" tabindex="-1"></a><span class="fu">density</span>(ANES<span class="sc">$</span>dem)</span>
-<span id="cb199-156"><a href="#cb199-156" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(ANES<span class="sc">$</span>dem))</span>
-<span id="cb199-157"><a href="#cb199-157" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> baseball<span class="sc">$</span>heightinches, <span class="at">y =</span> baseball<span class="sc">$</span>weightpounds,</span>
-<span id="cb199-158"><a href="#cb199-158" aria-hidden="true" tabindex="-1"></a>     <span class="at">frame.plot =</span> <span class="cn">FALSE</span>, <span class="at">xlab =</span> <span class="st">&quot;height&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;weight&quot;</span>,</span>
-<span id="cb199-159"><a href="#cb199-159" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">20</span>) <span class="co"># pch is an option that selects the shape of dots we want </span></span>
-<span id="cb199-160"><a href="#cb199-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-161"><a href="#cb199-161" aria-hidden="true" tabindex="-1"></a><span class="co"># what if we want to add lines on this plot? We use the abline() function</span></span>
-<span id="cb199-162"><a href="#cb199-162" aria-hidden="true" tabindex="-1"></a><span class="co"># Maybe we want to plot a line corresponding to the mean height </span></span>
-<span id="cb199-163"><a href="#cb199-163" aria-hidden="true" tabindex="-1"></a><span class="co"># lwd makes it thicker</span></span>
-<span id="cb199-164"><a href="#cb199-164" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="fu">mean</span>(baseball<span class="sc">$</span>heightinches, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">5</span>) </span>
-<span id="cb199-165"><a href="#cb199-165" aria-hidden="true" tabindex="-1"></a>my.plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(baseball, <span class="fu">aes</span>(<span class="at">x =</span> heightinches, <span class="at">y =</span> weightpounds)) <span class="sc">+</span></span>
-<span id="cb199-166"><a href="#cb199-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb199-167"><a href="#cb199-167" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb199-168"><a href="#cb199-168" aria-hidden="true" tabindex="-1"></a>my.plot</span>
-<span id="cb199-169"><a href="#cb199-169" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(my.plot, <span class="at">filename =</span> <span class="st">&quot;my_first_ggplot.pdf&quot;</span>)</span>
-<span id="cb199-170"><a href="#cb199-170" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ANES<span class="sc">$</span>poor) <span class="co"># by defaul it&#39;s a two-tailed t-test with null-value = 0</span></span>
-<span id="cb199-171"><a href="#cb199-171" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ANES<span class="sc">$</span>FTM, <span class="at">mu =</span> <span class="dv">60</span>)</span>
-<span id="cb199-172"><a href="#cb199-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-173"><a href="#cb199-173" aria-hidden="true" tabindex="-1"></a><span class="co"># ...and you can ask the test be one-sided:</span></span>
-<span id="cb199-174"><a href="#cb199-174" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ANES<span class="sc">$</span>FTM, <span class="at">mu =</span> <span class="dv">60</span>, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>)</span>
-<span id="cb199-175"><a href="#cb199-175" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ANES<span class="sc">$</span>FTM, <span class="at">mu =</span> <span class="dv">60</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span>
-<span id="cb199-176"><a href="#cb199-176" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> baseball<span class="sc">$</span>heightinches[baseball<span class="sc">$</span>team <span class="sc">==</span> <span class="st">&quot;NYY&quot;</span>],</span>
-<span id="cb199-177"><a href="#cb199-177" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> baseball<span class="sc">$</span>heightinches[baseball<span class="sc">$</span>team <span class="sc">==</span> <span class="st">&quot;MIN&quot;</span>])</span>
-<span id="cb199-178"><a href="#cb199-178" aria-hidden="true" tabindex="-1"></a>card <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">&quot;Card_data.dta&quot;</span>)</span>
-<span id="cb199-179"><a href="#cb199-179" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(card)</span>
-<span id="cb199-180"><a href="#cb199-180" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(wage <span class="sc">~</span> exper, <span class="co"># your formula</span></span>
-<span id="cb199-181"><a href="#cb199-181" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> card) <span class="co"># where are the data stored</span></span>
-<span id="cb199-182"><a href="#cb199-182" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1)</span>
-<span id="cb199-183"><a href="#cb199-183" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(wage <span class="sc">~</span> exper <span class="sc">+</span> motheduc <span class="sc">+</span> fatheduc,</span>
-<span id="cb199-184"><a href="#cb199-184" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> card)</span>
-<span id="cb199-185"><a href="#cb199-185" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model2)</span>
-<span id="cb199-186"><a href="#cb199-186" aria-hidden="true" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(wage) <span class="sc">~</span> exper <span class="sc">+</span> motheduc <span class="sc">+</span> fatheduc,</span>
-<span id="cb199-187"><a href="#cb199-187" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> card)</span>
-<span id="cb199-188"><a href="#cb199-188" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)</span>
-<span id="cb199-189"><a href="#cb199-189" aria-hidden="true" tabindex="-1"></a><span class="fu">extract_eq</span>(model3,<span class="at">wrap =</span> <span class="cn">TRUE</span>, <span class="at">use_coefs =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb199-190"><a href="#cb199-190" aria-hidden="true" tabindex="-1"></a><span class="co"># let&#39;s see how stargazer works</span></span>
-<span id="cb199-191"><a href="#cb199-191" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(model1, model2, model3, <span class="at">type =</span> <span class="st">&quot;text&quot;</span>,</span>
-<span id="cb199-192"><a href="#cb199-192" aria-hidden="true" tabindex="-1"></a>          <span class="at">keep.stat =</span> <span class="fu">c</span>(<span class="st">&quot;n&quot;</span>, <span class="st">&quot;rsq&quot;</span>, <span class="st">&quot;adj.rsq&quot;</span>, <span class="st">&quot;f&quot;</span>), <span class="at">df =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb199-193"><a href="#cb199-193" aria-hidden="true" tabindex="-1"></a>?stargazer</span>
-<span id="cb199-194"><a href="#cb199-194" aria-hidden="true" tabindex="-1"></a><span class="co"># we can also extract statistics and information from our model objects:</span></span>
-<span id="cb199-195"><a href="#cb199-195" aria-hidden="true" tabindex="-1"></a>model3<span class="sc">$</span>coefficients</span>
-<span id="cb199-196"><a href="#cb199-196" aria-hidden="true" tabindex="-1"></a><span class="co"># model3$residuals</span></span>
-<span id="cb199-197"><a href="#cb199-197" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> model3<span class="sc">$</span>fitted.values</span>
-<span id="cb199-198"><a href="#cb199-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb199-199"><a href="#cb199-199" aria-hidden="true" tabindex="-1"></a><span class="co"># and more:</span></span>
-<span id="cb199-200"><a href="#cb199-200" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)<span class="sc">$</span>coefficients[,<span class="dv">1</span>] <span class="co"># these are the coefficients (the betas)</span></span>
-<span id="cb199-201"><a href="#cb199-201" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)<span class="sc">$</span>coefficients[,<span class="dv">2</span>] <span class="co"># these are the standard errors of our coefficients</span></span>
-<span id="cb199-202"><a href="#cb199-202" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)<span class="sc">$</span>coefficients[,<span class="dv">3</span>] <span class="co"># these are the t-statistics</span></span>
-<span id="cb199-203"><a href="#cb199-203" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)<span class="sc">$</span>coefficients[,<span class="dv">4</span>] <span class="co"># these are the p-values</span></span>
-<span id="cb199-204"><a href="#cb199-204" aria-hidden="true" tabindex="-1"></a><span class="co"># of course we could save this information in R objects</span></span>
-<span id="cb199-205"><a href="#cb199-205" aria-hidden="true" tabindex="-1"></a>mod.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(enroll <span class="sc">~</span> fatheduc <span class="sc">+</span> motheduc <span class="sc">+</span></span>
-<span id="cb199-206"><a href="#cb199-206" aria-hidden="true" tabindex="-1"></a>                 black <span class="sc">+</span> smsa <span class="sc">+</span> south <span class="sc">+</span> IQ,</span>
-<span id="cb199-207"><a href="#cb199-207" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> card,</span>
-<span id="cb199-208"><a href="#cb199-208" aria-hidden="true" tabindex="-1"></a>               <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>))</span>
-<span id="cb199-209"><a href="#cb199-209" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod.glm)</span>
-<span id="cb199-210"><a href="#cb199-210" aria-hidden="true" tabindex="-1"></a><span class="fu">screenreg</span>(mod.glm)</span>
-<span id="cb199-211"><a href="#cb199-211" aria-hidden="true" tabindex="-1"></a>myfunction <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
-<span id="cb199-212"><a href="#cb199-212" aria-hidden="true" tabindex="-1"></a>  a <span class="ot">&lt;-</span> x<span class="sc">/</span><span class="dv">2</span></span>
-<span id="cb199-213"><a href="#cb199-213" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(a)</span>
-<span id="cb199-214"><a href="#cb199-214" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb199-215"><a href="#cb199-215" aria-hidden="true" tabindex="-1"></a><span class="fu">myfunction</span>(<span class="dv">4</span>)</span>
-<span id="cb199-216"><a href="#cb199-216" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(wdi_data)</span>
-<span id="cb199-217"><a href="#cb199-217" aria-hidden="true" tabindex="-1"></a>wdi_data<span class="sc">$</span>euro_central <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(wdi_data<span class="sc">$</span>region <span class="sc">==</span> <span class="st">&quot;Europe &amp; Central Asia&quot;</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
-<span id="cb199-218"><a href="#cb199-218" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(wdi_data<span class="sc">$</span>region)</span>
-<span id="cb199-219"><a href="#cb199-219" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(wdi_data<span class="sc">$</span>euro_central)</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="#cb202-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb202-2"><a href="#cb202-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(c(&quot;dplyr&quot;,&quot;haven&quot;,&quot;readr&quot;, &quot;tidyr&quot;,&quot;ggplot2&quot;,&quot;texreg&quot;,&quot;stringr&quot;,&quot;stringi&quot;,&quot;WDI&quot;))</span></span>
+<span id="cb202-3"><a href="#cb202-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)        <span class="co"># Import Data</span></span>
+<span id="cb202-4"><a href="#cb202-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)        <span class="co"># Import Data</span></span>
+<span id="cb202-5"><a href="#cb202-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)        <span class="co"># Data manipulation</span></span>
+<span id="cb202-6"><a href="#cb202-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)      <span class="co"># Creating graphics</span></span>
+<span id="cb202-7"><a href="#cb202-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)      <span class="co"># Deal with string data</span></span>
+<span id="cb202-8"><a href="#cb202-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)   <span class="co"># Build complex tables and manipulate table styles</span></span>
+<span id="cb202-9"><a href="#cb202-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(WDI)          <span class="co"># Get data from the World Bank&#39;s API</span></span>
+<span id="cb202-10"><a href="#cb202-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)        <span class="co"># We use the describe() function from this package for summary statistics.</span></span>
+<span id="cb202-11"><a href="#cb202-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(texreg)       <span class="co"># Convert regression output to Table</span></span>
+<span id="cb202-12"><a href="#cb202-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)    <span class="co"># Convert regression output to Table</span></span>
+<span id="cb202-13"><a href="#cb202-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(equatiomatic) <span class="co"># Provide an automatic way to show the equations of models fitted in R.</span></span>
+<span id="cb202-14"><a href="#cb202-14" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span>
+<span id="cb202-15"><a href="#cb202-15" aria-hidden="true" tabindex="-1"></a><span class="fl">1.5</span></span>
+<span id="cb202-16"><a href="#cb202-16" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">/</span><span class="dv">4</span></span>
+<span id="cb202-17"><a href="#cb202-17" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;Hello world&quot;</span></span>
+<span id="cb202-18"><a href="#cb202-18" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb202-19"><a href="#cb202-19" aria-hidden="true" tabindex="-1"></a>a</span>
+<span id="cb202-20"><a href="#cb202-20" aria-hidden="true" tabindex="-1"></a>my_string <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;hello&quot;</span>,<span class="st">&quot;world&quot;</span>,<span class="st">&quot;today&quot;</span>,<span class="st">&quot;is&quot;</span>,<span class="st">&quot;amazing&quot;</span>)</span>
+<span id="cb202-21"><a href="#cb202-21" aria-hidden="true" tabindex="-1"></a>a <span class="sc">==</span> my_string</span>
+<span id="cb202-22"><a href="#cb202-22" aria-hidden="true" tabindex="-1"></a>a <span class="sc">!=</span> my_string</span>
+<span id="cb202-23"><a href="#cb202-23" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">4</span>)</span>
+<span id="cb202-24"><a href="#cb202-24" aria-hidden="true" tabindex="-1"></a>?sqrt</span>
+<span id="cb202-25"><a href="#cb202-25" aria-hidden="true" tabindex="-1"></a>?log</span>
+<span id="cb202-26"><a href="#cb202-26" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">2</span>, <span class="dv">10</span>)</span>
+<span id="cb202-27"><a href="#cb202-27" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="fu">sqrt</span>(<span class="dv">4</span>), <span class="dv">10</span>) <span class="co"># gives exactly the same as log(2, 10) above as sqrt(4) = 2</span></span>
+<span id="cb202-28"><a href="#cb202-28" aria-hidden="true" tabindex="-1"></a>?paste</span>
+<span id="cb202-29"><a href="#cb202-29" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&quot;This&quot;</span>, <span class="st">&quot;is&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;full&quot;</span>, <span class="st">&quot;sentence&quot;</span>)</span>
+<span id="cb202-30"><a href="#cb202-30" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&quot;This&quot;</span>, <span class="st">&quot;is&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;full&quot;</span>, <span class="st">&quot;sentence&quot;</span>, <span class="at">sep=</span><span class="st">&quot;-&quot;</span>)</span>
+<span id="cb202-31"><a href="#cb202-31" aria-hidden="true" tabindex="-1"></a>my.first.vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="fl">2.4</span>, <span class="fl">0.3</span>, <span class="sc">-</span><span class="fl">2.56</span>, <span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>, <span class="dv">2</span><span class="sc">+</span><span class="dv">3</span>)</span>
+<span id="cb202-32"><a href="#cb202-32" aria-hidden="true" tabindex="-1"></a><span class="co"># the c() function stands for &quot;concatenate&quot; and is used to join objects together</span></span>
+<span id="cb202-33"><a href="#cb202-33" aria-hidden="true" tabindex="-1"></a>my.first.vector</span>
+<span id="cb202-34"><a href="#cb202-34" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(my.first.vector)</span>
+<span id="cb202-35"><a href="#cb202-35" aria-hidden="true" tabindex="-1"></a>my.first.vector[<span class="dv">8</span>] <span class="co"># the value of the eighth element in our vector</span></span>
+<span id="cb202-36"><a href="#cb202-36" aria-hidden="true" tabindex="-1"></a>my.first.vector[<span class="dv">1</span>] <span class="co"># the value of the first element in our vector</span></span>
+<span id="cb202-37"><a href="#cb202-37" aria-hidden="true" tabindex="-1"></a>a.string.vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;here&quot;</span>, <span class="st">&quot;are&quot;</span>, <span class="st">&quot;some&quot;</span>, <span class="st">&quot;elements&quot;</span>)</span>
+<span id="cb202-38"><a href="#cb202-38" aria-hidden="true" tabindex="-1"></a>a.string.vector</span>
+<span id="cb202-39"><a href="#cb202-39" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(my.first.vector)</span>
+<span id="cb202-40"><a href="#cb202-40" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(a.string.vector)</span>
+<span id="cb202-41"><a href="#cb202-41" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="st">&quot;hello&quot;</span></span>
+<span id="cb202-42"><a href="#cb202-42" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="st">&quot;world&quot;</span></span>
+<span id="cb202-43"><a href="#cb202-43" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(c, d, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb202-44"><a href="#cb202-44" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(c, d)</span>
+<span id="cb202-45"><a href="#cb202-45" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(c, d, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>) <span class="co"># specifies the separator of the two objects!</span></span>
+<span id="cb202-46"><a href="#cb202-46" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(c, d)</span>
+<span id="cb202-47"><a href="#cb202-47" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>,  <span class="co"># the data in our matrix. Pick all integers from 1 to 12 (included)</span></span>
+<span id="cb202-48"><a href="#cb202-48" aria-hidden="true" tabindex="-1"></a>            <span class="at">nrow =</span> <span class="dv">3</span>,     <span class="co"># the number of rows </span></span>
+<span id="cb202-49"><a href="#cb202-49" aria-hidden="true" tabindex="-1"></a>            <span class="at">ncol =</span> <span class="dv">4</span>,     <span class="co"># the number of columns</span></span>
+<span id="cb202-50"><a href="#cb202-50" aria-hidden="true" tabindex="-1"></a>            <span class="at">byrow =</span> <span class="cn">TRUE</span>) <span class="co"># do we want data to be stored in cells by row or by column?</span></span>
+<span id="cb202-51"><a href="#cb202-51" aria-hidden="true" tabindex="-1"></a>m</span>
+<span id="cb202-52"><a href="#cb202-52" aria-hidden="true" tabindex="-1"></a>m[<span class="dv">2</span>,<span class="dv">4</span>] <span class="co"># the object in the 2nd row, 4th column</span></span>
+<span id="cb202-53"><a href="#cb202-53" aria-hidden="true" tabindex="-1"></a>m[,<span class="dv">1</span>]  <span class="co"># all the first column</span></span>
+<span id="cb202-54"><a href="#cb202-54" aria-hidden="true" tabindex="-1"></a>m[<span class="dv">1</span>,]  <span class="co"># all the first row</span></span>
+<span id="cb202-55"><a href="#cb202-55" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(m) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>, <span class="st">&quot;four&quot;</span>)</span>
+<span id="cb202-56"><a href="#cb202-56" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(m) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
+<span id="cb202-57"><a href="#cb202-57" aria-hidden="true" tabindex="-1"></a>m</span>
+<span id="cb202-58"><a href="#cb202-58" aria-hidden="true" tabindex="-1"></a>datafr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb202-59"><a href="#cb202-59" aria-hidden="true" tabindex="-1"></a>  <span class="at">var1 =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;a&quot;</span>, <span class="dv">3</span>), <span class="fu">rep</span>(<span class="st">&quot;b&quot;</span>, <span class="dv">4</span>), <span class="fu">rep</span>(<span class="st">&quot;c&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;d&quot;</span>),</span>
+<span id="cb202-60"><a href="#cb202-60" aria-hidden="true" tabindex="-1"></a>  <span class="at">var2 =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">1.3</span>), <span class="co"># here we are drawing 10 random values from a </span></span>
+<span id="cb202-61"><a href="#cb202-61" aria-hidden="true" tabindex="-1"></a>  <span class="co"># normal distribution with mean = 0 and sd = 1.3</span></span>
+<span id="cb202-62"><a href="#cb202-62" aria-hidden="true" tabindex="-1"></a>  <span class="at">var3 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="fl">4.2</span>, <span class="fl">5.3333</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">9</span>, <span class="fl">7.5</span>, <span class="fl">0.000</span>, <span class="dv">1-12</span>, <span class="fu">sqrt</span>(<span class="dv">2</span>)) <span class="co"># notice that here we are</span></span>
+<span id="cb202-63"><a href="#cb202-63" aria-hidden="true" tabindex="-1"></a>  <span class="co"># creating a vector where the elements are expressions! We also include the squared root of 2</span></span>
+<span id="cb202-64"><a href="#cb202-64" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb202-65"><a href="#cb202-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-66"><a href="#cb202-66" aria-hidden="true" tabindex="-1"></a>datafr</span>
+<span id="cb202-67"><a href="#cb202-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-68"><a href="#cb202-68" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">var1 =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;a&quot;</span>, <span class="dv">3</span>), <span class="fu">rep</span>(<span class="st">&quot;b&quot;</span>, <span class="dv">4</span>), <span class="fu">rep</span>(<span class="st">&quot;c&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;d&quot;</span>),</span>
+<span id="cb202-69"><a href="#cb202-69" aria-hidden="true" tabindex="-1"></a>                 <span class="at">var2 =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="cn">NA</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>))</span>
+<span id="cb202-70"><a href="#cb202-70" aria-hidden="true" tabindex="-1"></a>df <span class="co"># we have a missing value in var2</span></span>
+<span id="cb202-71"><a href="#cb202-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-72"><a href="#cb202-72" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(datafr)</span>
+<span id="cb202-73"><a href="#cb202-73" aria-hidden="true" tabindex="-1"></a>datafr<span class="sc">$</span>var1 <span class="co"># this gives us precisely the object we want.</span></span>
+<span id="cb202-74"><a href="#cb202-74" aria-hidden="true" tabindex="-1"></a>datafr<span class="sc">$</span>var3</span>
+<span id="cb202-75"><a href="#cb202-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-76"><a href="#cb202-76" aria-hidden="true" tabindex="-1"></a>datafr<span class="sc">$</span>var2</span>
+<span id="cb202-77"><a href="#cb202-77" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>var2</span>
+<span id="cb202-78"><a href="#cb202-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-79"><a href="#cb202-79" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(datafr)</span>
+<span id="cb202-80"><a href="#cb202-80" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(datafr<span class="sc">$</span>var1)</span>
+<span id="cb202-81"><a href="#cb202-81" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(datafr<span class="sc">$</span>var2)</span>
+<span id="cb202-82"><a href="#cb202-82" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(datafr<span class="sc">$</span>var3)</span>
+<span id="cb202-83"><a href="#cb202-83" aria-hidden="true" tabindex="-1"></a>ls <span class="ot">&lt;-</span> <span class="fu">list</span>(df, datafr, datafr<span class="sc">$</span>var2)</span>
+<span id="cb202-84"><a href="#cb202-84" aria-hidden="true" tabindex="-1"></a>ls</span>
+<span id="cb202-85"><a href="#cb202-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-86"><a href="#cb202-86" aria-hidden="true" tabindex="-1"></a>ls2 <span class="ot">&lt;-</span> <span class="fu">list</span>(df, ls)</span>
+<span id="cb202-87"><a href="#cb202-87" aria-hidden="true" tabindex="-1"></a>ls2</span>
+<span id="cb202-88"><a href="#cb202-88" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb202-89"><a href="#cb202-89" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/Desktop/ESS_3x_website&quot;</span>)</span>
+<span id="cb202-90"><a href="#cb202-90" aria-hidden="true" tabindex="-1"></a>ANES <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">&quot;anesByState.dta&quot;</span>)</span>
+<span id="cb202-91"><a href="#cb202-91" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ANES)</span>
+<span id="cb202-92"><a href="#cb202-92" aria-hidden="true" tabindex="-1"></a>csvfile <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/lorenzo-crippa/Intro_to_R/master/2021/baseball.csv&quot;</span></span>
+<span id="cb202-93"><a href="#cb202-93" aria-hidden="true" tabindex="-1"></a>baseball <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(csvfile)</span>
+<span id="cb202-94"><a href="#cb202-94" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(baseball)</span>
+<span id="cb202-95"><a href="#cb202-95" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;http://www.principlesofeconometrics.com/stata/broiler.dta&quot;</span></span>
+<span id="cb202-96"><a href="#cb202-96" aria-hidden="true" tabindex="-1"></a>data.df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(url)</span>
+<span id="cb202-97"><a href="#cb202-97" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data.df)</span>
+<span id="cb202-98"><a href="#cb202-98" aria-hidden="true" tabindex="-1"></a>wdi_data <span class="ot">&lt;-</span> <span class="fu">WDI</span>(<span class="at">country =</span> <span class="st">&quot;all&quot;</span>, </span>
+<span id="cb202-99"><a href="#cb202-99" aria-hidden="true" tabindex="-1"></a>               <span class="at">indicator =</span> <span class="fu">c</span>(<span class="at">population =</span> <span class="st">&quot;SP.POP.TOTL&quot;</span>,</span>
+<span id="cb202-100"><a href="#cb202-100" aria-hidden="true" tabindex="-1"></a>                             <span class="at">gdp_percapita =</span> <span class="st">&quot;NY.GDP.PCAP.KD&quot;</span>), </span>
+<span id="cb202-101"><a href="#cb202-101" aria-hidden="true" tabindex="-1"></a>               <span class="at">start =</span> <span class="dv">2000</span>, <span class="at">end =</span> <span class="dv">2020</span>, <span class="at">extra =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb202-102"><a href="#cb202-102" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(wdi_data)</span>
+<span id="cb202-103"><a href="#cb202-103" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;tidyverse&quot;)</span></span>
+<span id="cb202-104"><a href="#cb202-104" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb202-105"><a href="#cb202-105" aria-hidden="true" tabindex="-1"></a>baseball.no.CLE <span class="ot">&lt;-</span> baseball[baseball<span class="sc">$</span>team <span class="sc">!=</span> <span class="st">&quot;CLE&quot;</span>, ]</span>
+<span id="cb202-106"><a href="#cb202-106" aria-hidden="true" tabindex="-1"></a>baseball<span class="fl">.2</span> <span class="ot">&lt;-</span> baseball[baseball<span class="sc">$</span>team <span class="sc">==</span> <span class="st">&quot;NYY&quot;</span>, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span>
+<span id="cb202-107"><a href="#cb202-107" aria-hidden="true" tabindex="-1"></a>ANES <span class="ot">&lt;-</span> <span class="fu">filter</span>(ANES, <span class="co"># what is your data frame? </span></span>
+<span id="cb202-108"><a href="#cb202-108" aria-hidden="true" tabindex="-1"></a>               year <span class="sc">!=</span> <span class="dv">2000</span>) <span class="co"># the condition you impose</span></span>
+<span id="cb202-109"><a href="#cb202-109" aria-hidden="true" tabindex="-1"></a>ANES <span class="ot">&lt;-</span> <span class="fu">select</span>(ANES, </span>
+<span id="cb202-110"><a href="#cb202-110" aria-hidden="true" tabindex="-1"></a>               <span class="sc">-</span>turnout) <span class="co"># keep everything BUT the variable named &quot;turnout&quot;</span></span>
+<span id="cb202-111"><a href="#cb202-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-112"><a href="#cb202-112" aria-hidden="true" tabindex="-1"></a>ANES[<span class="fu">order</span>(ANES[,<span class="dv">2</span>], ANES[,<span class="dv">1</span>]),]</span>
+<span id="cb202-113"><a href="#cb202-113" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(ANES<span class="sc">$</span>year) <span class="co"># all possible years in the ANES dataset</span></span>
+<span id="cb202-114"><a href="#cb202-114" aria-hidden="true" tabindex="-1"></a><span class="co"># we might want to have it sorted:</span></span>
+<span id="cb202-115"><a href="#cb202-115" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">unique</span>(ANES<span class="sc">$</span>year)) <span class="co"># years from 1952 to 2008 by 2-year distance. </span></span>
+<span id="cb202-116"><a href="#cb202-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-117"><a href="#cb202-117" aria-hidden="true" tabindex="-1"></a>ANES<span class="sc">$</span>new.var <span class="ot">&lt;-</span> ANES<span class="sc">$</span>poor<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb202-118"><a href="#cb202-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-119"><a href="#cb202-119" aria-hidden="true" tabindex="-1"></a><span class="co"># we can also do it in tidyverse by doing:</span></span>
+<span id="cb202-120"><a href="#cb202-120" aria-hidden="true" tabindex="-1"></a>ANES <span class="ot">&lt;-</span> <span class="fu">mutate</span>(ANES,</span>
+<span id="cb202-121"><a href="#cb202-121" aria-hidden="true" tabindex="-1"></a>               <span class="at">new.var2 =</span> poor<span class="sc">*</span><span class="dv">2</span>)</span>
+<span id="cb202-122"><a href="#cb202-122" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ANES)   <span class="co"># obtain all the variable names of a dataset</span></span>
+<span id="cb202-123"><a href="#cb202-123" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ANES)    </span>
+<span id="cb202-124"><a href="#cb202-124" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(ANES) <span class="co"># get a glimpse of your data.</span></span>
+<span id="cb202-125"><a href="#cb202-125" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ANES<span class="sc">$</span>poor)</span>
+<span id="cb202-126"><a href="#cb202-126" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(ANES<span class="sc">$</span>voteDem) </span>
+<span id="cb202-127"><a href="#cb202-127" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(ANES<span class="sc">$</span>poor)</span>
+<span id="cb202-128"><a href="#cb202-128" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(ANES<span class="sc">$</span>dem)</span>
+<span id="cb202-129"><a href="#cb202-129" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(ANES<span class="sc">$</span>year)</span>
+<span id="cb202-130"><a href="#cb202-130" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(ANES<span class="sc">$</span>voteDem)</span>
+<span id="cb202-131"><a href="#cb202-131" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(ANES<span class="sc">$</span>poor, <span class="fl">0.3</span>) <span class="co"># the observation that leaves 30% of the observations to its left</span></span>
+<span id="cb202-132"><a href="#cb202-132" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(ANES<span class="sc">$</span>poor, <span class="fl">0.5</span>) <span class="co"># this will be the median of course!</span></span>
+<span id="cb202-133"><a href="#cb202-133" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(ANES<span class="sc">$</span>poor)</span>
+<span id="cb202-134"><a href="#cb202-134" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(ANES<span class="sc">$</span>dem) <span class="co"># the variance</span></span>
+<span id="cb202-135"><a href="#cb202-135" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ANES<span class="sc">$</span>year) <span class="co"># how often does each occurrence appear?</span></span>
+<span id="cb202-136"><a href="#cb202-136" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(ANES<span class="sc">$</span>year)</span>
+<span id="cb202-137"><a href="#cb202-137" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ANES<span class="sc">$</span>white)</span>
+<span id="cb202-138"><a href="#cb202-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-139"><a href="#cb202-139" aria-hidden="true" tabindex="-1"></a><span class="co"># we can then intervene on options and modify its appearance:</span></span>
+<span id="cb202-140"><a href="#cb202-140" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ANES<span class="sc">$</span>white, <span class="at">frame =</span> F, <span class="at">ylab =</span> <span class="st">&quot;white&quot;</span>, <span class="at">main =</span> <span class="st">&quot;A boxplot&quot;</span>)</span>
+<span id="cb202-141"><a href="#cb202-141" aria-hidden="true" tabindex="-1"></a>?boxplot</span>
+<span id="cb202-142"><a href="#cb202-142" aria-hidden="true" tabindex="-1"></a><span class="co"># this would be the tidyverse way of doing it:</span></span>
+<span id="cb202-143"><a href="#cb202-143" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ANES, <span class="fu">aes</span>(<span class="at">y =</span> white)) <span class="sc">+</span></span>
+<span id="cb202-144"><a href="#cb202-144" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb202-145"><a href="#cb202-145" aria-hidden="true" tabindex="-1"></a>         <span class="fu">theme_minimal</span>()</span>
+<span id="cb202-146"><a href="#cb202-146" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ANES<span class="sc">$</span>FTM, <span class="at">main =</span> <span class="st">&quot;Histogram of FTM&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;FTM&quot;</span>)</span>
+<span id="cb202-147"><a href="#cb202-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-148"><a href="#cb202-148" aria-hidden="true" tabindex="-1"></a><span class="co"># and we can also intervene in the plot with options:</span></span>
+<span id="cb202-149"><a href="#cb202-149" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ANES<span class="sc">$</span>FTM, <span class="at">main =</span> <span class="st">&quot;Histogram of FTM&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;FTM&quot;</span>, <span class="at">probability =</span> <span class="cn">TRUE</span>) <span class="co"># to have probabilities</span></span>
+<span id="cb202-150"><a href="#cb202-150" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ANES, <span class="fu">aes</span>(<span class="at">x =</span> FTM)) <span class="sc">+</span></span>
+<span id="cb202-151"><a href="#cb202-151" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb202-152"><a href="#cb202-152" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb202-153"><a href="#cb202-153" aria-hidden="true" tabindex="-1"></a><span class="fu">density</span>(ANES<span class="sc">$</span>dem)</span>
+<span id="cb202-154"><a href="#cb202-154" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(ANES<span class="sc">$</span>dem))</span>
+<span id="cb202-155"><a href="#cb202-155" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> baseball<span class="sc">$</span>heightinches, <span class="at">y =</span> baseball<span class="sc">$</span>weightpounds,</span>
+<span id="cb202-156"><a href="#cb202-156" aria-hidden="true" tabindex="-1"></a>     <span class="at">frame.plot =</span> <span class="cn">FALSE</span>, <span class="at">xlab =</span> <span class="st">&quot;height&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;weight&quot;</span>,</span>
+<span id="cb202-157"><a href="#cb202-157" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">20</span>) <span class="co"># pch is an option that selects the shape of dots we want </span></span>
+<span id="cb202-158"><a href="#cb202-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-159"><a href="#cb202-159" aria-hidden="true" tabindex="-1"></a><span class="co"># what if we want to add lines on this plot? We use the abline() function</span></span>
+<span id="cb202-160"><a href="#cb202-160" aria-hidden="true" tabindex="-1"></a><span class="co"># Maybe we want to plot a line corresponding to the mean height </span></span>
+<span id="cb202-161"><a href="#cb202-161" aria-hidden="true" tabindex="-1"></a><span class="co"># lwd makes it thicker</span></span>
+<span id="cb202-162"><a href="#cb202-162" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="fu">mean</span>(baseball<span class="sc">$</span>heightinches, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">5</span>) </span>
+<span id="cb202-163"><a href="#cb202-163" aria-hidden="true" tabindex="-1"></a>my.plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(baseball, <span class="fu">aes</span>(<span class="at">x =</span> heightinches, <span class="at">y =</span> weightpounds)) <span class="sc">+</span></span>
+<span id="cb202-164"><a href="#cb202-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb202-165"><a href="#cb202-165" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb202-166"><a href="#cb202-166" aria-hidden="true" tabindex="-1"></a>my.plot</span>
+<span id="cb202-167"><a href="#cb202-167" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(my.plot, <span class="at">filename =</span> <span class="st">&quot;my_first_ggplot.pdf&quot;</span>)</span>
+<span id="cb202-168"><a href="#cb202-168" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(WDI)</span>
+<span id="cb202-169"><a href="#cb202-169" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb202-170"><a href="#cb202-170" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb202-171"><a href="#cb202-171" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hrbrthemes)</span>
+<span id="cb202-172"><a href="#cb202-172" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MetBrewer)</span>
+<span id="cb202-173"><a href="#cb202-173" aria-hidden="true" tabindex="-1"></a>wdi_data <span class="ot">&lt;-</span> <span class="fu">WDI</span>(<span class="at">country =</span> <span class="st">&quot;all&quot;</span>,</span>
+<span id="cb202-174"><a href="#cb202-174" aria-hidden="true" tabindex="-1"></a>                <span class="at">indicator =</span> <span class="fu">c</span>(<span class="at">population =</span> <span class="st">&quot;SP.POP.TOTL&quot;</span>,</span>
+<span id="cb202-175"><a href="#cb202-175" aria-hidden="true" tabindex="-1"></a>                              <span class="at">gdp_percapita =</span> <span class="st">&quot;NY.GDP.PCAP.KD&quot;</span>), </span>
+<span id="cb202-176"><a href="#cb202-176" aria-hidden="true" tabindex="-1"></a>                <span class="at">start =</span> <span class="dv">1996</span>, <span class="at">end =</span> <span class="dv">2020</span>, <span class="at">extra =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb202-177"><a href="#cb202-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-178"><a href="#cb202-178" aria-hidden="true" tabindex="-1"></a>north_ame <span class="ot">&lt;-</span> wdi_data <span class="sc">|&gt;</span></span>
+<span id="cb202-179"><a href="#cb202-179" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">&quot;United States&quot;</span> <span class="sc">|</span> country <span class="sc">==</span> <span class="st">&quot;Canada&quot;</span> <span class="sc">|</span></span>
+<span id="cb202-180"><a href="#cb202-180" aria-hidden="true" tabindex="-1"></a>           country <span class="sc">==</span> <span class="st">&quot;Mexico&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb202-181"><a href="#cb202-181" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">GDP =</span> <span class="fu">log</span>(gdp_percapita))</span>
+<span id="cb202-182"><a href="#cb202-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-183"><a href="#cb202-183" aria-hidden="true" tabindex="-1"></a>north_ame <span class="sc">|&gt;</span></span>
+<span id="cb202-184"><a href="#cb202-184" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> population, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb202-185"><a href="#cb202-185" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb202-186"><a href="#cb202-186" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span> <span class="fu">met.brewer</span>(<span class="st">&quot;Renoir&quot;</span>, <span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="cb202-187"><a href="#cb202-187" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ipsum_rc</span>() <span class="sc">+</span></span>
+<span id="cb202-188"><a href="#cb202-188" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Year&quot;</span>,</span>
+<span id="cb202-189"><a href="#cb202-189" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Population&quot;</span>,</span>
+<span id="cb202-190"><a href="#cb202-190" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;World Bank Data&quot;</span>)</span>
+<span id="cb202-191"><a href="#cb202-191" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb202-192"><a href="#cb202-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-193"><a href="#cb202-193" aria-hidden="true" tabindex="-1"></a><span class="co"># Or</span></span>
+<span id="cb202-194"><a href="#cb202-194" aria-hidden="true" tabindex="-1"></a>north_ame <span class="sc">|&gt;</span></span>
+<span id="cb202-195"><a href="#cb202-195" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> population)) <span class="sc">+</span></span>
+<span id="cb202-196"><a href="#cb202-196" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb202-197"><a href="#cb202-197" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&#39;Year&#39;</span>) <span class="sc">+</span></span>
+<span id="cb202-198"><a href="#cb202-198" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Population&quot;</span>) <span class="sc">+</span></span>
+<span id="cb202-199"><a href="#cb202-199" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>country) <span class="sc">+</span></span>
+<span id="cb202-200"><a href="#cb202-200" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span> <span class="fu">met.brewer</span>(<span class="st">&quot;Renoir&quot;</span>, <span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="cb202-201"><a href="#cb202-201" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ipsum_rc</span>() <span class="sc">+</span></span>
+<span id="cb202-202"><a href="#cb202-202" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>))</span>
+<span id="cb202-203"><a href="#cb202-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-204"><a href="#cb202-204" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ANES<span class="sc">$</span>poor) <span class="co"># by defaul it&#39;s a two-tailed t-test with null-value = 0</span></span>
+<span id="cb202-205"><a href="#cb202-205" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ANES<span class="sc">$</span>FTM, <span class="at">mu =</span> <span class="dv">60</span>)</span>
+<span id="cb202-206"><a href="#cb202-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-207"><a href="#cb202-207" aria-hidden="true" tabindex="-1"></a><span class="co"># ...and you can ask the test be one-sided:</span></span>
+<span id="cb202-208"><a href="#cb202-208" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ANES<span class="sc">$</span>FTM, <span class="at">mu =</span> <span class="dv">60</span>, <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>)</span>
+<span id="cb202-209"><a href="#cb202-209" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(ANES<span class="sc">$</span>FTM, <span class="at">mu =</span> <span class="dv">60</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span>
+<span id="cb202-210"><a href="#cb202-210" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> baseball<span class="sc">$</span>heightinches[baseball<span class="sc">$</span>team <span class="sc">==</span> <span class="st">&quot;NYY&quot;</span>],</span>
+<span id="cb202-211"><a href="#cb202-211" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> baseball<span class="sc">$</span>heightinches[baseball<span class="sc">$</span>team <span class="sc">==</span> <span class="st">&quot;MIN&quot;</span>])</span>
+<span id="cb202-212"><a href="#cb202-212" aria-hidden="true" tabindex="-1"></a>card <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">&quot;Card_data.dta&quot;</span>)</span>
+<span id="cb202-213"><a href="#cb202-213" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(card)</span>
+<span id="cb202-214"><a href="#cb202-214" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(wage <span class="sc">~</span> exper, <span class="co"># your formula</span></span>
+<span id="cb202-215"><a href="#cb202-215" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> card) <span class="co"># where are the data stored</span></span>
+<span id="cb202-216"><a href="#cb202-216" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1)</span>
+<span id="cb202-217"><a href="#cb202-217" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(wage <span class="sc">~</span> exper <span class="sc">+</span> motheduc <span class="sc">+</span> fatheduc,</span>
+<span id="cb202-218"><a href="#cb202-218" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> card)</span>
+<span id="cb202-219"><a href="#cb202-219" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model2)</span>
+<span id="cb202-220"><a href="#cb202-220" aria-hidden="true" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(wage) <span class="sc">~</span> exper <span class="sc">+</span> motheduc <span class="sc">+</span> fatheduc,</span>
+<span id="cb202-221"><a href="#cb202-221" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> card)</span>
+<span id="cb202-222"><a href="#cb202-222" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)</span>
+<span id="cb202-223"><a href="#cb202-223" aria-hidden="true" tabindex="-1"></a><span class="fu">extract_eq</span>(model3,<span class="at">wrap =</span> <span class="cn">TRUE</span>, <span class="at">use_coefs =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb202-224"><a href="#cb202-224" aria-hidden="true" tabindex="-1"></a><span class="co"># let&#39;s see how stargazer works</span></span>
+<span id="cb202-225"><a href="#cb202-225" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(model1, model2, model3, <span class="at">type =</span> <span class="st">&quot;text&quot;</span>,</span>
+<span id="cb202-226"><a href="#cb202-226" aria-hidden="true" tabindex="-1"></a>          <span class="at">keep.stat =</span> <span class="fu">c</span>(<span class="st">&quot;n&quot;</span>, <span class="st">&quot;rsq&quot;</span>, <span class="st">&quot;adj.rsq&quot;</span>, <span class="st">&quot;f&quot;</span>), <span class="at">df =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb202-227"><a href="#cb202-227" aria-hidden="true" tabindex="-1"></a>?stargazer</span>
+<span id="cb202-228"><a href="#cb202-228" aria-hidden="true" tabindex="-1"></a><span class="co"># we can also extract statistics and information from our model objects:</span></span>
+<span id="cb202-229"><a href="#cb202-229" aria-hidden="true" tabindex="-1"></a>model3<span class="sc">$</span>coefficients</span>
+<span id="cb202-230"><a href="#cb202-230" aria-hidden="true" tabindex="-1"></a><span class="co"># model3$residuals</span></span>
+<span id="cb202-231"><a href="#cb202-231" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> model3<span class="sc">$</span>fitted.values</span>
+<span id="cb202-232"><a href="#cb202-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb202-233"><a href="#cb202-233" aria-hidden="true" tabindex="-1"></a><span class="co"># and more:</span></span>
+<span id="cb202-234"><a href="#cb202-234" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)<span class="sc">$</span>coefficients[,<span class="dv">1</span>] <span class="co"># these are the coefficients (the betas)</span></span>
+<span id="cb202-235"><a href="#cb202-235" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)<span class="sc">$</span>coefficients[,<span class="dv">2</span>] <span class="co"># these are the standard errors of our coefficients</span></span>
+<span id="cb202-236"><a href="#cb202-236" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)<span class="sc">$</span>coefficients[,<span class="dv">3</span>] <span class="co"># these are the t-statistics</span></span>
+<span id="cb202-237"><a href="#cb202-237" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)<span class="sc">$</span>coefficients[,<span class="dv">4</span>] <span class="co"># these are the p-values</span></span>
+<span id="cb202-238"><a href="#cb202-238" aria-hidden="true" tabindex="-1"></a><span class="co"># of course we could save this information in R objects</span></span>
+<span id="cb202-239"><a href="#cb202-239" aria-hidden="true" tabindex="-1"></a>mod.glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(enroll <span class="sc">~</span> fatheduc <span class="sc">+</span> motheduc <span class="sc">+</span></span>
+<span id="cb202-240"><a href="#cb202-240" aria-hidden="true" tabindex="-1"></a>                 black <span class="sc">+</span> smsa <span class="sc">+</span> south <span class="sc">+</span> IQ,</span>
+<span id="cb202-241"><a href="#cb202-241" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> card,</span>
+<span id="cb202-242"><a href="#cb202-242" aria-hidden="true" tabindex="-1"></a>               <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb202-243"><a href="#cb202-243" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod.glm)</span>
+<span id="cb202-244"><a href="#cb202-244" aria-hidden="true" tabindex="-1"></a><span class="fu">screenreg</span>(mod.glm)</span>
+<span id="cb202-245"><a href="#cb202-245" aria-hidden="true" tabindex="-1"></a>myfunction <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb202-246"><a href="#cb202-246" aria-hidden="true" tabindex="-1"></a>  a <span class="ot">&lt;-</span> x<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb202-247"><a href="#cb202-247" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(a)</span>
+<span id="cb202-248"><a href="#cb202-248" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb202-249"><a href="#cb202-249" aria-hidden="true" tabindex="-1"></a><span class="fu">myfunction</span>(<span class="dv">4</span>)</span>
+<span id="cb202-250"><a href="#cb202-250" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(wdi_data)</span>
+<span id="cb202-251"><a href="#cb202-251" aria-hidden="true" tabindex="-1"></a>wdi_data<span class="sc">$</span>euro_central <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(wdi_data<span class="sc">$</span>region <span class="sc">==</span> <span class="st">&quot;Europe &amp; Central Asia&quot;</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb202-252"><a href="#cb202-252" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(wdi_data<span class="sc">$</span>region)</span>
+<span id="cb202-253"><a href="#cb202-253" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(wdi_data<span class="sc">$</span>euro_central)</span></code></pre></div>
 </div>
 </div>
 
